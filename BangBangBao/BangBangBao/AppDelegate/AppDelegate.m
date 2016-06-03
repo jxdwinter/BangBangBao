@@ -11,6 +11,7 @@
 #import "BaseNavigationController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <Flurry.h>
 
 @interface AppDelegate ()
 
@@ -24,7 +25,7 @@
     
 
     [Fabric with:@[CrashlyticsKit]];
-
+    [Flurry startSession:@"KVQKB3QRRCZ4D98WCNV6"];
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '14F40F96A2E9CA7B29C0B2740DD200FA'
+               BlueprintIdentifier = '2A57D2A161660726BD200E71'
                BlueprintName = 'YTKKeyValueStore'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libYTKKeyValueStore.a'>

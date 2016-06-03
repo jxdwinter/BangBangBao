@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import <Flurry.h>
 
 @interface BaseViewController ()
 
@@ -21,6 +22,16 @@
     self.tabBarController.tabBar.translucent = NO;
     self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor whiteColor];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [Flurry logEvent:self.title timed:YES];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [Flurry endTimedEvent:self.title withParameters:nil];
 }
 
 - (void)didReceiveMemoryWarning {

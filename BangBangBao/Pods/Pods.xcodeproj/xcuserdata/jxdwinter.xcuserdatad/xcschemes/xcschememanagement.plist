@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Flurry-iOS-SDK.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GBVersionTracking.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -112,17 +117,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>077BDF53E785B54F249CD64988D7031A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>12F9CF302410DB63D309EF66ACB61562</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>14F40F96A2E9CA7B29C0B2740DD200FA</key>
+		<key>0E98966CF995C26CB23E710027527BF4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,22 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3A46BA36C97A4EAEEA3DB7F9D8FEC20E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>40A630B02DD46E9F51866BFB1C16A61C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4C36B1F5D992ACDFD781AFC537E2D4B2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4C970935A73500EFD0635B0BA394519C</key>
+		<key>52EB1F5B90F924DA2F254978B70AB5EF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -172,7 +157,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>820EA011825E27F14B37DC75889D1C85</key>
+		<key>7A6D6EAF5150BC8F0BBE3E679C48FFBF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7C2BA6C5F60C810A90790F95FB2648A4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -183,11 +173,6 @@
 			<true/>
 		</dict>
 		<key>8F74D9EA91F4C43190670066BAC37D44</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>9A124E6B6E9749C59B48BC752A51514D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -203,6 +188,31 @@
 			<true/>
 		</dict>
 		<key>BD34E6032CAD9787E625016A764D15E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C727C87DE1203A928218CB1DB3A7138C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D079C0B8D193CBDF60F39822F384E43F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E6AE6135ACBDC06B7F947FCCFDE3AEDB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F34F9893A980CBF121B394A40AC0FDF8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FAD9FD49D2A23BDDE886625647A3770D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
