@@ -22,5 +22,7 @@ target "BangBangBao" do
 	pod 'VTAcknowledgementsViewController'
 	pod 'YYModel'
 	pod 'LBXScan'
-
+	pod 'Fabric'
+	pod 'Crashlytics'
+	
 end

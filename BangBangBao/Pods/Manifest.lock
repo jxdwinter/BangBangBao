@@ -23,6 +23,9 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.7)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -55,6 +58,8 @@ PODS:
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
+  - Crashlytics
+  - Fabric
   - GBVersionTracking
   - IQKeyboardManager
   - JDStatusBarNotification
@@ -75,6 +80,8 @@ SPEC CHECKSUMS:
   ActionSheetPicker-3.0: db66605feb85689279d328206c61f0e4f398df92
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
+  Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   GBVersionTracking: c9b5eb256a234e01b5b44731fda86a3488760c49
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
@@ -93,6 +100,6 @@ SPEC CHECKSUMS:
   YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
   ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-PODFILE CHECKSUM: 3dbc2eedbe83329851b35162748541b6b6479adc
+PODFILE CHECKSUM: e0062ea5b85a3c9a11f58f1a23acd40dc2ab44db
 
 COCOAPODS: 1.0.1

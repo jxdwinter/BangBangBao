@@ -13,6 +13,8 @@
 		8345771D1D011C6200558456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8345771C1D011C6200558456 /* Assets.xcassets */; };
 		8345772B1D011C6200558456 /* BangBangBaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345772A1D011C6200558456 /* BangBangBaoTests.m */; };
 		834577361D011C6200558456 /* BangBangBaoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 834577351D011C6200558456 /* BangBangBaoUITests.m */; };
+		838BE4631D017EDA00D12AC2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4611D017EDA00D12AC2 /* Crashlytics.framework */; };
+		838BE4641D017EDA00D12AC2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4621D017EDA00D12AC2 /* Fabric.framework */; };
 		83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */; };
 		83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E01D01389C00B71E2D /* BaseNavigationController.m */; };
 		83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E21D01389C00B71E2D /* BaseViewController.m */; };
@@ -50,6 +52,8 @@
 		834577311D011C6200558456 /* BangBangBaoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BangBangBaoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		834577351D011C6200558456 /* BangBangBaoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BangBangBaoUITests.m; sourceTree = "<group>"; };
 		834577371D011C6200558456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		838BE4611D017EDA00D12AC2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		838BE4621D017EDA00D12AC2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		83E3D5DB1D0134BB00B71E2D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		83E3D5DF1D01389C00B71E2D /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
@@ -69,7 +73,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				838BE4631D017EDA00D12AC2 /* Crashlytics.framework in Frameworks */,
 				16D0136AECC1E4E19F8800ED /* libPods-BangBangBao.a in Frameworks */,
+				838BE4641D017EDA00D12AC2 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +202,8 @@
 		E93A8374766770B974E15466 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				838BE4611D017EDA00D12AC2 /* Crashlytics.framework */,
+				838BE4621D017EDA00D12AC2 /* Fabric.framework */,
 				6A1FF09EBCCE970ABA091BCE /* libPods-BangBangBao.a */,
 			);
 			name = Frameworks;
@@ -214,6 +222,7 @@
 				8345770B1D011C6200558456 /* Resources */,
 				94E325C93C409F5AC12E9118 /* [CP] Embed Pods Frameworks */,
 				DD846D2AB00A965F380CF61C /* [CP] Copy Pods Resources */,
+				838BE45C1D017BF400D12AC2 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -343,6 +352,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		838BE45C1D017BF400D12AC2 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run adb6c6dba2e462026e3494de452a18ec98b17ee6 5a8d7401026ac649042273ae3fc605356fa3e30bff2cb069a27713f3e81ab866";
 		};
 		94E325C93C409F5AC12E9118 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -512,7 +534,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Tong Wang (HV6974MYBR)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/BangBangBao/BangBangBao-Prefix.pch";
 				INFOPLIST_FILE = BangBangBao/Info.plist;
@@ -532,7 +559,12 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Paybao International Limited (DC6PX32954)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/BangBangBao/BangBangBao-Prefix.pch";
 				INFOPLIST_FILE = BangBangBao/Info.plist;
