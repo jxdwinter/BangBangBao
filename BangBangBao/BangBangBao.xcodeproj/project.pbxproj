@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		465178ADE25D6564C0308C98 /* libPods-BangBangBao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D7B671A672F94C8E349712 /* libPods-BangBangBao.a */; };
 		834577121D011C6200558456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 834577111D011C6200558456 /* main.m */; };
-		834577181D011C6200558456 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834577171D011C6200558456 /* ViewController.m */; };
 		8345771D1D011C6200558456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8345771C1D011C6200558456 /* Assets.xcassets */; };
 		8345772B1D011C6200558456 /* BangBangBaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345772A1D011C6200558456 /* BangBangBaoTests.m */; };
 		834577361D011C6200558456 /* BangBangBaoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 834577351D011C6200558456 /* BangBangBaoUITests.m */; };
 		836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */; };
+		836E71021D05669200456C57 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71011D05669200456C57 /* ViewController.m */; };
+		836E71051D05685400456C57 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71041D05685400456C57 /* RecordViewController.m */; };
+		836E71081D0568A600456C57 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71071D0568A600456C57 /* SettingViewController.m */; };
 		838BE4631D017EDA00D12AC2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4611D017EDA00D12AC2 /* Crashlytics.framework */; };
 		838BE4641D017EDA00D12AC2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4621D017EDA00D12AC2 /* Fabric.framework */; };
 		83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */; };
@@ -44,8 +46,6 @@
 		8199B71886D002DE4EEF55F7 /* Pods-BangBangBao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BangBangBao.release.xcconfig"; path = "Pods/Target Support Files/Pods-BangBangBao/Pods-BangBangBao.release.xcconfig"; sourceTree = "<group>"; };
 		8345770D1D011C6200558456 /* BangBangBao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangBao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		834577111D011C6200558456 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		834577161D011C6200558456 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		834577171D011C6200558456 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8345771C1D011C6200558456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		834577211D011C6200558456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		834577261D011C6200558456 /* BangBangBaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BangBangBaoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,6 +56,12 @@
 		834577371D011C6200558456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		836E70EB1D0559E400456C57 /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
 		836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeViewController.m; sourceTree = "<group>"; };
+		836E71001D05669200456C57 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		836E71011D05669200456C57 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		836E71031D05685400456C57 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
+		836E71041D05685400456C57 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
+		836E71061D0568A600456C57 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		836E71071D0568A600456C57 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		838BE4611D017EDA00D12AC2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		838BE4621D017EDA00D12AC2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		83E3D5DB1D0134BB00B71E2D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -124,12 +130,13 @@
 		8345770F1D011C6200558456 /* BangBangBao */ = {
 			isa = PBXGroup;
 			children = (
-				834577161D011C6200558456 /* ViewController.h */,
-				834577171D011C6200558456 /* ViewController.m */,
 				83E3D5DA1D0134BB00B71E2D /* AppDelegate */,
 				83E3D5E51D0139F000B71E2D /* AppConfigration */,
 				83E3D5DE1D01389C00B71E2D /* BaseViewController */,
 				836E70E71D05550E00456C57 /* ScanQRCode */,
+				836E70F01D05657600456C57 /* YuanBao */,
+				836E70EE1D05657600456C57 /* Record */,
+				836E70EF1D05657600456C57 /* Setting */,
 				834577101D011C6200558456 /* Supporting Files */,
 			);
 			path = BangBangBao;
@@ -171,6 +178,153 @@
 				836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */,
 			);
 			path = ScanQRCode;
+			sourceTree = "<group>";
+		};
+		836E70EE1D05657600456C57 /* Record */ = {
+			isa = PBXGroup;
+			children = (
+				836E70F61D05660600456C57 /* Controller */,
+				836E70F71D05660600456C57 /* Helper */,
+				836E70F81D05660600456C57 /* Model */,
+				836E70F91D05660600456C57 /* Store */,
+				836E70FA1D05660600456C57 /* View */,
+			);
+			path = Record;
+			sourceTree = "<group>";
+		};
+		836E70EF1D05657600456C57 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				836E70FB1D05660E00456C57 /* Controller */,
+				836E70FC1D05660E00456C57 /* Helper */,
+				836E70FD1D05660E00456C57 /* Model */,
+				836E70FE1D05660E00456C57 /* Store */,
+				836E70FF1D05660E00456C57 /* View */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		836E70F01D05657600456C57 /* YuanBao */ = {
+			isa = PBXGroup;
+			children = (
+				836E70F11D0565FD00456C57 /* Controller */,
+				836E70F21D0565FD00456C57 /* Helper */,
+				836E70F31D0565FD00456C57 /* Model */,
+				836E70F41D0565FD00456C57 /* Store */,
+				836E70F51D0565FD00456C57 /* View */,
+			);
+			path = YuanBao;
+			sourceTree = "<group>";
+		};
+		836E70F11D0565FD00456C57 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				836E71001D05669200456C57 /* ViewController.h */,
+				836E71011D05669200456C57 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		836E70F21D0565FD00456C57 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		836E70F31D0565FD00456C57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		836E70F41D0565FD00456C57 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		836E70F51D0565FD00456C57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		836E70F61D05660600456C57 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				836E71031D05685400456C57 /* RecordViewController.h */,
+				836E71041D05685400456C57 /* RecordViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		836E70F71D05660600456C57 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		836E70F81D05660600456C57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		836E70F91D05660600456C57 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		836E70FA1D05660600456C57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		836E70FB1D05660E00456C57 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				836E71061D0568A600456C57 /* SettingViewController.h */,
+				836E71071D0568A600456C57 /* SettingViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		836E70FC1D05660E00456C57 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		836E70FD1D05660E00456C57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		836E70FE1D05660E00456C57 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		836E70FF1D05660E00456C57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		83E3D5DA1D0134BB00B71E2D /* AppDelegate */ = {
@@ -416,13 +570,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				836E71021D05669200456C57 /* ViewController.m in Sources */,
 				83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */,
 				83E3D5E91D013AAD00B71E2D /* Config.m in Sources */,
 				83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */,
-				834577181D011C6200558456 /* ViewController.m in Sources */,
 				834577121D011C6200558456 /* main.m in Sources */,
+				836E71081D0568A600456C57 /* SettingViewController.m in Sources */,
 				83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */,
 				836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */,
+				836E71051D05685400456C57 /* RecordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

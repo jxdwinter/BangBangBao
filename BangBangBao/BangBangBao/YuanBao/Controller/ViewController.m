@@ -21,7 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.title = @"測試";
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 80.0, 20.0)];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = @"元寶";
+    self.navigationItem.titleView = titleLabel;
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.scanQRCodeButton];
 }
 
