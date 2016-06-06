@@ -12,6 +12,7 @@
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Flurry.h>
+#import <JPFPSStatus.h>
 
 @interface AppDelegate ()
 
@@ -23,7 +24,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-
+#if defined(DEBUG)||defined(_DEBUG)
+    [[JPFPSStatus sharedInstance] open];
+#endif
     [Fabric with:@[CrashlyticsKit]];
     [Flurry startSession:@"KVQKB3QRRCZ4D98WCNV6"];
     

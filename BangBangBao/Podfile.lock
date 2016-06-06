@@ -34,6 +34,7 @@ PODS:
   - IQKeyboardManager (3.3.7)
   - JDStatusBarNotification (1.5.3)
   - JGActionSheet (1.0.5)
+  - JPFPSStatus (0.0.2)
   - LBXScan (1.1.1):
     - ZXingObjC (~> 3.0)
   - Masonry (1.0.1)
@@ -66,6 +67,7 @@ DEPENDENCIES:
   - IQKeyboardManager
   - JDStatusBarNotification
   - JGActionSheet
+  - JPFPSStatus
   - LBXScan
   - Masonry
   - MBProgressHUD
@@ -90,6 +92,7 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   JDStatusBarNotification: 29413865af11c862c17180610b0f46a21118b412
   JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
+  JPFPSStatus: 11de6027b4cbebfeee0c939dfe08f5ec124a0965
   LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
@@ -103,4 +106,6 @@ SPEC CHECKSUMS:
   YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
   ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: d29f2f1575a8163eb366b61f74121c01e213abfe
+
+COCOAPODS: 1.0.1

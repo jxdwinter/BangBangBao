@@ -53,7 +53,7 @@
     
     }
     
-      [_qRScanView startDeviceReadyingWithText:@"相机启动中"];
+      [_qRScanView startDeviceReadyingWithText:@"相機啟動中"];
     
     
 }
@@ -70,7 +70,7 @@
     {
         [_qRScanView stopDeviceReadying];
         
-        [self showError:@"   请到设置隐私中开启本程序相机权限   "];
+        [self showError:@"   請在設置隱私中開啟本軟體相機權限   "];
         return;
     }
     
