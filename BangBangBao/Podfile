@@ -25,5 +25,5 @@ target "BangBangBao" do
 	pod 'Fabric'
 	pod 'Crashlytics'
 	pod 'Flurry-iOS-SDK/FlurrySDK'
-	pod 'JPFPSStatus'
+	
 end

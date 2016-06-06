@@ -9,16 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
 
-
-@protocol ScanQRCodeSuccessfulDelegate <NSObject>
-
-@required
-- (void) scanQRCodeSuccessfulWithResult : (NSString *) result;
-
-@end
-
-
-@interface ViewController : BaseViewController<ScanQRCodeSuccessfulDelegate>
+@interface ViewController : BaseViewController
 
 
 @end
