@@ -1,21 +1,20 @@
 //
+//  ScanQRCodeViewController.m
+//  BangBangBao
 //
-//
-//
-//  Created by lbxia on 15/10/21.
-//  Copyright © 2015年 lbxia. All rights reserved.
+//  Created by Xiaodong Jiang on 6/6/16.
+//  Copyright © 2016 PAYBAO INTERNATIONAL LIMITED. All rights reserved.
 //
 
-#import "SubLBXScanViewController.h"
+#import "ScanQRCodeViewController.h"
 
-@interface SubLBXScanViewController ()
+@interface ScanQRCodeViewController ()
 
 @property (nonatomic, strong) UIButton *backButton;
 
 @end
 
-@implementation SubLBXScanViewController
-
+@implementation ScanQRCodeViewController
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -28,7 +27,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backButton];
     self.navigationItem.backBarButtonItem.title = @"";
-    self.title = @"扫码绑定";
+    self.title = @"掃碼支付";
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -59,7 +58,7 @@
         _topTitle.text = @"將取景框對準二維碼即可自動掃描";
         _topTitle.textColor = [UIColor whiteColor];
         [self.view addSubview:_topTitle];
-    }    
+    }
 }
 
 - (void)drawBottomItems{
@@ -67,7 +66,7 @@
         return;
     }
     self.bottomItemsView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(self.view.frame)-164,
-                                                                      CGRectGetWidth(self.view.frame), 100)];
+                                                                   CGRectGetWidth(self.view.frame), 100)];
     _bottomItemsView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
     
     [self.view addSubview:_bottomItemsView];
@@ -101,7 +100,7 @@
     //声音提醒
     //[LBXScanWrapper systemSound];
     [self showNextVCWithScanResult:scanResult];
-   
+    
 }
 
 - (void)showNextVCWithScanResult:(LBXScanResult*)strResult{

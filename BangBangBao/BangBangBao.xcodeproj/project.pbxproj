@@ -13,7 +13,7 @@
 		8345771D1D011C6200558456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8345771C1D011C6200558456 /* Assets.xcassets */; };
 		8345772B1D011C6200558456 /* BangBangBaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345772A1D011C6200558456 /* BangBangBaoTests.m */; };
 		834577361D011C6200558456 /* BangBangBaoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 834577351D011C6200558456 /* BangBangBaoUITests.m */; };
-		836E70EA1D05550E00456C57 /* SubLBXScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E70E91D05550E00456C57 /* SubLBXScanViewController.m */; };
+		836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */; };
 		838BE4631D017EDA00D12AC2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4611D017EDA00D12AC2 /* Crashlytics.framework */; };
 		838BE4641D017EDA00D12AC2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4621D017EDA00D12AC2 /* Fabric.framework */; };
 		83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */; };
@@ -54,8 +54,8 @@
 		834577311D011C6200558456 /* BangBangBaoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BangBangBaoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		834577351D011C6200558456 /* BangBangBaoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BangBangBaoUITests.m; sourceTree = "<group>"; };
 		834577371D011C6200558456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		836E70E81D05550E00456C57 /* SubLBXScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubLBXScanViewController.h; sourceTree = "<group>"; };
-		836E70E91D05550E00456C57 /* SubLBXScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubLBXScanViewController.m; sourceTree = "<group>"; };
+		836E70EB1D0559E400456C57 /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
+		836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeViewController.m; sourceTree = "<group>"; };
 		838BE4611D017EDA00D12AC2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		838BE4621D017EDA00D12AC2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		83E3D5DB1D0134BB00B71E2D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -167,8 +167,8 @@
 		836E70E71D05550E00456C57 /* ScanQRCode */ = {
 			isa = PBXGroup;
 			children = (
-				836E70E81D05550E00456C57 /* SubLBXScanViewController.h */,
-				836E70E91D05550E00456C57 /* SubLBXScanViewController.m */,
+				836E70EB1D0559E400456C57 /* ScanQRCodeViewController.h */,
+				836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */,
 			);
 			path = ScanQRCode;
 			sourceTree = "<group>";
@@ -416,13 +416,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				836E70EA1D05550E00456C57 /* SubLBXScanViewController.m in Sources */,
 				83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */,
 				83E3D5E91D013AAD00B71E2D /* Config.m in Sources */,
 				83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */,
 				834577181D011C6200558456 /* ViewController.m in Sources */,
 				834577121D011C6200558456 /* main.m in Sources */,
 				83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */,
+				836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

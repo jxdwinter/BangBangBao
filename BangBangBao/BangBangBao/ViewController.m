@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "SubLBXScanViewController.h"
+#import "ScanQRCodeViewController.h"
 #import "BaseNavigationController.h"
 
 @interface ViewController ()
@@ -45,7 +45,7 @@
         style.photoframeAngleH = 24;
         style.anmiationStyle = LBXScanViewAnimationStyle_LineMove;
         style.animationImage = [UIImage imageNamed:@"qrcode_scan_light_green"];
-        SubLBXScanViewController *vc = [SubLBXScanViewController new];
+        ScanQRCodeViewController *vc = [ScanQRCodeViewController new];
         vc.style = style;
         vc.isQQSimulator = YES;
         vc.scanQRCodeSuccessfulDelegate = self;

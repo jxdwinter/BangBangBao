@@ -1,16 +1,16 @@
 //
-//  SubLBXScanViewController.h
+//  ScanQRCodeViewController.h
+//  BangBangBao
 //
-//  github:https://github.com/MxABC/LBXScan
-//  Created by lbxia on 15/10/21.
-//  Copyright © 2015年 lbxia. All rights reserved.
+//  Created by Xiaodong Jiang on 6/6/16.
+//  Copyright © 2016 PAYBAO INTERNATIONAL LIMITED. All rights reserved.
 //
 
 #import <LBXScanViewController.h>
 #import "ViewController.h"
 
 //继承LBXScanViewController,在界面上绘制想要的按钮，提示语等
-@interface SubLBXScanViewController : LBXScanViewController
+@interface ScanQRCodeViewController : LBXScanViewController
 
 #pragma mark -模仿qq界面
 
@@ -26,7 +26,7 @@
 @property (nonatomic, strong) UIView *bottomItemsView;
 //相册
 @property (nonatomic, strong) UIButton *btnPhoto;
-
+//掃描成功後代理
 @property (nonatomic, weak) id<ScanQRCodeSuccessfulDelegate> scanQRCodeSuccessfulDelegate;
 
 @end
