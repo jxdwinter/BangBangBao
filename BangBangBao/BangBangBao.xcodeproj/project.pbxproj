@@ -16,12 +16,12 @@
 		836E71021D05669200456C57 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71011D05669200456C57 /* ViewController.m */; };
 		836E71051D05685400456C57 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71041D05685400456C57 /* RecordViewController.m */; };
 		836E71081D0568A600456C57 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71071D0568A600456C57 /* SettingViewController.m */; };
-		838BE4631D017EDA00D12AC2 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4611D017EDA00D12AC2 /* Crashlytics.framework */; };
-		838BE4641D017EDA00D12AC2 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4621D017EDA00D12AC2 /* Fabric.framework */; };
 		83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */; };
 		83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E01D01389C00B71E2D /* BaseNavigationController.m */; };
 		83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E21D01389C00B71E2D /* BaseViewController.m */; };
 		83E3D5E91D013AAD00B71E2D /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E81D013AAD00B71E2D /* Config.m */; };
+		83FDF79A1D06600C0044E782 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4611D017EDA00D12AC2 /* Crashlytics.framework */; };
+		83FDF79B1D06600C0044E782 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4621D017EDA00D12AC2 /* Fabric.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,8 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				838BE4631D017EDA00D12AC2 /* Crashlytics.framework in Frameworks */,
-				838BE4641D017EDA00D12AC2 /* Fabric.framework in Frameworks */,
+				83FDF79A1D06600C0044E782 /* Crashlytics.framework in Frameworks */,
+				83FDF79B1D06600C0044E782 /* Fabric.framework in Frameworks */,
 				465178ADE25D6564C0308C98 /* libPods-BangBangBao.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
