@@ -14,7 +14,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>APAddressBook.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ActionSheetPicker-3.0.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ClusterPrePermissions.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -55,6 +65,11 @@
 			<false/>
 		</dict>
 		<key>LBXScan.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LCUIKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -122,7 +137,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>172229712E47F3F8AE9536CCB83086B5</key>
+		<key>13F38FE813261679F2552C8039EDD956</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>277626129FE8F8A6CA1A29A3513E3D57</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,7 +157,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3B72EC5534ECEFB8FCE87759D8F77F07</key>
+		<key>39ECA1DFE0925CD3D590199AB05CEDC8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3CA304DB35E17384265D2FDB229E91F2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4241BAC4928945AFBD95604B603BF89E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -157,17 +187,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5AAF0BFD579FF900FC2301E1C0FBB05F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>5B0BD2DECAB32BFCFD79325EA6EAC852</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>624C27CC79C68731A1C2051314753A6C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -177,12 +197,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77E629E673F55FA272B106893C4C31C4</key>
+		<key>8328CFEA64628576CB65E4FD461EB69F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>82FA2C485391B7FCDA60F18DC0D250DA</key>
+		<key>862E51D4A07E0BBA054781C1162A809B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -193,6 +213,11 @@
 			<true/>
 		</dict>
 		<key>8F74D9EA91F4C43190670066BAC37D44</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9667E10B2AA6986B647C6E9C8AAFF124</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -212,17 +237,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>CEB3CF59D31DCBBF99D4418D64C02925</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF9E727E26522214FAC3832553978298</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D079C0B8D193CBDF60F39822F384E43F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D28DD12F60A049B554EBDBB37A262FE4</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E39523A0269A52BB866884DF827A32A4</key>
+		<key>DA17884156D67867C1321919546DCA90</key>
 		<dict>
 			<key>primary</key>
 			<true/>

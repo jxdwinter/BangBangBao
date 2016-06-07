@@ -23,6 +23,10 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - APAddressBook (0.2.3):
+    - APAddressBook/Core (= 0.2.3)
+  - APAddressBook/Core (0.2.3)
+  - ClusterPrePermissions (0.8.1)
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
@@ -37,6 +41,7 @@ PODS:
   - JPFPSStatus (0.0.2)
   - LBXScan (1.1.1):
     - ZXingObjC (~> 3.0)
+  - LCUIKit (0.0.2)
   - Masonry (1.0.1)
   - MBProgressHUD (0.9.2)
   - MJRefresh (3.1.0)
@@ -60,6 +65,8 @@ PODS:
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
+  - APAddressBook
+  - ClusterPrePermissions
   - Crashlytics
   - Fabric
   - Flurry-iOS-SDK/FlurrySDK
@@ -69,6 +76,7 @@ DEPENDENCIES:
   - JGActionSheet
   - JPFPSStatus
   - LBXScan
+  - LCUIKit
   - Masonry
   - MBProgressHUD
   - MJRefresh
@@ -84,6 +92,8 @@ SPEC CHECKSUMS:
   ActionSheetPicker-3.0: db66605feb85689279d328206c61f0e4f398df92
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  APAddressBook: 2a91bf05999548bea210ec9d1a68073f4dc8bfce
+  ClusterPrePermissions: 168c127a658e423062550dd9c56fe26042a58bce
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
   Flurry-iOS-SDK: 5ea9c76a73ce16bff005d21a4f0b539d2c15d97d
@@ -94,6 +104,7 @@ SPEC CHECKSUMS:
   JGActionSheet: 2cfca820b57a11ec4b4a5655d45ee599fbeddc05
   JPFPSStatus: 11de6027b4cbebfeee0c939dfe08f5ec124a0965
   LBXScan: dfb4d8ae8e4cff2aa0c9e1771e43954dce1469a9
+  LCUIKit: bd8798cd9b1508c64b07e1786111a2480ed0889c
   Masonry: a1a931a0d08870ed8ae415a2ea5ea68ebcac77df
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJRefresh: 743e6404967d1c2c688472ea3ecfde247d872db4
@@ -106,6 +117,6 @@ SPEC CHECKSUMS:
   YYModel: 63142c2f07c5c8c9d1c261689cf3827ea6ab2886
   ZXingObjC: bf15b3814f7a105b6d99f47da2333c93a063650a
 
-PODFILE CHECKSUM: d29f2f1575a8163eb366b61f74121c01e213abfe
+PODFILE CHECKSUM: 848d5461e4578fd37f1b4e95eb93759976d24f4d
 
 COCOAPODS: 1.0.1

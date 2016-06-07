@@ -22,6 +22,14 @@
 		83E3D5E91D013AAD00B71E2D /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E81D013AAD00B71E2D /* Config.m */; };
 		83FDF79A1D06600C0044E782 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4611D017EDA00D12AC2 /* Crashlytics.framework */; };
 		83FDF79B1D06600C0044E782 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4621D017EDA00D12AC2 /* Fabric.framework */; };
+		83FDF79F1D0674240044E782 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FDF79C1D0674240044E782 /* FBSDKCoreKit.framework */; };
+		83FDF7A01D0674240044E782 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FDF79D1D0674240044E782 /* FBSDKLoginKit.framework */; };
+		83FDF7A11D0674240044E782 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FDF79E1D0674240044E782 /* FBSDKShareKit.framework */; };
+		83FDF7AF1D067C0D0044E782 /* EncryptTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FDF7A51D067C0D0044E782 /* EncryptTools.m */; };
+		83FDF7B01D067C0D0044E782 /* MF_Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FDF7A71D067C0D0044E782 /* MF_Base64Additions.m */; };
+		83FDF7B11D067C0D0044E782 /* VerifyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FDF7A91D067C0D0044E782 /* VerifyTools.m */; };
+		83FDF7B21D067C0D0044E782 /* MBProgressHUD+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FDF7AC1D067C0D0044E782 /* MBProgressHUD+Helper.m */; };
+		83FDF7B31D067C0D0044E782 /* MostTopViewControllerTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FDF7AE1D067C0D0044E782 /* MostTopViewControllerTools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +82,19 @@
 		83E3D5E71D013AAD00B71E2D /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		83E3D5E81D013AAD00B71E2D /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		83E3D5EA1D013D3700B71E2D /* BangBangBao-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BangBangBao-Prefix.pch"; sourceTree = "<group>"; };
+		83FDF79C1D0674240044E782 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		83FDF79D1D0674240044E782 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		83FDF79E1D0674240044E782 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		83FDF7A41D067C0D0044E782 /* EncryptTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptTools.h; sourceTree = "<group>"; };
+		83FDF7A51D067C0D0044E782 /* EncryptTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptTools.m; sourceTree = "<group>"; };
+		83FDF7A61D067C0D0044E782 /* MF_Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MF_Base64Additions.h; sourceTree = "<group>"; };
+		83FDF7A71D067C0D0044E782 /* MF_Base64Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MF_Base64Additions.m; sourceTree = "<group>"; };
+		83FDF7A81D067C0D0044E782 /* VerifyTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerifyTools.h; sourceTree = "<group>"; };
+		83FDF7A91D067C0D0044E782 /* VerifyTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerifyTools.m; sourceTree = "<group>"; };
+		83FDF7AB1D067C0D0044E782 /* MBProgressHUD+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+Helper.h"; sourceTree = "<group>"; };
+		83FDF7AC1D067C0D0044E782 /* MBProgressHUD+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+Helper.m"; sourceTree = "<group>"; };
+		83FDF7AD1D067C0D0044E782 /* MostTopViewControllerTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MostTopViewControllerTools.h; sourceTree = "<group>"; };
+		83FDF7AE1D067C0D0044E782 /* MostTopViewControllerTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MostTopViewControllerTools.m; sourceTree = "<group>"; };
 		F692E501644EEE35163D1C0F /* Pods-BangBangBao.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BangBangBao.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BangBangBao/Pods-BangBangBao.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +104,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				83FDF79A1D06600C0044E782 /* Crashlytics.framework in Frameworks */,
+				83FDF79F1D0674240044E782 /* FBSDKCoreKit.framework in Frameworks */,
+				83FDF7A11D0674240044E782 /* FBSDKShareKit.framework in Frameworks */,
+				83FDF7A01D0674240044E782 /* FBSDKLoginKit.framework in Frameworks */,
 				83FDF79B1D06600C0044E782 /* Fabric.framework in Frameworks */,
 				465178ADE25D6564C0308C98 /* libPods-BangBangBao.a in Frameworks */,
 			);
@@ -137,6 +161,7 @@
 				836E70F01D05657600456C57 /* YuanBao */,
 				836E70EE1D05657600456C57 /* Record */,
 				836E70EF1D05657600456C57 /* Setting */,
+				83FDF7A21D067C0D0044E782 /* Toolkit */,
 				834577101D011C6200558456 /* Supporting Files */,
 			);
 			path = BangBangBao;
@@ -357,6 +382,39 @@
 			path = AppConfigration;
 			sourceTree = "<group>";
 		};
+		83FDF7A21D067C0D0044E782 /* Toolkit */ = {
+			isa = PBXGroup;
+			children = (
+				83FDF7A31D067C0D0044E782 /* Foundation */,
+				83FDF7AA1D067C0D0044E782 /* UIKit */,
+			);
+			path = Toolkit;
+			sourceTree = "<group>";
+		};
+		83FDF7A31D067C0D0044E782 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				83FDF7A41D067C0D0044E782 /* EncryptTools.h */,
+				83FDF7A51D067C0D0044E782 /* EncryptTools.m */,
+				83FDF7A61D067C0D0044E782 /* MF_Base64Additions.h */,
+				83FDF7A71D067C0D0044E782 /* MF_Base64Additions.m */,
+				83FDF7A81D067C0D0044E782 /* VerifyTools.h */,
+				83FDF7A91D067C0D0044E782 /* VerifyTools.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		83FDF7AA1D067C0D0044E782 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				83FDF7AB1D067C0D0044E782 /* MBProgressHUD+Helper.h */,
+				83FDF7AC1D067C0D0044E782 /* MBProgressHUD+Helper.m */,
+				83FDF7AD1D067C0D0044E782 /* MostTopViewControllerTools.h */,
+				83FDF7AE1D067C0D0044E782 /* MostTopViewControllerTools.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		C909E028A3FE0AA74036E0A2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +427,9 @@
 		E93A8374766770B974E15466 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				83FDF79C1D0674240044E782 /* FBSDKCoreKit.framework */,
+				83FDF79D1D0674240044E782 /* FBSDKLoginKit.framework */,
+				83FDF79E1D0674240044E782 /* FBSDKShareKit.framework */,
 				838BE4611D017EDA00D12AC2 /* Crashlytics.framework */,
 				838BE4621D017EDA00D12AC2 /* Fabric.framework */,
 				09D7B671A672F94C8E349712 /* libPods-BangBangBao.a */,
@@ -575,8 +636,13 @@
 				83E3D5E91D013AAD00B71E2D /* Config.m in Sources */,
 				83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */,
 				834577121D011C6200558456 /* main.m in Sources */,
+				83FDF7B31D067C0D0044E782 /* MostTopViewControllerTools.m in Sources */,
+				83FDF7B21D067C0D0044E782 /* MBProgressHUD+Helper.m in Sources */,
+				83FDF7AF1D067C0D0044E782 /* EncryptTools.m in Sources */,
+				83FDF7B11D067C0D0044E782 /* VerifyTools.m in Sources */,
 				836E71081D0568A600456C57 /* SettingViewController.m in Sources */,
 				83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */,
+				83FDF7B01D067C0D0044E782 /* MF_Base64Additions.m in Sources */,
 				836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */,
 				836E71051D05685400456C57 /* RecordViewController.m in Sources */,
 			);

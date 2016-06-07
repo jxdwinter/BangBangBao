@@ -26,4 +26,8 @@ target "BangBangBao" do
 	pod 'Crashlytics'
 	pod 'Flurry-iOS-SDK/FlurrySDK'
 	pod 'JPFPSStatus'
+	pod 'ClusterPrePermissions'
+	pod 'APAddressBook'
+	pod 'LCUIKit'
+	
 end

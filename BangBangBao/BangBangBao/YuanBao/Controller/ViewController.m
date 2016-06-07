@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "ScanQRCodeViewController.h"
 #import "BaseNavigationController.h"
+#import <ClusterPrePermissions/ClusterPrePermissions.h>
 
 @interface ViewController ()
 
@@ -36,46 +37,35 @@
 #pragma mark - private methods
 
 - (void) scan {
-    if (![self cameraPemission]){
-        //[MBProgressHUD showHUDwithSuccess:NO WithTitle:@"没有摄像机权限" withView:self.navigationController.view];
-        return;
-    }else{
-        LBXScanViewStyle *style = [[LBXScanViewStyle alloc]init];
-        style.centerUpOffset = 44;
-        style.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle_Outer;
-        style.photoframeLineW = 6;
-        style.photoframeAngleW = 24;
-        style.photoframeAngleH = 24;
-        style.anmiationStyle = LBXScanViewAnimationStyle_LineMove;
-        style.animationImage = [UIImage imageNamed:@"qrcode_scan_light_green"];
-        ScanQRCodeViewController *vc = [ScanQRCodeViewController new];
-        vc.style = style;
-        vc.isQQSimulator = YES;
-        vc.scanQRCodeSuccessfulDelegate = self;
-        [self presentViewController:[[BaseNavigationController alloc] initWithRootViewController:vc] animated:YES completion:^{
-            
-        }];
-    }
-}
+    ClusterPrePermissions *permissions = [ClusterPrePermissions sharedPermissions];
+    [permissions showCameraPermissionsWithTitle:@"訪問您的相機"
+                                        message:@"幫幫寶想要使用您的攝像頭來掃描二維碼"
+                                denyButtonTitle:@"不允許"
+                               grantButtonTitle:@"允許"
+                              completionHandler:^(BOOL hasPermission,
+                                                  ClusterDialogResult userDialogResult,
+                                                  ClusterDialogResult systemDialogResult) {
+                                  if (hasPermission) {
+                                      LBXScanViewStyle *style = [[LBXScanViewStyle alloc]init];
+                                      style.centerUpOffset = 44;
+                                      style.photoframeAngleStyle = LBXScanViewPhotoframeAngleStyle_Outer;
+                                      style.photoframeLineW = 6;
+                                      style.photoframeAngleW = 24;
+                                      style.photoframeAngleH = 24;
+                                      style.anmiationStyle = LBXScanViewAnimationStyle_LineMove;
+                                      style.animationImage = [UIImage imageNamed:@"qrcode_scan_light_green"];
+                                      ScanQRCodeViewController *vc = [ScanQRCodeViewController new];
+                                      vc.style = style;
+                                      vc.isQQSimulator = YES;
+                                      vc.scanQRCodeSuccessfulDelegate = self;
+                                      [self presentViewController:[[BaseNavigationController alloc] initWithRootViewController:vc] animated:YES completion:^{
+                                          
+                                      }];
+                                  } else {
+                                      [MBProgressHUD showHUDwithSuccess:NO WithTitle:@"請在設置隱私中開啟本軟體相機權限" withView:self.navigationController.view];
+                                  }
 
-- (BOOL)cameraPemission{
-    BOOL isHavePemission = NO;
-    if ([AVCaptureDevice respondsToSelector:@selector(authorizationStatusForMediaType:)]){
-        AVAuthorizationStatus permission =
-        [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
-        switch (permission) {
-            case AVAuthorizationStatusAuthorized:
-                isHavePemission = YES;
-                break;
-            case AVAuthorizationStatusDenied:
-            case AVAuthorizationStatusRestricted:
-                break;
-            case AVAuthorizationStatusNotDetermined:
-                isHavePemission = YES;
-                break;
-        }
-    }
-    return isHavePemission;
+    }];
 }
 
 #pragma mark - ScanSuccessfulDelegate
