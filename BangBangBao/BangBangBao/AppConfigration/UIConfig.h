@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define DEFAULTCOLOR [UIColor colorWithRed:0.23 green:0.37 blue:0.69 alpha:1.00]
+#define DEFAULTCOLOR [UIColor colorWithRed:0.95 green:0.60 blue:0.22 alpha:1.00]
 
 #define DEFAULTTEXTCOLOR [UIColor colorWithRed:(100/255.0) green:(100/255.0) blue:(100/255.0) alpha:1.0] 
 #define DEFAULTLIGHTGRAYCOLOR [UIColor colorWithRed:0.95 green:0.95 blue:0.95 alpha:1]

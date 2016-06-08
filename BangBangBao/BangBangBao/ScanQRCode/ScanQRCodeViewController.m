@@ -117,7 +117,7 @@
     if ([LBXScanWrapper isGetPhotoPermission]){
         [self openLocalPhoto];
     }else{
-        //[MBProgressHUD showHUDwithSuccess:NO WithTitle:@"請到設置隱私中開啟本軟體相冊權限" withView:self.navigationController.view];
+        [MBProgressHUD showHUDwithSuccess:NO WithTitle:@"請到設置隱私中開啟本軟體相冊權限" withView:self.navigationController.view];
     }
 }
 

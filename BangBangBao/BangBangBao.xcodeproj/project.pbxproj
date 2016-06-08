@@ -129,6 +129,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		831137381D07CA9F00BACDDE /* OtherViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OtherViewController;
+			sourceTree = "<group>";
+		};
 		834577041D011C6200558456 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +164,7 @@
 				83E3D5DA1D0134BB00B71E2D /* AppDelegate */,
 				83E3D5E51D0139F000B71E2D /* AppConfigration */,
 				83E3D5DE1D01389C00B71E2D /* BaseViewController */,
+				831137381D07CA9F00BACDDE /* OtherViewController */,
 				836E70E71D05550E00456C57 /* ScanQRCode */,
 				836E70F01D05657600456C57 /* YuanBao */,
 				836E70EE1D05657600456C57 /* Record */,

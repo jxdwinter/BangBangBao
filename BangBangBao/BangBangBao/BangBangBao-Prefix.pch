@@ -20,6 +20,7 @@
 #import <MBProgressHUD.h>
 #import <YYModel/YYModel.h>
 
+#import "UIConfig.h"
 #import "MBProgressHUD+Helper.h"
 
 #endif /* BangBangBao_Prefix_pch */

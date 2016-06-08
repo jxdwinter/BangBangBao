@@ -218,7 +218,6 @@
 }
 
 - (void)setupRootViewController {
-    
     self.window.rootViewController = self.tabBarController;
 //    /**
 //     *  如果当前用户已经登录
