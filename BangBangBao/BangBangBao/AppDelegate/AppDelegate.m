@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import "RecordViewController.h"
 #import "SettingViewController.h"
+#import "WelcomeViewController.h"
 #import "BaseNavigationController.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
@@ -218,23 +219,16 @@
 }
 
 - (void)setupRootViewController {
-    self.window.rootViewController = self.tabBarController;
+    //self.window.rootViewController = self.tabBarController;
+    self.window.rootViewController = [[BaseNavigationController alloc] initWithRootViewController:[[WelcomeViewController alloc] init]];
 //    /**
 //     *  如果当前用户已经登录
 //     */
 //    if ([[AccountManager sharedAccountManager] getCurrentUser]) {
-//        /**
-//         *  如果当前用户登录并且已经完善信息
-//         */
-//        if ([[[[AccountManager sharedAccountManager] getCurrentUser] realName] length]) {
-//            self.window.rootViewController = self.tabBarController;
-//        }else{
-//            self.window.rootViewController = [[BaseNavigationController alloc]
-//                                              initWithRootViewController:[[CompleteViewController alloc] init]];
-//        }
+//        self.window.rootViewController = self.tabBarController;
 //    }else{
 //        self.window.rootViewController = [[BaseNavigationController alloc]
-//                                          initWithRootViewController:[[LoginViewController alloc] init]];
+//                                          initWithRootViewController:[[WelcomeViewController alloc] init]];
 //    }
 }
 
