@@ -8,6 +8,7 @@
 
 #import "WelcomeViewController.h"
 #import "LoginViewController.h"
+#import "SignupViewController.h"
 
 @interface WelcomeViewController ()
 
@@ -100,7 +101,8 @@
 #pragma mark - private methods
 
 - (void) createAccount {
-    
+    SignupViewController *signupViewController = [[SignupViewController alloc] init];
+    [self.navigationController pushViewController:signupViewController animated:YES];
 }
 
 - (void) signin {

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		465178ADE25D6564C0308C98 /* libPods-BangBangBao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D7B671A672F94C8E349712 /* libPods-BangBangBao.a */; };
+		8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8323EDB21D0CEF4500005152 /* SignupViewController.m */; };
+		8323EDB61D0D08EC00005152 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8323EDB51D0D08EC00005152 /* ForgetPasswordViewController.m */; };
 		834577121D011C6200558456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 834577111D011C6200558456 /* main.m */; };
 		8345771D1D011C6200558456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8345771C1D011C6200558456 /* Assets.xcassets */; };
 		8345772B1D011C6200558456 /* BangBangBaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345772A1D011C6200558456 /* BangBangBaoTests.m */; };
@@ -54,6 +56,10 @@
 /* Begin PBXFileReference section */
 		09D7B671A672F94C8E349712 /* libPods-BangBangBao.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BangBangBao.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8199B71886D002DE4EEF55F7 /* Pods-BangBangBao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BangBangBao.release.xcconfig"; path = "Pods/Target Support Files/Pods-BangBangBao/Pods-BangBangBao.release.xcconfig"; sourceTree = "<group>"; };
+		8323EDB11D0CEF4500005152 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		8323EDB21D0CEF4500005152 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		8323EDB41D0D08EC00005152 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
+		8323EDB51D0D08EC00005152 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
 		8345770D1D011C6200558456 /* BangBangBao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangBao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		834577111D011C6200558456 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8345771C1D011C6200558456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +148,10 @@
 				834748A21D0BA82300EFADE0 /* WelcomeViewController.m */,
 				838343501D0BC87A007F3EB6 /* LoginViewController.h */,
 				838343511D0BC87A007F3EB6 /* LoginViewController.m */,
+				8323EDB11D0CEF4500005152 /* SignupViewController.h */,
+				8323EDB21D0CEF4500005152 /* SignupViewController.m */,
+				8323EDB41D0D08EC00005152 /* ForgetPasswordViewController.h */,
+				8323EDB51D0D08EC00005152 /* ForgetPasswordViewController.m */,
 			);
 			path = OtherViewController;
 			sourceTree = "<group>";
@@ -652,10 +662,12 @@
 				836E71021D05669200456C57 /* ViewController.m in Sources */,
 				83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */,
 				83E3D5E91D013AAD00B71E2D /* Config.m in Sources */,
+				8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */,
 				83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */,
 				834577121D011C6200558456 /* main.m in Sources */,
 				834748A31D0BA82300EFADE0 /* WelcomeViewController.m in Sources */,
 				83FDF7B31D067C0D0044E782 /* MostTopViewControllerTools.m in Sources */,
+				8323EDB61D0D08EC00005152 /* ForgetPasswordViewController.m in Sources */,
 				83FDF7B21D067C0D0044E782 /* MBProgressHUD+Helper.m in Sources */,
 				838343521D0BC87A007F3EB6 /* LoginViewController.m in Sources */,
 				83FDF7AF1D067C0D0044E782 /* EncryptTools.m in Sources */,

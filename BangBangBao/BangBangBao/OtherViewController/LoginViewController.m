@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "ForgetPasswordViewController.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
 
@@ -46,7 +47,11 @@
     titleLabel.text = @"歡迎回來";
     [self.view addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).with.offset(50.0);
+        if (IS_IPHONE_4_OR_LESS) {
+            make.top.equalTo(self.view.mas_top).with.offset(30.0);
+        }else{
+            make.top.equalTo(self.view.mas_top).with.offset(50.0);
+        }
         make.left.equalTo(self.view.mas_left).with.offset(0.0);
         make.right.equalTo(self.view.mas_right).with.offset(0.0);
         make.height.equalTo(@30.0);
@@ -186,7 +191,6 @@
         make.left.equalTo(self.passwordTextField.mas_right).with.offset(0.0);
         make.right.equalTo(self.view.mas_right).with.offset(-20.0);
         make.bottom.equalTo(self.passwordTextField.mas_bottom).with.offset(0.0);
-        make.height.equalTo(@40.0);
     }];
     
     UIView *bottomLine = [[UIView alloc] init];
@@ -229,7 +233,8 @@
 }
 
 - (void) forgetPassword {
-    
+    ForgetPasswordViewController *forgetPasswordViewController = [[ForgetPasswordViewController alloc] init];
+    [self.navigationController pushViewController:forgetPasswordViewController animated:YES];
 }
 
 #pragma mark - getter and setter
@@ -283,9 +288,11 @@
         [_loginButton setTitle:@"登錄" forState:UIControlStateNormal];
         [_loginButton.titleLabel setFont:[UIFont systemFontOfSize:14.0]];
         [_loginButton setTitleColor:DEFAULTCOLOR forState:UIControlStateNormal];
+        _loginButton.enabled = NO;
     }
     return _loginButton;
 }
+
 - (UIButton *) forgetPasswordButton {
     if (!_forgetPasswordButton) {
         _forgetPasswordButton = [[UIButton alloc] init];
