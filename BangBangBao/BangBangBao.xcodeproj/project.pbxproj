@@ -19,6 +19,7 @@
 		836E71021D05669200456C57 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71011D05669200456C57 /* ViewController.m */; };
 		836E71051D05685400456C57 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71041D05685400456C57 /* RecordViewController.m */; };
 		836E71081D0568A600456C57 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71071D0568A600456C57 /* SettingViewController.m */; };
+		837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A131D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m */; };
 		838343521D0BC87A007F3EB6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838343511D0BC87A007F3EB6 /* LoginViewController.m */; };
 		83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */; };
 		83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E01D01389C00B71E2D /* BaseNavigationController.m */; };
@@ -80,6 +81,8 @@
 		836E71041D05685400456C57 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
 		836E71061D0568A600456C57 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		836E71071D0568A600456C57 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		837B0A121D0E514000C31D3C /* ForgetPasswordStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordStepTwoViewController.h; sourceTree = "<group>"; };
+		837B0A131D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordStepTwoViewController.m; sourceTree = "<group>"; };
 		838343501D0BC87A007F3EB6 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		838343511D0BC87A007F3EB6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		838BE4611D017EDA00D12AC2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
@@ -152,6 +155,8 @@
 				8323EDB21D0CEF4500005152 /* SignupViewController.m */,
 				8323EDB41D0D08EC00005152 /* ForgetPasswordViewController.h */,
 				8323EDB51D0D08EC00005152 /* ForgetPasswordViewController.m */,
+				837B0A121D0E514000C31D3C /* ForgetPasswordStepTwoViewController.h */,
+				837B0A131D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m */,
 			);
 			path = OtherViewController;
 			sourceTree = "<group>";
@@ -662,6 +667,7 @@
 				836E71021D05669200456C57 /* ViewController.m in Sources */,
 				83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */,
 				83E3D5E91D013AAD00B71E2D /* Config.m in Sources */,
+				837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */,
 				8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */,
 				83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */,
 				834577121D011C6200558456 /* main.m in Sources */,

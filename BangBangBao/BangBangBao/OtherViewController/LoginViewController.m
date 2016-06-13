@@ -187,7 +187,7 @@
     
     [self.view addSubview:self.loginButton];
     [self.loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(midLine.mas_bottom).with.offset(20.0);
+        make.top.equalTo(self.passwordTextField.mas_top).with.offset(0.0);
         make.left.equalTo(self.passwordTextField.mas_right).with.offset(0.0);
         make.right.equalTo(self.view.mas_right).with.offset(-20.0);
         make.bottom.equalTo(self.passwordTextField.mas_bottom).with.offset(0.0);

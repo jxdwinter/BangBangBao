@@ -7,10 +7,13 @@
 //
 
 #import "ForgetPasswordViewController.h"
+#import "ForgetPasswordStepTwoViewController.h"
 
-@interface ForgetPasswordViewController ()
+@interface ForgetPasswordViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UIButton *backButton;
+@property (nonatomic, strong) UITextField *accountTextField;
+@property (nonatomic, strong) UIButton *nextButton;
 
 @end
 
@@ -32,6 +35,7 @@
         make.width.equalTo(@25.0);
         make.height.equalTo(@25.0);
     }];
+    
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.textColor = [UIColor blackColor];
@@ -61,13 +65,62 @@
         make.right.equalTo(self.view.mas_right).with.offset(0.0);
         make.height.equalTo(@20.0);
     }];
-
+    
+    UIView *oneLine = [[UIView alloc] init];
+    oneLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
+    [self.view addSubview:oneLine];
+    [oneLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(infoLabel.mas_bottom).with.offset(10.0);
+        make.left.equalTo(self.view.mas_left).with.offset(0.0);
+        make.right.equalTo(self.view.mas_right).with.offset(0.0);
+        make.height.equalTo(@0.5);
+    }];
+    
+    UILabel *accountLabel = [[UILabel alloc] init];
+    accountLabel.textColor = [UIColor blackColor];
+    accountLabel.font = [UIFont systemFontOfSize:10];
+    accountLabel.text = @"Email帳號或行動電話";
+    [self.view addSubview:accountLabel];
+    [accountLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(oneLine.mas_bottom).with.offset(20.0);
+        make.left.equalTo(self.view.mas_left).with.offset(20.0);
+        make.right.equalTo(self.view.mas_right).with.offset(-100.0);
+        make.height.equalTo(@15.0);
+    }];
+    
+    [self.view addSubview:self.accountTextField];
+    [self.accountTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(accountLabel.mas_bottom).with.offset(0.0);
+        make.left.equalTo(self.view.mas_left).with.offset(20.0);
+        make.right.equalTo(self.view.mas_right).with.offset(-100.0);
+        make.height.equalTo(@30.0);
+    }];
+    
+    [self.view addSubview:self.nextButton];
+    [self.nextButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.accountTextField.mas_top).with.offset(0.0);
+        make.left.equalTo(self.accountTextField.mas_right).with.offset(0.0);
+        make.right.equalTo(self.view.mas_right).with.offset(-20.0);
+        make.bottom.equalTo(self.accountTextField.mas_bottom).with.offset(0.0);
+    }];
+    
+    UIView *twoLine = [[UIView alloc] init];
+    twoLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
+    [self.view addSubview:twoLine];
+    [twoLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.accountTextField.mas_bottom).with.offset(20.0);
+        make.left.equalTo(self.view.mas_left).with.offset(0.0);
+        make.right.equalTo(self.view.mas_right).with.offset(0.0);
+        make.height.equalTo(@0.5);
+    }];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 #pragma mark - private methods
 
 - (void) closeKeyboard {
@@ -78,12 +131,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void) signup {
-    
-}
-
-- (void) announcement {
-    
+- (void) next {
+    ForgetPasswordStepTwoViewController *forgetPasswordStepTwoViewController = [[ForgetPasswordStepTwoViewController alloc] init];
+    [self.navigationController pushViewController:forgetPasswordStepTwoViewController animated:YES];
 }
 
 #pragma mark - getter and setter
@@ -97,5 +147,32 @@
     return _backButton;
 }
 
+- (UITextField *) accountTextField{
+    if (!_accountTextField) {
+        _accountTextField = [[UITextField alloc] init];
+        _accountTextField.delegate = self;
+        _accountTextField.keyboardType = UIKeyboardTypeEmailAddress;
+        _accountTextField.font = DEFAULFONT;
+        _accountTextField.textColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
+        _accountTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        [_accountTextField setTintColor:DEFAULTCOLOR];
+        _accountTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"請輸入Email帳號或行動電話"
+                                                                                attributes:@{NSForegroundColorAttributeName:
+                                                                                                 [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
+    }
+    return _accountTextField;
+}
+
+- (UIButton *) nextButton{
+    if (!_nextButton) {
+        _nextButton = [[UIButton alloc] init];
+        [_nextButton addTarget:self action:@selector(next) forControlEvents:UIControlEventTouchUpInside];
+        [_nextButton setTitle:@"下一步" forState:UIControlStateNormal];
+        [_nextButton.titleLabel setFont:[UIFont systemFontOfSize:14.0]];
+        [_nextButton setTitleColor:DEFAULTCOLOR forState:UIControlStateNormal];
+        //_nextButton.enabled = NO;
+    }
+    return _nextButton;
+}
 
 @end

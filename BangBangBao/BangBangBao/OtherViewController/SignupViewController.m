@@ -222,7 +222,7 @@
     
     [self.view addSubview:self.signupButton];
     [self.signupButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(fourLine.mas_bottom).with.offset(20.0);
+        make.top.equalTo(self.confirmPasswordTextField.mas_top).with.offset(0.0);
         make.left.equalTo(self.confirmPasswordTextField.mas_right).with.offset(0.0);
         make.right.equalTo(self.view.mas_right).with.offset(-20.0);
         make.bottom.equalTo(self.confirmPasswordTextField.mas_bottom).with.offset(0.0);
