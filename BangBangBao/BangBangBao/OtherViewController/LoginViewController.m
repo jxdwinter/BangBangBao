@@ -10,6 +10,8 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ForgetPasswordViewController.h"
+#import "LoginApi.h"
+#import "MemberInformationApi.h"
 
 @interface LoginViewController () <UITextFieldDelegate>
 
@@ -229,7 +231,38 @@
 }
 
 - (void) login {
-    
+    NSString *username = self.usernameTextField.text;
+    NSString *password = self.passwordTextField.text;
+    if (username.length && password.length) {
+        LoginApi *api = [[LoginApi alloc] initWithUsername:username withPassword:password];
+        RequestAccessory *accessory = [[RequestAccessory alloc] initAccessoryWithView:self.navigationController.view];
+        [api addAccessory:accessory];
+        [api startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
+            NSDictionary *dic = [api responseDictionaryWithResponseString:request.responseString];
+            if (dic) {
+                [AccountHelper saveAccountVerifyTokenWithToken:dic[@"token"]];
+                [self getMemberInformationWithMid:[dic[@"mid"] description]];
+            }
+        } failure:^(YTKBaseRequest *request) {
+            NSLog(@"%@",request.responseString);
+        }];
+    }else{
+        
+    }
+}
+
+- (void) getMemberInformationWithMid : (NSString *) mid {
+    MemberInformationApi *api = [[MemberInformationApi alloc] initWithMid:mid];
+    RequestAccessory *accessory = [[RequestAccessory alloc] initAccessoryWithView:self.navigationController.view];
+    [api addAccessory:accessory];
+    [api startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
+        NSDictionary *dic = [api responseDictionaryWithResponseString:request.responseString];
+        if (dic) {
+            NSLog(@"%@",[dic description]);
+        }
+    } failure:^(YTKBaseRequest *request) {
+        NSLog(@"%@",request.responseString);
+    }];
 }
 
 - (void) forgetPassword {
@@ -288,7 +321,7 @@
         [_loginButton setTitle:@"登錄" forState:UIControlStateNormal];
         [_loginButton.titleLabel setFont:[UIFont systemFontOfSize:14.0]];
         [_loginButton setTitleColor:DEFAULTCOLOR forState:UIControlStateNormal];
-        _loginButton.enabled = NO;
+        //_loginButton.enabled = NO;
     }
     return _loginButton;
 }

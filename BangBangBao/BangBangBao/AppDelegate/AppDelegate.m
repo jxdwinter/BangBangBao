@@ -82,6 +82,7 @@
     }else{
         pushToken = @"0";
     }
+    [AccountHelper saveAccountNotificationTokenWithToken:pushToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
@@ -149,13 +150,11 @@
     /**
      *  初始化数据库
      */
-    /*
     SharedDatabaseHelper *sharedDatabaseHelper = [SharedDatabaseHelper sharedDatabaseHelper];
     NSLog(@"%@",[sharedDatabaseHelper description]);
     
     YTKNetworkConfig *config = [YTKNetworkConfig sharedInstance];
     config.baseUrl = BASEURL;
-    */
     
 #if defined(DEBUG)||defined(_DEBUG)
     [[JPFPSStatus sharedInstance] open];

@@ -18,12 +18,11 @@ NSString *const DATABASENAME = @"bangbangbao.db";
 /**
  *  URL
  */
-NSString *const BASEURL = @"https://api.paybao.com.tw/u1/member";
+NSString *const BASEURL = @"https://api.paybao.com.tw";
 
 /**
  *  每一页的数量,用于翻页
  */
 NSInteger const PAGENUMBER = 50;
-
 
 @end
