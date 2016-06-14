@@ -15,6 +15,9 @@
 		8345772B1D011C6200558456 /* BangBangBaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345772A1D011C6200558456 /* BangBangBaoTests.m */; };
 		834577361D011C6200558456 /* BangBangBaoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 834577351D011C6200558456 /* BangBangBaoUITests.m */; };
 		834748A31D0BA82300EFADE0 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834748A21D0BA82300EFADE0 /* WelcomeViewController.m */; };
+		834E599A1D0FA44E00B68FAA /* NSString+NSString_Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E59991D0FA44E00B68FAA /* NSString+NSString_Extended.m */; };
+		834E599E1D0FD20100B68FAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E599D1D0FD20100B68FAA /* User.m */; };
+		834E59A11D0FD25700B68FAA /* FacebookData.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E59A01D0FD25700B68FAA /* FacebookData.m */; };
 		836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */; };
 		836E71021D05669200456C57 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71011D05669200456C57 /* ViewController.m */; };
 		836E71051D05685400456C57 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71041D05685400456C57 /* RecordViewController.m */; };
@@ -81,6 +84,12 @@
 		834577371D011C6200558456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		834748A11D0BA82300EFADE0 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		834748A21D0BA82300EFADE0 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		834E59981D0FA44E00B68FAA /* NSString+NSString_Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSString_Extended.h"; sourceTree = "<group>"; };
+		834E59991D0FA44E00B68FAA /* NSString+NSString_Extended.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+NSString_Extended.m"; sourceTree = "<group>"; };
+		834E599C1D0FD20100B68FAA /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		834E599D1D0FD20100B68FAA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		834E599F1D0FD25700B68FAA /* FacebookData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookData.h; sourceTree = "<group>"; };
+		834E59A01D0FD25700B68FAA /* FacebookData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookData.m; sourceTree = "<group>"; };
 		836E70EB1D0559E400456C57 /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
 		836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeViewController.m; sourceTree = "<group>"; };
 		836E71001D05669200456C57 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -210,6 +219,7 @@
 		8345770F1D011C6200558456 /* BangBangBao */ = {
 			isa = PBXGroup;
 			children = (
+				834E599B1D0FD1CD00B68FAA /* CurrentUser */,
 				837B0A151D0E59AB00C31D3C /* API */,
 				83E3D5DA1D0134BB00B71E2D /* AppDelegate */,
 				83E3D5E51D0139F000B71E2D /* AppConfigration */,
@@ -252,6 +262,17 @@
 				834577371D011C6200558456 /* Info.plist */,
 			);
 			path = BangBangBaoUITests;
+			sourceTree = "<group>";
+		};
+		834E599B1D0FD1CD00B68FAA /* CurrentUser */ = {
+			isa = PBXGroup;
+			children = (
+				834E599F1D0FD25700B68FAA /* FacebookData.h */,
+				834E59A01D0FD25700B68FAA /* FacebookData.m */,
+				834E599C1D0FD20100B68FAA /* User.h */,
+				834E599D1D0FD20100B68FAA /* User.m */,
+			);
+			path = CurrentUser;
 			sourceTree = "<group>";
 		};
 		836E70E71D05550E00456C57 /* ScanQRCode */ = {
@@ -489,6 +510,8 @@
 				83FDF7A71D067C0D0044E782 /* MF_Base64Additions.m */,
 				83FDF7A81D067C0D0044E782 /* VerifyTools.h */,
 				83FDF7A91D067C0D0044E782 /* VerifyTools.m */,
+				834E59981D0FA44E00B68FAA /* NSString+NSString_Extended.h */,
+				834E59991D0FA44E00B68FAA /* NSString+NSString_Extended.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -730,6 +753,7 @@
 				837B0A1B1D0E59E000C31D3C /* RequestAccessory.m in Sources */,
 				83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */,
 				834577121D011C6200558456 /* main.m in Sources */,
+				834E599A1D0FA44E00B68FAA /* NSString+NSString_Extended.m in Sources */,
 				834748A31D0BA82300EFADE0 /* WelcomeViewController.m in Sources */,
 				837B0A261D0E75A000C31D3C /* AccountManager.m in Sources */,
 				83FDF7B31D067C0D0044E782 /* MostTopViewControllerTools.m in Sources */,
@@ -743,8 +767,10 @@
 				83FDF7B11D067C0D0044E782 /* VerifyTools.m in Sources */,
 				836E71081D0568A600456C57 /* SettingViewController.m in Sources */,
 				83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */,
+				834E599E1D0FD20100B68FAA /* User.m in Sources */,
 				837B0A1A1D0E59E000C31D3C /* ConfigYTKRequest.m in Sources */,
 				83FDF7B01D067C0D0044E782 /* MF_Base64Additions.m in Sources */,
+				834E59A11D0FD25700B68FAA /* FacebookData.m in Sources */,
 				836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */,
 				836E71051D05685400456C57 /* RecordViewController.m in Sources */,
 			);

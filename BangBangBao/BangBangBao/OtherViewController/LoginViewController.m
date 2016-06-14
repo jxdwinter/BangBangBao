@@ -16,6 +16,7 @@
 @interface LoginViewController () <UITextFieldDelegate>
 
 @property (nonatomic, strong) UIButton *backButton;
+@property (nonatomic, strong) UIButton *facebookLoginButton;
 @property (nonatomic, strong) UITextField *usernameTextField;
 @property (nonatomic, strong) UITextField *passwordTextField;
 @property (nonatomic, strong) UIButton *loginButton;
@@ -71,11 +72,9 @@
         make.right.equalTo(self.view.mas_right).with.offset(0.0);
         make.height.equalTo(@20.0);
     }];
-    
-    FBSDKLoginButton *facebookLoginButton = [[FBSDKLoginButton alloc] init];
-    facebookLoginButton.titleLabel.text = @"使用Facebook登錄";
-    [self.view addSubview:facebookLoginButton];
-    [facebookLoginButton mas_makeConstraints:^(MASConstraintMaker *make) {
+
+    [self.view addSubview:self.facebookLoginButton];
+    [self.facebookLoginButton mas_makeConstraints:^(MASConstraintMaker *make) {
         if (IS_IPHONE_4_OR_LESS) {
             make.top.equalTo(infoLabel.mas_bottom).with.offset(20.0);
         }else{
@@ -94,9 +93,9 @@
     [self.view addSubview:orLabel];
     [orLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         if (IS_IPHONE_4_OR_LESS) {
-            make.top.equalTo(facebookLoginButton.mas_bottom).with.offset(20.0);
+            make.top.equalTo(self.facebookLoginButton.mas_bottom).with.offset(20.0);
         }else{
-            make.top.equalTo(facebookLoginButton.mas_bottom).with.offset(40.0);
+            make.top.equalTo(self.facebookLoginButton.mas_bottom).with.offset(40.0);
         }
         make.centerX.equalTo(self.view.mas_centerX);
         make.width.equalTo(@40.0);
@@ -270,6 +269,28 @@
     [self.navigationController pushViewController:forgetPasswordViewController animated:YES];
 }
 
+
+-(void)loginButtonClicked{
+    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
+    [login logInWithReadPermissions: @[@"public_profile"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+         if (error) {
+             NSLog(@"Process error");
+         } else if (result.isCancelled) {
+             NSLog(@"Cancelled");
+         } else {
+             if ([FBSDKAccessToken currentAccessToken]) {
+                 [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
+                  startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
+                      if (!error) {
+                          NSLog(@"fetched user:%@", result);
+                      }
+                  }];
+             }
+         }
+     }];
+}
+
+
 #pragma mark - getter and setter
 
 - (UIButton *) backButton {
@@ -279,6 +300,19 @@
         [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     }
     return _backButton;
+}
+
+- (UIButton *) facebookLoginButton {
+    if (!_facebookLoginButton) {
+        _facebookLoginButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [_facebookLoginButton.layer setMasksToBounds:YES];
+        [_facebookLoginButton.layer setCornerRadius:2.0];
+        _facebookLoginButton.backgroundColor = [UIColor colorWithRed:0.24 green:0.34 blue:0.56 alpha:1.00];
+        _facebookLoginButton.center = self.view.center;
+        [_facebookLoginButton setTitle: @"使用Facebook登錄" forState: UIControlStateNormal];
+        [_facebookLoginButton addTarget:self action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _facebookLoginButton;
 }
 
 - (UITextField *) usernameTextField{

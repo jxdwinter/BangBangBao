@@ -93,6 +93,7 @@
     YTKRequestMethod method = [request requestMethod];
     NSString *url = [self buildRequestUrl:request];
     id param = request.requestArgument;
+    NSLog(@"网络请求地址 = %@ \n 参数 = %@", url, param);
     AFConstructingBlock constructingBlock = [request constructingBodyBlock];
 
     if (request.requestSerializerType == YTKRequestSerializerTypeHTTP) {

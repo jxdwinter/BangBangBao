@@ -8,15 +8,18 @@
 
 #import "SignupViewController.h"
 
-@interface SignupViewController () <UITextFieldDelegate>
+@interface SignupViewController () <UITextFieldDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIButton *backButton;
+@property (nonatomic, strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UITextField *emailTextField;
 @property (nonatomic, strong) UITextField *nameTextField;
 @property (nonatomic, strong) UITextField *phoneTextField;
 @property (nonatomic, strong) UITextField *passwordTextField;
 @property (nonatomic, strong) UITextField *confirmPasswordTextField;
 @property (nonatomic, strong) UIButton *signupButton;
+@property (nonatomic, strong) UITextField *referrerTextField;
 @property (nonatomic, strong) UIButton *announcementButton;
 
 @end
@@ -27,15 +30,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIControl *control = [[UIControl alloc] initWithFrame:self.view.frame];
-    control.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.00];
-    [control addTarget:self action:@selector(closeKeyboard) forControlEvents:UIControlEventTouchUpInside];
-    self.view = control;
+    [self.view addSubview:self.scrollView];
+    [self.scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).with.offset(.0);
+        make.left.equalTo(self.view.mas_left).with.offset(0.0);
+        make.right.equalTo(self.view.mas_right).with.offset(0.0);
+        make.bottom.equalTo(self.view.mas_bottom).with.offset(0.0);
+    }];
+
+    [self.scrollView addSubview:self.contentView];
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.scrollView);
+        make.width.equalTo(self.scrollView);
+    }];
     
-    [self.view addSubview:self.backButton];
+    [self.contentView addSubview:self.backButton];
     [self.backButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).with.offset(30.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
+        make.top.equalTo(self.contentView.mas_top).with.offset(30.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
         make.width.equalTo(@25.0);
         make.height.equalTo(@25.0);
     }];
@@ -45,15 +57,11 @@
     titleLabel.textColor = [UIColor blackColor];
     titleLabel.font = [UIFont systemFontOfSize:20];
     titleLabel.text = @"創建帳號";
-    [self.view addSubview:titleLabel];
+    [self.contentView addSubview:titleLabel];
     [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (IS_IPHONE_4_OR_LESS) {
-            make.top.equalTo(self.view.mas_top).with.offset(30.0);
-        }else{
-            make.top.equalTo(self.view.mas_top).with.offset(50.0);
-        }
-        make.left.equalTo(self.view.mas_left).with.offset(0.0);
-        make.right.equalTo(self.view.mas_right).with.offset(0.0);
+        make.top.equalTo(self.contentView.mas_top).with.offset(50.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(0.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(0.0);
         make.height.equalTo(@30.0);
     }];
     
@@ -62,21 +70,21 @@
     infoLabel.textColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
     infoLabel.font = [UIFont systemFontOfSize:12];
     infoLabel.text = @"立即加入幫幫寶";
-    [self.view addSubview:infoLabel];
+    [self.contentView addSubview:infoLabel];
     [infoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(titleLabel.mas_bottom).with.offset(10.0);
-        make.left.equalTo(self.view.mas_left).with.offset(0.0);
-        make.right.equalTo(self.view.mas_right).with.offset(0.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(0.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(0.0);
         make.height.equalTo(@20.0);
     }];
     
     UIView *oneLine = [[UIView alloc] init];
     oneLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
-    [self.view addSubview:oneLine];
+    [self.contentView addSubview:oneLine];
     [oneLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(infoLabel.mas_bottom).with.offset(10.0);
-        make.left.equalTo(self.view.mas_left).with.offset(0.0);
-        make.right.equalTo(self.view.mas_right).with.offset(0.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(0.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(0.0);
         make.height.equalTo(@0.5);
     }];
     
@@ -84,29 +92,29 @@
     emailLabel.textColor = [UIColor blackColor];
     emailLabel.font = [UIFont systemFontOfSize:10];
     emailLabel.text = @"Email帳號";
-    [self.view addSubview:emailLabel];
+    [self.contentView addSubview:emailLabel];
     [emailLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(oneLine.mas_bottom).with.offset(20.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
-        make.right.equalTo(self.view.mas_right).with.offset(-20.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-20.0);
         make.height.equalTo(@15.0);
     }];
     
-    [self.view addSubview:self.emailTextField];
+    [self.contentView addSubview:self.emailTextField];
     [self.emailTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(emailLabel.mas_bottom).with.offset(0.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
-        make.right.equalTo(self.view.mas_right).with.offset(-20.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-20.0);
         make.height.equalTo(@30.0);
     }];
     
     UIView *twoLine = [[UIView alloc] init];
     twoLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
-    [self.view addSubview:twoLine];
+    [self.contentView addSubview:twoLine];
     [twoLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.emailTextField.mas_bottom).with.offset(20.0);
-        make.left.equalTo(self.view.mas_left).with.offset(0.0);
-        make.right.equalTo(self.view.mas_right).with.offset(0.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(0.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(0.0);
         make.height.equalTo(@0.5);
     }];
     
@@ -114,18 +122,18 @@
     nameLabel.textColor = [UIColor blackColor];
     nameLabel.font = [UIFont systemFontOfSize:10];
     nameLabel.text = @"真實姓名";
-    [self.view addSubview:nameLabel];
+    [self.contentView addSubview:nameLabel];
     [nameLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(twoLine.mas_bottom).with.offset(20.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
         make.width.equalTo(@((SCREEN_WIDTH - 40.0)/2 - 20.0));
         make.height.equalTo(@15.0);
     }];
     
-    [self.view addSubview:self.nameTextField];
+    [self.contentView addSubview:self.nameTextField];
     [self.nameTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(nameLabel.mas_bottom).with.offset(0.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
         make.width.equalTo(@((SCREEN_WIDTH - 40.0)/2 - 20.0));
         make.height.equalTo(@30.0);
     }];
@@ -134,7 +142,7 @@
     phoneLabel.textColor = [UIColor blackColor];
     phoneLabel.font = [UIFont systemFontOfSize:10];
     phoneLabel.text = @"行動電話";
-    [self.view addSubview:phoneLabel];
+    [self.contentView addSubview:phoneLabel];
     [phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(twoLine.mas_bottom).with.offset(20.0);
         make.left.equalTo(nameLabel.mas_right).with.offset(40.5);
@@ -142,7 +150,7 @@
         make.height.equalTo(@15.0);
     }];
     
-    [self.view addSubview:self.phoneTextField];
+    [self.contentView addSubview:self.phoneTextField];
     [self.phoneTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(phoneLabel.mas_bottom).with.offset(0.0);
         make.left.equalTo(self.nameTextField.mas_right).with.offset(40.5);
@@ -152,17 +160,17 @@
     
     UIView *thrLine = [[UIView alloc] init];
     thrLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
-    [self.view addSubview:thrLine];
+    [self.contentView addSubview:thrLine];
     [thrLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.nameTextField.mas_bottom).with.offset(20.0);
-        make.left.equalTo(self.view.mas_left).with.offset(0.0);
-        make.right.equalTo(self.view.mas_right).with.offset(0.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(0.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(0.0);
         make.height.equalTo(@0.5);
     }];
     
     UIView *line = [[UIView alloc] init];
     line.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
-    [self.view addSubview:line];
+    [self.contentView addSubview:line];
     [line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(twoLine.mas_bottom).with.offset(0.0);
         make.centerX.equalTo(twoLine.mas_centerX);
@@ -174,29 +182,29 @@
     passwordLabel.textColor = [UIColor blackColor];
     passwordLabel.font = [UIFont systemFontOfSize:10];
     passwordLabel.text = @"密碼";
-    [self.view addSubview:passwordLabel];
+    [self.contentView addSubview:passwordLabel];
     [passwordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(thrLine.mas_bottom).with.offset(20.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
-        make.right.equalTo(self.view.mas_right).with.offset(-20.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-20.0);
         make.height.equalTo(@15.0);
     }];
     
-    [self.view addSubview:self.passwordTextField];
+    [self.contentView addSubview:self.passwordTextField];
     [self.passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(passwordLabel.mas_bottom).with.offset(0.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
-        make.right.equalTo(self.view.mas_right).with.offset(-20.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-20.0);
         make.height.equalTo(@30.0);
     }];
     
     UIView *fourLine = [[UIView alloc] init];
     fourLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
-    [self.view addSubview:fourLine];
+    [self.contentView addSubview:fourLine];
     [fourLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.passwordTextField.mas_bottom).with.offset(20.0);
-        make.left.equalTo(self.view.mas_left).with.offset(0.0);
-        make.right.equalTo(self.view.mas_right).with.offset(0.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(0.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(0.0);
         make.height.equalTo(@0.5);
     }];
     
@@ -204,51 +212,80 @@
     confirmPasswordLabel.textColor = [UIColor blackColor];
     confirmPasswordLabel.font = [UIFont systemFontOfSize:10];
     confirmPasswordLabel.text = @"密碼確認";
-    [self.view addSubview:confirmPasswordLabel];
+    [self.contentView addSubview:confirmPasswordLabel];
     [confirmPasswordLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(fourLine.mas_bottom).with.offset(20.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
-        make.right.equalTo(self.view.mas_right).with.offset(-100.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-100.0);
         make.height.equalTo(@15.0);
     }];
     
-    [self.view addSubview:self.confirmPasswordTextField];
+    [self.contentView addSubview:self.confirmPasswordTextField];
     [self.confirmPasswordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(confirmPasswordLabel.mas_bottom).with.offset(0.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
-        make.right.equalTo(self.view.mas_right).with.offset(-100.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-100.0);
         make.height.equalTo(@30.0);
     }];
     
-    [self.view addSubview:self.signupButton];
+    [self.contentView addSubview:self.signupButton];
     [self.signupButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.confirmPasswordTextField.mas_top).with.offset(0.0);
         make.left.equalTo(self.confirmPasswordTextField.mas_right).with.offset(0.0);
-        make.right.equalTo(self.view.mas_right).with.offset(-20.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-20.0);
         make.bottom.equalTo(self.confirmPasswordTextField.mas_bottom).with.offset(0.0);
     }];
     
     UIView *fiveLine = [[UIView alloc] init];
     fiveLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
-    [self.view addSubview:fiveLine];
+    [self.contentView addSubview:fiveLine];
     [fiveLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.confirmPasswordTextField.mas_bottom).with.offset(20.0);
-        make.left.equalTo(self.view.mas_left).with.offset(0.0);
-        make.right.equalTo(self.view.mas_right).with.offset(0.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(0.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(0.0);
         make.height.equalTo(@0.5);
     }];
     
-    [self.view addSubview:self.announcementButton];
+    UILabel *referrerLabel = [[UILabel alloc] init];
+    referrerLabel.textColor = [UIColor blackColor];
+    referrerLabel.font = [UIFont systemFontOfSize:10];
+    referrerLabel.text = @"推薦人ID/行動電話（無推薦人可不填）";
+    [self.contentView addSubview:referrerLabel];
+    [referrerLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(fiveLine.mas_bottom).with.offset(20.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-100.0);
+        make.height.equalTo(@15.0);
+    }];
+    
+    [self.contentView addSubview:self.referrerTextField];
+    [self.referrerTextField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(referrerLabel.mas_bottom).with.offset(0.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(20.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-20.0);
+        make.height.equalTo(@30.0);
+    }];
+    
+    UIView *sixLine = [[UIView alloc] init];
+    sixLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
+    [self.contentView addSubview:sixLine];
+    [sixLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.referrerTextField.mas_bottom).with.offset(20.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(0.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(0.0);
+        make.height.equalTo(@0.5);
+    }];
+    
+    [self.contentView addSubview:self.announcementButton];
     [self.announcementButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (IS_IPHONE_4_OR_LESS) {
-            make.bottom.equalTo(self.view.mas_bottom).with.offset(-10.0);
-            make.height.equalTo(@20.0);
-        }else{
-            make.bottom.equalTo(self.view.mas_bottom).with.offset(-20.0);
-            make.height.equalTo(@40.0);
-        }
-        make.left.equalTo(self.view.mas_left).with.offset(10.0);
-        make.right.equalTo(self.view.mas_right).with.offset(-10.0);
+        make.top.equalTo(sixLine.mas_bottom).with.offset(20.0);
+        make.height.equalTo(@40.0);
+        make.left.equalTo(self.contentView.mas_left).with.offset(10.0);
+        make.right.equalTo(self.contentView.mas_right).with.offset(-10.0);
+    }];
+    
+    [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(self.announcementButton.mas_bottom).with.offset(20.0);
     }];
 }
 
@@ -274,6 +311,13 @@
 - (void) announcement {
     
 }
+#pragma mark - scroll view delegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (scrollView == self.scrollView) {
+        //[self closeKeyboard];
+    }
+}
 
 #pragma mark - getter and setter
 
@@ -284,6 +328,22 @@
         [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     }
     return _backButton;
+}
+
+- (UIScrollView *) scrollView {
+    if (!_scrollView) {
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectZero];
+        _scrollView.delegate = self;
+    }
+    return _scrollView;
+}
+
+- (UIView *) contentView {
+    if (!_contentView) {
+        _contentView = [[UIView alloc] initWithFrame:CGRectZero];
+        _contentView.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.00];
+    }
+    return _contentView;
 }
 
 - (UITextField *) emailTextField{
@@ -378,6 +438,22 @@
         _signupButton.enabled = NO;
     }
     return _signupButton;
+}
+
+- (UITextField *) referrerTextField{
+    if (!_referrerTextField) {
+        _referrerTextField = [[UITextField alloc] init];
+        _referrerTextField.delegate = self;
+        _referrerTextField.keyboardType = UIKeyboardTypeDefault;
+        _referrerTextField.font = DEFAULFONT;
+        _referrerTextField.textColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
+        _referrerTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+        [_referrerTextField setTintColor:DEFAULTCOLOR];
+        _referrerTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"請輸入推薦人ID/行動電話"
+                                                                               attributes:@{NSForegroundColorAttributeName:
+                                                                                                [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
+    }
+    return _referrerTextField;
 }
 
 - (UIButton *) announcementButton{

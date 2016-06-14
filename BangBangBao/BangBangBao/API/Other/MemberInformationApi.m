@@ -7,6 +7,7 @@
 //
 
 #import "MemberInformationApi.h"
+#import "NSString+NSString_Extended.h"
 
 @interface MemberInformationApi ()
 
@@ -29,14 +30,7 @@
 }
 
 - (NSString *)requestUrl {
-    return @"/u1/member";
-}
-
-- (id)requestArgument {
-    return @{
-             @"token" : [AccountHelper accountVerifyToken],
-             @"mid" : self.mid
-             };
+    return [NSString stringWithFormat:@"/u1/member?token=%@&mid=%@",[[AccountHelper accountVerifyToken] urlencode],self.mid];
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "AccountManager.h"
-//#import "User.h"
+#import "User.h"
 #import <YTKKeyValueStore.h>
 
 @implementation AccountManager
@@ -21,11 +21,10 @@
     return manager;
 }
 
-/*
 - (void)setCurrentUser:(NSDictionary *)userInfo{
     [self clear];
-    self.user = [[User alloc] initWithUserInfomation:userInfo];
-    [[self store] putObject:userInfo withId:userInfo[@"username"] intoTable:CURRENTUSERTALBE];
+    self.user = [User yy_modelWithJSON:userInfo];
+    [[self store] putObject:userInfo withId:userInfo[@"mid"] intoTable:CURRENTUSERTALBE];
 }
 
 - (User *) getCurrentUser{
@@ -35,7 +34,7 @@
         NSArray *array = [[self store] getAllItemsFromTable:CURRENTUSERTALBE];
         if (array && [array count]) {
             YTKKeyValueItem *item = [array lastObject];
-            User *user = [[User alloc] initWithUserInfomation:item.itemObject];
+            User *user = [User yy_modelWithJSON:item.itemObject];
             if (user) {
                 self.user = user;
                 return user;
@@ -47,7 +46,6 @@
         }
     }
 }
-*/
 
 - (void)clear{
     [[self store] clearTable:CURRENTUSERTALBE];
