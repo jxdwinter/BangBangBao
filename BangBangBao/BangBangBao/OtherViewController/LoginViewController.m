@@ -308,7 +308,7 @@
         [_facebookLoginButton.layer setMasksToBounds:YES];
         [_facebookLoginButton.layer setCornerRadius:2.0];
         _facebookLoginButton.backgroundColor = [UIColor colorWithRed:0.24 green:0.34 blue:0.56 alpha:1.00];
-        _facebookLoginButton.center = self.view.center;
+        _facebookLoginButton.titleLabel.font = DEFAULFONT;
         [_facebookLoginButton setTitle: @"使用Facebook登錄" forState: UIControlStateNormal];
         [_facebookLoginButton addTarget:self action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];
     }
