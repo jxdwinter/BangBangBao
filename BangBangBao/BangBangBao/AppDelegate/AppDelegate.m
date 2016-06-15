@@ -218,31 +218,26 @@
 }
 
 - (void)setupRootViewController {
-    //self.window.rootViewController = self.tabBarController;
-    self.window.rootViewController = [[BaseNavigationController alloc] initWithRootViewController:[[WelcomeViewController alloc] init]];
-//    /**
-//     *  如果当前用户已经登录
-//     */
-//    if ([[AccountManager sharedAccountManager] getCurrentUser]) {
-//        self.window.rootViewController = self.tabBarController;
-//    }else{
-//        self.window.rootViewController = [[BaseNavigationController alloc]
-//                                          initWithRootViewController:[[WelcomeViewController alloc] init]];
-//    }
+    /**
+     *  如果当前用户已经登录
+     */
+    if ([[AccountManager sharedAccountManager] getCurrentUser]) {
+        self.window.rootViewController = self.tabBarController;
+    }else{
+        self.window.rootViewController = [[BaseNavigationController alloc]
+                                          initWithRootViewController:[[WelcomeViewController alloc] init]];
+    }
 }
 
 /**
  *  第一次启动客户端或者是某一个版本的第一次启动
  */
 - (void)launchRootViewController{
-    [self setupRootViewController];
-    /*
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
-        self.window.rootViewController = [[IntroViewController alloc] init];
+        //self.window.rootViewController = [[IntroViewController alloc] init];
     }else{
         [self setupRootViewController];
     }
-     */
 }
 
 //网络情况改变通知

@@ -37,7 +37,8 @@
 - (id)requestArgument {
     return @{
              @"username" : self.username,
-             @"password" : self.password
+             @"password" : self.password,
+             @"udid" : [AccountHelper accountNotificationToken]
              };
 }
 

@@ -12,8 +12,11 @@
 #import "ForgetPasswordViewController.h"
 #import "LoginApi.h"
 #import "MemberInformationApi.h"
+#import <YTKChainRequest.h>
+#import "User.h"
+#import "AppDelegate.h"
 
-@interface LoginViewController () <UITextFieldDelegate,UIScrollViewDelegate>
+@interface LoginViewController () <UITextFieldDelegate,UIScrollViewDelegate,YTKChainRequestDelegate>
 
 @property (nonatomic, strong) UIButton *backButton;
 @property (nonatomic, strong) UIScrollView *scrollView;
@@ -232,34 +235,21 @@
     NSString *password = self.passwordTextField.text;
     if (username.length && password.length) {
         LoginApi *api = [[LoginApi alloc] initWithUsername:username withPassword:password];
+        YTKChainRequest *chainReq = [[YTKChainRequest alloc] init];
         RequestAccessory *accessory = [[RequestAccessory alloc] initAccessoryWithView:self.navigationController.view];
-        [api addAccessory:accessory];
-        [api startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
-            NSDictionary *dic = [api responseDictionaryWithResponseString:request.responseString];
+        [chainReq addAccessory:accessory];
+        [chainReq addRequest:api callback:^(YTKChainRequest *chainRequest, YTKBaseRequest *baseRequest) {
+            LoginApi *result = (LoginApi *)baseRequest;
+            NSDictionary *dic = [api responseDictionaryWithResponseString:result.responseString];
             if (dic) {
                 [AccountHelper saveAccountVerifyTokenWithToken:dic[@"token"]];
-                [self getMemberInformationWithMid:[dic[@"mid"] description]];
+                MemberInformationApi *api = [[MemberInformationApi alloc] initWithMid:[dic[@"mid"] description]];
+                [chainRequest addRequest:api callback:nil];
             }
-        } failure:^(YTKBaseRequest *request) {
-            NSLog(@"%@",request.responseString);
         }];
-    }else{
-        
+        chainReq.delegate = self;
+        [chainReq start];
     }
-}
-
-- (void) getMemberInformationWithMid : (NSString *) mid {
-    MemberInformationApi *api = [[MemberInformationApi alloc] initWithMid:mid];
-    RequestAccessory *accessory = [[RequestAccessory alloc] initAccessoryWithView:self.navigationController.view];
-    [api addAccessory:accessory];
-    [api startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
-        NSDictionary *dic = [api responseDictionaryWithResponseString:request.responseString];
-        if (dic) {
-            NSLog(@"%@",[dic description]);
-        }
-    } failure:^(YTKBaseRequest *request) {
-        NSLog(@"%@",request.responseString);
-    }];
 }
 
 - (void) forgetPassword {
@@ -287,8 +277,29 @@
      }];
 }
 
-#pragma mark - UITextFieldDelegate
+- (void) enter{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate setupRootViewController];
+}
 
+#pragma mark - YTKChainRequestDelegate
+
+- (void)chainRequestFinished:(YTKChainRequest *)chainRequest {
+    NSArray *requestArray = chainRequest.requestArray;
+    MemberInformationApi *api = requestArray[1];
+    NSDictionary *dic = [api responseDictionaryWithResponseString:api.responseString];
+    if (dic) {
+        [MBProgressHUD showHUDwithSuccess:YES WithTitle:@"登录成功" withView:self.navigationController.view];
+        AccountManager *accountManager = [AccountManager sharedAccountManager];
+        [accountManager setCurrentUser:dic];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"USERLOGIN" object:nil];
+        [self performSelector:@selector(enter) withObject:nil afterDelay:1.5];
+    }
+}
+
+- (void)chainRequestFailed:(YTKChainRequest *)chainRequest failedBaseRequest:(YTKBaseRequest*)request {
+    // some one of request is failed
+}
 
 #pragma mark - getter and setter
 
