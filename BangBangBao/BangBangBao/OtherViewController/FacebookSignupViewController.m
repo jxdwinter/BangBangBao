@@ -1,20 +1,16 @@
 //
-//  SignupViewController.m
+//  FacebookSignupViewController.m
 //  BangBangBao
 //
-//  Created by Xiaodong Jiang on 6/12/16.
+//  Created by Xiaodong Jiang on 6/15/16.
 //  Copyright © 2016 PAYBAO INTERNATIONAL LIMITED. All rights reserved.
 //
 
-#import "SignupViewController.h"
 #import "FacebookSignupViewController.h"
-#import <FBSDKCoreKit/FBSDKCoreKit.h>
-#import <FBSDKLoginKit/FBSDKLoginKit.h>
 
-@interface SignupViewController () <UITextFieldDelegate,UIScrollViewDelegate>
+@interface FacebookSignupViewController ()<UITextFieldDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIButton *backButton;
-@property (nonatomic, strong) UIButton *facebookLoginButton;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *contentView;
 @property (nonatomic, strong) UITextField *emailTextField;
@@ -28,7 +24,7 @@
 
 @end
 
-@implementation SignupViewController
+@implementation FacebookSignupViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,7 +37,7 @@
         make.right.equalTo(self.view.mas_right).with.offset(0.0);
         make.bottom.equalTo(self.view.mas_bottom).with.offset(0.0);
     }];
-
+    
     [self.scrollView addSubview:self.contentView];
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.scrollView);
@@ -82,52 +78,11 @@
         make.height.equalTo(@20.0);
     }];
     
-    [self.view addSubview:self.facebookLoginButton];
-    [self.facebookLoginButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(infoLabel.mas_bottom).with.offset(40.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
-        make.right.equalTo(self.view.mas_right).with.offset(-20.0);
-        make.height.equalTo(@50.0);
-    }];
-    
-    UILabel *orLabel = [[UILabel alloc] init];
-    orLabel.textAlignment = NSTextAlignmentCenter;
-    orLabel.textColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
-    orLabel.font = [UIFont systemFontOfSize:12];
-    orLabel.text = @"或者";
-    [self.view addSubview:orLabel];
-    [orLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.facebookLoginButton.mas_bottom).with.offset(40.0);
-        make.centerX.equalTo(self.view.mas_centerX);
-        make.width.equalTo(@40.0);
-        make.height.equalTo(@20.0);
-    }];
-    
-    UIView *leftLine = [[UIView alloc] init];
-    leftLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
-    [self.view addSubview:leftLine];
-    [leftLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(orLabel.mas_centerY).with.offset(0.0);
-        make.left.equalTo(self.view.mas_left).with.offset(20.0);
-        make.right.equalTo(orLabel.mas_left).with.offset(-20.0);
-        make.height.equalTo(@.5);
-    }];
-    
-    UIView *rightLine = [[UIView alloc] init];
-    rightLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
-    [self.view addSubview:rightLine];
-    [rightLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(orLabel.mas_centerY).with.offset(0.0);
-        make.left.equalTo(orLabel.mas_right).with.offset(20.0);
-        make.right.equalTo(self.view.mas_right).with.offset(-20.0);
-        make.height.equalTo(@.5);
-    }];
-    
     UIView *oneLine = [[UIView alloc] init];
     oneLine.backgroundColor = [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00];
     [self.contentView addSubview:oneLine];
     [oneLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(orLabel.mas_bottom).with.offset(40.0);
+        make.top.equalTo(infoLabel.mas_bottom).with.offset(10.0);
         make.left.equalTo(self.contentView.mas_left).with.offset(0.0);
         make.right.equalTo(self.contentView.mas_right).with.offset(0.0);
         make.height.equalTo(@0.5);
@@ -356,24 +311,6 @@
 - (void) announcement {
     
 }
-
--(void)loginButtonClicked{
-    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login logInWithReadPermissions: @[@"public_profile"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
-        if (error) {
-            NSLog(@"Process error");
-        } else if (result.isCancelled) {
-            NSLog(@"Cancelled");
-        } else {
-            if ([FBSDKAccessToken currentAccessToken]) {
-                FacebookSignupViewController *facebookSignupViewController = [[FacebookSignupViewController alloc] init];
-                facebookSignupViewController.accessToken = [FBSDKAccessToken currentAccessToken];
-                [self.navigationController pushViewController:facebookSignupViewController animated:YES];
-            }
-        }
-    }];
-}
-
 #pragma mark - scroll view delegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
@@ -391,19 +328,6 @@
         [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
     }
     return _backButton;
-}
-
-- (UIButton *) facebookLoginButton {
-    if (!_facebookLoginButton) {
-        _facebookLoginButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_facebookLoginButton.layer setMasksToBounds:YES];
-        [_facebookLoginButton.layer setCornerRadius:2.0];
-        _facebookLoginButton.backgroundColor = [UIColor colorWithRed:0.24 green:0.34 blue:0.56 alpha:1.00];
-        _facebookLoginButton.titleLabel.font = DEFAULFONT;
-        [_facebookLoginButton setTitle: @"使用Facebook註冊" forState: UIControlStateNormal];
-        [_facebookLoginButton addTarget:self action:@selector(loginButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _facebookLoginButton;
 }
 
 - (UIScrollView *) scrollView {
@@ -432,8 +356,8 @@
         _emailTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         [_emailTextField setTintColor:DEFAULTCOLOR];
         _emailTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"請輸入Email帳號"
-                                                                                   attributes:@{NSForegroundColorAttributeName:
-                                                                                                    [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
+                                                                                attributes:@{NSForegroundColorAttributeName:
+                                                                                                 [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
     }
     return _emailTextField;
 }
@@ -448,8 +372,8 @@
         _nameTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         [_nameTextField setTintColor:DEFAULTCOLOR];
         _nameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"請輸入真實姓名"
-                                                                                attributes:@{NSForegroundColorAttributeName:
-                                                                                                 [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
+                                                                               attributes:@{NSForegroundColorAttributeName:
+                                                                                                [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
     }
     return _nameTextField;
 }
@@ -464,8 +388,8 @@
         _phoneTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         [_phoneTextField setTintColor:DEFAULTCOLOR];
         _phoneTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"請輸入行動電話"
-                                                                               attributes:@{NSForegroundColorAttributeName:
-                                                                                                [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
+                                                                                attributes:@{NSForegroundColorAttributeName:
+                                                                                                 [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
     }
     return _phoneTextField;
 }
@@ -498,8 +422,8 @@
         _confirmPasswordTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         _confirmPasswordTextField.secureTextEntry = YES;
         _confirmPasswordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"請再次輸入密碼"
-                                                                                   attributes:@{NSForegroundColorAttributeName:
-                                                                                                    [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
+                                                                                          attributes:@{NSForegroundColorAttributeName:
+                                                                                                           [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
     }
     return _confirmPasswordTextField;
 }
@@ -526,8 +450,8 @@
         _referrerTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
         [_referrerTextField setTintColor:DEFAULTCOLOR];
         _referrerTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"請輸入推薦人ID/行動電話"
-                                                                               attributes:@{NSForegroundColorAttributeName:
-                                                                                                [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
+                                                                                   attributes:@{NSForegroundColorAttributeName:
+                                                                                                    [UIColor colorWithRed:0.56 green:0.56 blue:0.56 alpha:1.00]}];
     }
     return _referrerTextField;
 }

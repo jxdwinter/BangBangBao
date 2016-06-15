@@ -32,6 +32,7 @@
 		837B0A2B1D0E76E000C31D3C /* LoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A2A1D0E76E000C31D3C /* LoginApi.m */; };
 		837B0A2E1D0E85D600C31D3C /* MemberInformationApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A2D1D0E85D600C31D3C /* MemberInformationApi.m */; };
 		838343521D0BC87A007F3EB6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838343511D0BC87A007F3EB6 /* LoginViewController.m */; };
+		83C479A21D1131BF00C5E3AB /* FacebookSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C479A11D1131BF00C5E3AB /* FacebookSignupViewController.m */; };
 		83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */; };
 		83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E01D01389C00B71E2D /* BaseNavigationController.m */; };
 		83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E21D01389C00B71E2D /* BaseViewController.m */; };
@@ -120,6 +121,8 @@
 		838343511D0BC87A007F3EB6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		838BE4611D017EDA00D12AC2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		838BE4621D017EDA00D12AC2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		83C479A01D1131BF00C5E3AB /* FacebookSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSignupViewController.h; sourceTree = "<group>"; };
+		83C479A11D1131BF00C5E3AB /* FacebookSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookSignupViewController.m; sourceTree = "<group>"; };
 		83E3D5DB1D0134BB00B71E2D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		83E3D5DF1D01389C00B71E2D /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
@@ -186,6 +189,8 @@
 				838343511D0BC87A007F3EB6 /* LoginViewController.m */,
 				8323EDB11D0CEF4500005152 /* SignupViewController.h */,
 				8323EDB21D0CEF4500005152 /* SignupViewController.m */,
+				83C479A01D1131BF00C5E3AB /* FacebookSignupViewController.h */,
+				83C479A11D1131BF00C5E3AB /* FacebookSignupViewController.m */,
 				8323EDB41D0D08EC00005152 /* ForgetPasswordViewController.h */,
 				8323EDB51D0D08EC00005152 /* ForgetPasswordViewController.m */,
 				837B0A121D0E514000C31D3C /* ForgetPasswordStepTwoViewController.h */,
@@ -769,6 +774,7 @@
 				83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */,
 				834E599E1D0FD20100B68FAA /* User.m in Sources */,
 				837B0A1A1D0E59E000C31D3C /* ConfigYTKRequest.m in Sources */,
+				83C479A21D1131BF00C5E3AB /* FacebookSignupViewController.m in Sources */,
 				83FDF7B01D067C0D0044E782 /* MF_Base64Additions.m in Sources */,
 				834E59A11D0FD25700B68FAA /* FacebookData.m in Sources */,
 				836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */,
