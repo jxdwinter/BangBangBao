@@ -10,6 +10,9 @@
 		465178ADE25D6564C0308C98 /* libPods-BangBangBao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D7B671A672F94C8E349712 /* libPods-BangBangBao.a */; };
 		8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8323EDB21D0CEF4500005152 /* SignupViewController.m */; };
 		8323EDB61D0D08EC00005152 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8323EDB51D0D08EC00005152 /* ForgetPasswordViewController.m */; };
+		833B3D911D1279E50008D3AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833B3D8C1D1279E50008D3AD /* ViewController.m */; };
+		833B3D941D127A5D0008D3AD /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833B3D931D127A5D0008D3AD /* MineViewController.m */; };
+		833B3D971D128DEF0008D3AD /* MainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 833B3D961D128DEF0008D3AD /* MainCollectionViewCell.m */; };
 		834577121D011C6200558456 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 834577111D011C6200558456 /* main.m */; };
 		8345771D1D011C6200558456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8345771C1D011C6200558456 /* Assets.xcassets */; };
 		8345772B1D011C6200558456 /* BangBangBaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345772A1D011C6200558456 /* BangBangBaoTests.m */; };
@@ -19,9 +22,6 @@
 		834E599E1D0FD20100B68FAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E599D1D0FD20100B68FAA /* User.m */; };
 		834E59A11D0FD25700B68FAA /* FacebookData.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E59A01D0FD25700B68FAA /* FacebookData.m */; };
 		836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */; };
-		836E71021D05669200456C57 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71011D05669200456C57 /* ViewController.m */; };
-		836E71051D05685400456C57 /* RecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71041D05685400456C57 /* RecordViewController.m */; };
-		836E71081D0568A600456C57 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E71071D0568A600456C57 /* SettingViewController.m */; };
 		837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A131D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m */; };
 		837B0A1A1D0E59E000C31D3C /* ConfigYTKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A171D0E59E000C31D3C /* ConfigYTKRequest.m */; };
 		837B0A1B1D0E59E000C31D3C /* RequestAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A191D0E59E000C31D3C /* RequestAccessory.m */; };
@@ -73,6 +73,12 @@
 		8323EDB21D0CEF4500005152 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		8323EDB41D0D08EC00005152 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
 		8323EDB51D0D08EC00005152 /* ForgetPasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordViewController.m; sourceTree = "<group>"; };
+		833B3D8B1D1279E50008D3AD /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		833B3D8C1D1279E50008D3AD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		833B3D921D127A5D0008D3AD /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		833B3D931D127A5D0008D3AD /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		833B3D951D128DEF0008D3AD /* MainCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCollectionViewCell.h; sourceTree = "<group>"; };
+		833B3D961D128DEF0008D3AD /* MainCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCollectionViewCell.m; sourceTree = "<group>"; };
 		8345770D1D011C6200558456 /* BangBangBao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangBao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		834577111D011C6200558456 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8345771C1D011C6200558456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,12 +99,6 @@
 		834E59A01D0FD25700B68FAA /* FacebookData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookData.m; sourceTree = "<group>"; };
 		836E70EB1D0559E400456C57 /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
 		836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeViewController.m; sourceTree = "<group>"; };
-		836E71001D05669200456C57 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		836E71011D05669200456C57 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		836E71031D05685400456C57 /* RecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordViewController.h; sourceTree = "<group>"; };
-		836E71041D05685400456C57 /* RecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordViewController.m; sourceTree = "<group>"; };
-		836E71061D0568A600456C57 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		836E71071D0568A600456C57 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		837B0A121D0E514000C31D3C /* ForgetPasswordStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordStepTwoViewController.h; sourceTree = "<group>"; };
 		837B0A131D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordStepTwoViewController.m; sourceTree = "<group>"; };
 		837B0A161D0E59E000C31D3C /* ConfigYTKRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigYTKRequest.h; sourceTree = "<group>"; };
@@ -199,6 +199,57 @@
 			path = OtherViewController;
 			sourceTree = "<group>";
 		};
+		833B3D891D1279E50008D3AD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				833B3D8A1D1279E50008D3AD /* Controller */,
+				833B3D8D1D1279E50008D3AD /* Helper */,
+				833B3D8E1D1279E50008D3AD /* Model */,
+				833B3D8F1D1279E50008D3AD /* Store */,
+				833B3D901D1279E50008D3AD /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		833B3D8A1D1279E50008D3AD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				833B3D8B1D1279E50008D3AD /* ViewController.h */,
+				833B3D8C1D1279E50008D3AD /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		833B3D8D1D1279E50008D3AD /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		833B3D8E1D1279E50008D3AD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		833B3D8F1D1279E50008D3AD /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		833B3D901D1279E50008D3AD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				833B3D951D128DEF0008D3AD /* MainCollectionViewCell.h */,
+				833B3D961D128DEF0008D3AD /* MainCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		834577041D011C6200558456 = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +275,7 @@
 		8345770F1D011C6200558456 /* BangBangBao */ = {
 			isa = PBXGroup;
 			children = (
+				8345771C1D011C6200558456 /* Assets.xcassets */,
 				834E599B1D0FD1CD00B68FAA /* CurrentUser */,
 				837B0A151D0E59AB00C31D3C /* API */,
 				83E3D5DA1D0134BB00B71E2D /* AppDelegate */,
@@ -231,8 +283,7 @@
 				83E3D5DE1D01389C00B71E2D /* BaseViewController */,
 				831137381D07CA9F00BACDDE /* OtherViewController */,
 				836E70E71D05550E00456C57 /* ScanQRCode */,
-				836E70F01D05657600456C57 /* YuanBao */,
-				836E70EE1D05657600456C57 /* Record */,
+				833B3D891D1279E50008D3AD /* Main */,
 				836E70EF1D05657600456C57 /* Setting */,
 				83FDF7A21D067C0D0044E782 /* Toolkit */,
 				834577101D011C6200558456 /* Supporting Files */,
@@ -243,7 +294,6 @@
 		834577101D011C6200558456 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				8345771C1D011C6200558456 /* Assets.xcassets */,
 				834577211D011C6200558456 /* Info.plist */,
 				834577111D011C6200558456 /* main.m */,
 				83E3D5EA1D013D3700B71E2D /* BangBangBao-Prefix.pch */,
@@ -289,18 +339,6 @@
 			path = ScanQRCode;
 			sourceTree = "<group>";
 		};
-		836E70EE1D05657600456C57 /* Record */ = {
-			isa = PBXGroup;
-			children = (
-				836E70F61D05660600456C57 /* Controller */,
-				836E70F71D05660600456C57 /* Helper */,
-				836E70F81D05660600456C57 /* Model */,
-				836E70F91D05660600456C57 /* Store */,
-				836E70FA1D05660600456C57 /* View */,
-			);
-			path = Record;
-			sourceTree = "<group>";
-		};
 		836E70EF1D05657600456C57 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,97 +351,11 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
-		836E70F01D05657600456C57 /* YuanBao */ = {
-			isa = PBXGroup;
-			children = (
-				836E70F11D0565FD00456C57 /* Controller */,
-				836E70F21D0565FD00456C57 /* Helper */,
-				836E70F31D0565FD00456C57 /* Model */,
-				836E70F41D0565FD00456C57 /* Store */,
-				836E70F51D0565FD00456C57 /* View */,
-			);
-			path = YuanBao;
-			sourceTree = "<group>";
-		};
-		836E70F11D0565FD00456C57 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				836E71001D05669200456C57 /* ViewController.h */,
-				836E71011D05669200456C57 /* ViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		836E70F21D0565FD00456C57 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		836E70F31D0565FD00456C57 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		836E70F41D0565FD00456C57 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		836E70F51D0565FD00456C57 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		836E70F61D05660600456C57 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				836E71031D05685400456C57 /* RecordViewController.h */,
-				836E71041D05685400456C57 /* RecordViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		836E70F71D05660600456C57 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		836E70F81D05660600456C57 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		836E70F91D05660600456C57 /* Store */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Store;
-			sourceTree = "<group>";
-		};
-		836E70FA1D05660600456C57 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		836E70FB1D05660E00456C57 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				836E71061D0568A600456C57 /* SettingViewController.h */,
-				836E71071D0568A600456C57 /* SettingViewController.m */,
+				833B3D921D127A5D0008D3AD /* MineViewController.h */,
+				833B3D931D127A5D0008D3AD /* MineViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -748,13 +700,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				833B3D941D127A5D0008D3AD /* MineViewController.m in Sources */,
 				837B0A271D0E75A000C31D3C /* DatabaseHelper.m in Sources */,
-				836E71021D05669200456C57 /* ViewController.m in Sources */,
 				837B0A2E1D0E85D600C31D3C /* MemberInformationApi.m in Sources */,
 				83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */,
 				83E3D5E91D013AAD00B71E2D /* Config.m in Sources */,
 				837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */,
 				8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */,
+				833B3D971D128DEF0008D3AD /* MainCollectionViewCell.m in Sources */,
 				837B0A1B1D0E59E000C31D3C /* RequestAccessory.m in Sources */,
 				83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */,
 				834577121D011C6200558456 /* main.m in Sources */,
@@ -770,15 +723,14 @@
 				838343521D0BC87A007F3EB6 /* LoginViewController.m in Sources */,
 				83FDF7AF1D067C0D0044E782 /* EncryptTools.m in Sources */,
 				83FDF7B11D067C0D0044E782 /* VerifyTools.m in Sources */,
-				836E71081D0568A600456C57 /* SettingViewController.m in Sources */,
 				83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */,
 				834E599E1D0FD20100B68FAA /* User.m in Sources */,
+				833B3D911D1279E50008D3AD /* ViewController.m in Sources */,
 				837B0A1A1D0E59E000C31D3C /* ConfigYTKRequest.m in Sources */,
 				83C479A21D1131BF00C5E3AB /* FacebookSignupViewController.m in Sources */,
 				83FDF7B01D067C0D0044E782 /* MF_Base64Additions.m in Sources */,
 				834E59A11D0FD25700B68FAA /* FacebookData.m in Sources */,
 				836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */,
-				836E71051D05685400456C57 /* RecordViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

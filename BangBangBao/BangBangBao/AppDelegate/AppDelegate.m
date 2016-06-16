@@ -8,8 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "RecordViewController.h"
-#import "SettingViewController.h"
+#import "MineViewController.h"
 #import "WelcomeViewController.h"
 #import "BaseNavigationController.h"
 #import <Fabric/Fabric.h>
@@ -25,9 +24,8 @@
 
 @property (strong, nonatomic) UITabBarController *tabBarController;
 
-@property (nonatomic, strong) BaseNavigationController *yunbaoNavController;
-@property (nonatomic, strong) BaseNavigationController *recordNavController;
-@property (nonatomic, strong) BaseNavigationController *settingNavController;
+@property (nonatomic, strong) BaseNavigationController *mainNavController;
+@property (nonatomic, strong) BaseNavigationController *mineNavController;
 
 @end
 
@@ -185,32 +183,23 @@
     self.tabBarController.delegate = self;
     self.tabBarController.tabBar.translucent = NO;
     
-    self.yunbaoNavController = [[BaseNavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
-    self.recordNavController = [[BaseNavigationController alloc] initWithRootViewController:[[RecordViewController alloc] init]];
-    self.settingNavController = [[BaseNavigationController alloc] initWithRootViewController:[[SettingViewController alloc] init]];
+    self.mainNavController = [[BaseNavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
+    self.mineNavController = [[BaseNavigationController alloc] initWithRootViewController:[[MineViewController alloc] init]];
     
-    NSArray* controllers = @[self.yunbaoNavController,self.recordNavController,self.settingNavController];
+    NSArray* controllers = @[self.mainNavController,self.mineNavController];
     self.tabBarController.viewControllers = controllers;
     
     UITabBar *tabBar = self.tabBarController.tabBar;
     UITabBarItem *tabBarItem0 = [tabBar.items objectAtIndex:0];
     UITabBarItem *tabBarItem1 = [tabBar.items objectAtIndex:1];
-    UITabBarItem *tabBarItem2 = [tabBar.items objectAtIndex:2];
 
-    //tabBarItem0.titlePositionAdjustment = UIOffsetMake(0.0, -2.0);
-    tabBarItem0.image = [[UIImage imageNamed:@"tabbar_yuanbao"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem0.selectedImage = [[UIImage imageNamed:@"tabbar_yuanbao_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem0.image = [[UIImage imageNamed:@"tarbar_main"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem0.selectedImage = [[UIImage imageNamed:@"tarbar_main_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem0.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
-    
-    //tabBarItem1.titlePositionAdjustment = UIOffsetMake(0.0, -2.0);
-    tabBarItem1.image = [[UIImage imageNamed:@"tabbar_record"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem1.selectedImage = [[UIImage imageNamed:@"tabbar_record_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+
+    tabBarItem1.image = [[UIImage imageNamed:@"tarbar_mine"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
+    tabBarItem1.selectedImage = [[UIImage imageNamed:@"tarbar_mine_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     tabBarItem1.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
-    
-    //tabBarItem2.titlePositionAdjustment = UIOffsetMake(0.0, -2.0);
-    tabBarItem2.image = [[UIImage imageNamed:@"tabbar_setting"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem2.selectedImage = [[UIImage imageNamed:@"tabbar_setting_selected"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
-    tabBarItem2.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
     
     self.tabBarController.selectedIndex = 0;
     [self launchRootViewController];
