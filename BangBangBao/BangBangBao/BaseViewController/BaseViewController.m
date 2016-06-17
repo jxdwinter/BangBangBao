@@ -22,6 +22,9 @@
     self.tabBarController.tabBar.translucent = NO;
     self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.00];
+    
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
+    [self.navigationController.interactivePopGestureRecognizer setEnabled:YES];
 }
 
 - (void) viewWillAppear:(BOOL)animated {

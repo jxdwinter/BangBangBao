@@ -16,8 +16,8 @@
         self.iconImageView = [[UIImageView alloc] init];
         [self.contentView addSubview:self.iconImageView];
         [self.iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.contentView.mas_top).with.offset(10.0);
             make.centerX.equalTo(self.contentView.mas_centerX);
+            make.centerY.equalTo(self.contentView.mas_centerY).with.offset(-10.0);
             make.width.equalTo(@30.0);
             make.height.equalTo(@30.0);
         }];

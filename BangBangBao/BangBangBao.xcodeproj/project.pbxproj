@@ -14,6 +14,9 @@
 		83325E1A1D13942A0062EEBE /* LoginWithFacebookApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 83325E191D13942A0062EEBE /* LoginWithFacebookApi.m */; };
 		83325E1D1D139DD90062EEBE /* MainFooterSubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83325E1C1D139DD90062EEBE /* MainFooterSubView.m */; };
 		83325E201D139E3A0062EEBE /* MainFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 83325E1F1D139E3A0062EEBE /* MainFooterView.m */; };
+		83325E231D13A86F0062EEBE /* MainBusinessRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83325E221D13A86F0062EEBE /* MainBusinessRecordViewController.m */; };
+		83325E261D13A8AF0062EEBE /* MainYuanbaoBusinessRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83325E251D13A8AF0062EEBE /* MainYuanbaoBusinessRecordViewController.m */; };
+		83325E291D13D0060062EEBE /* MineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 83325E281D13D0060062EEBE /* MineTableViewCell.m */; };
 		833B3D911D1279E50008D3AD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833B3D8C1D1279E50008D3AD /* ViewController.m */; };
 		833B3D941D127A5D0008D3AD /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 833B3D931D127A5D0008D3AD /* MineViewController.m */; };
 		833B3D971D128DEF0008D3AD /* MainCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 833B3D961D128DEF0008D3AD /* MainCollectionViewCell.m */; };
@@ -85,6 +88,12 @@
 		83325E1C1D139DD90062EEBE /* MainFooterSubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainFooterSubView.m; sourceTree = "<group>"; };
 		83325E1E1D139E3A0062EEBE /* MainFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainFooterView.h; sourceTree = "<group>"; };
 		83325E1F1D139E3A0062EEBE /* MainFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainFooterView.m; sourceTree = "<group>"; };
+		83325E211D13A86F0062EEBE /* MainBusinessRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainBusinessRecordViewController.h; sourceTree = "<group>"; };
+		83325E221D13A86F0062EEBE /* MainBusinessRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainBusinessRecordViewController.m; sourceTree = "<group>"; };
+		83325E241D13A8AF0062EEBE /* MainYuanbaoBusinessRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainYuanbaoBusinessRecordViewController.h; sourceTree = "<group>"; };
+		83325E251D13A8AF0062EEBE /* MainYuanbaoBusinessRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainYuanbaoBusinessRecordViewController.m; sourceTree = "<group>"; };
+		83325E271D13D0060062EEBE /* MineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewCell.h; sourceTree = "<group>"; };
+		83325E281D13D0060062EEBE /* MineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewCell.m; sourceTree = "<group>"; };
 		833B3D8B1D1279E50008D3AD /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		833B3D8C1D1279E50008D3AD /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		833B3D921D127A5D0008D3AD /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
@@ -230,6 +239,10 @@
 			children = (
 				833B3D8B1D1279E50008D3AD /* ViewController.h */,
 				833B3D8C1D1279E50008D3AD /* ViewController.m */,
+				83325E211D13A86F0062EEBE /* MainBusinessRecordViewController.h */,
+				83325E221D13A86F0062EEBE /* MainBusinessRecordViewController.m */,
+				83325E241D13A8AF0062EEBE /* MainYuanbaoBusinessRecordViewController.h */,
+				83325E251D13A8AF0062EEBE /* MainYuanbaoBusinessRecordViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -402,6 +415,8 @@
 		836E70FF1D05660E00456C57 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				83325E271D13D0060062EEBE /* MineTableViewCell.h */,
+				83325E281D13D0060062EEBE /* MineTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -722,6 +737,7 @@
 			files = (
 				83325E1A1D13942A0062EEBE /* LoginWithFacebookApi.m in Sources */,
 				833B3D941D127A5D0008D3AD /* MineViewController.m in Sources */,
+				83325E291D13D0060062EEBE /* MineTableViewCell.m in Sources */,
 				837B0A271D0E75A000C31D3C /* DatabaseHelper.m in Sources */,
 				837B0A2E1D0E85D600C31D3C /* MemberInformationApi.m in Sources */,
 				83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */,
@@ -729,6 +745,7 @@
 				837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */,
 				8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */,
 				833B3D971D128DEF0008D3AD /* MainCollectionViewCell.m in Sources */,
+				83325E261D13A8AF0062EEBE /* MainYuanbaoBusinessRecordViewController.m in Sources */,
 				837B0A1B1D0E59E000C31D3C /* RequestAccessory.m in Sources */,
 				83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */,
 				834577121D011C6200558456 /* main.m in Sources */,
@@ -736,6 +753,7 @@
 				834748A31D0BA82300EFADE0 /* WelcomeViewController.m in Sources */,
 				837B0A261D0E75A000C31D3C /* AccountManager.m in Sources */,
 				83FDF7B31D067C0D0044E782 /* MostTopViewControllerTools.m in Sources */,
+				83325E231D13A86F0062EEBE /* MainBusinessRecordViewController.m in Sources */,
 				8323EDB61D0D08EC00005152 /* ForgetPasswordViewController.m in Sources */,
 				837B0A251D0E75A000C31D3C /* AccountHelper.m in Sources */,
 				837B0A2B1D0E76E000C31D3C /* LoginApi.m in Sources */,

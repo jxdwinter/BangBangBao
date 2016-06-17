@@ -13,6 +13,8 @@
 #import "MainCollectionViewCell.h"
 #import "MainFooterView.h"
 #import "MainFooterSubView.h"
+#import "MainBusinessRecordViewController.h"
+#import "MainYuanbaoBusinessRecordViewController.h"
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -34,7 +36,7 @@
     titleLabel.text = @"幫幫寶";
     self.navigationItem.titleView = titleLabel;
     
-    self.dataSource = @[@"淘寶天貓代付",@"阿里巴巴代付",@"支付寶儲值",@"微信錢包",@"虛寶代購",@"充值元寶"];
+    self.dataSource = @[@"淘寶天貓代付",@"阿里巴巴代付",@"支付寶儲值",@"微信錢包",@"虛寶代購",@"儲值元寶"];
     self.iconDataSource = @[@"main_taobao",@"main_alibaba",@"main_zhifubao",@"main_weixin",@"main_qq",@"main_yuanbao"];
 
     [self.view addSubview:self.scanQRCodeButton];
@@ -49,6 +51,7 @@
     scanQRCodeLabel.text = @"掃碼支付";
     scanQRCodeLabel.textAlignment = NSTextAlignmentCenter;
     scanQRCodeLabel.font = DEFAULFONT;
+    scanQRCodeLabel.textColor = DEFAULTTEXTCOLOR;
     [self.view addSubview:scanQRCodeLabel];
     [scanQRCodeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.scanQRCodeButton.mas_bottom).with.offset(10.0);
@@ -117,11 +120,13 @@
 }
 
 - (void) businessRecord {
-    
+    MainBusinessRecordViewController *businessRecordViewController = [[MainBusinessRecordViewController alloc] init];
+    [self.navigationController pushViewController:businessRecordViewController animated:YES];
 }
 
 - (void) yuanbaoBusinessRecord {
-    
+    MainYuanbaoBusinessRecordViewController *yuanbaoBusinessRecordViewController = [[MainYuanbaoBusinessRecordViewController alloc] init];
+    [self.navigationController pushViewController:yuanbaoBusinessRecordViewController animated:YES];
 }
 
 #pragma mark - ScanSuccessfulDelegate
@@ -144,7 +149,7 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    return CGSizeMake(SCREEN_WIDTH/3, 80.0);
+    return CGSizeMake(SCREEN_WIDTH/3, SCREEN_WIDTH/3);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
@@ -165,7 +170,11 @@
         if (!_footerView) {
             _footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter
                                                              withReuseIdentifier:@"FOOTER" forIndexPath:indexPath];
+            _footerView.businessRecordView.iconImageView.image = [UIImage imageNamed:@"main_business_record"];
+            _footerView.businessRecordView.nameLabel.text = @"交易記錄";
             [_footerView.businessRecordView addTarget:self action:@selector(businessRecord) forControlEvents:UIControlEventTouchUpInside];
+            _footerView.yuanbaoBusinessRecordView.iconImageView.image = [UIImage imageNamed:@"main_yuanbao_business_record"];
+            _footerView.yuanbaoBusinessRecordView.nameLabel.text = @"元寶充值記錄";
             [_footerView.yuanbaoBusinessRecordView addTarget:self action:@selector(yuanbaoBusinessRecord) forControlEvents:UIControlEventTouchUpInside];
         }
         reusableview = _footerView;
@@ -189,7 +198,7 @@
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         flowLayout.minimumLineSpacing = 0;
-        flowLayout.footerReferenceSize = CGSizeMake(SCREEN_WIDTH, 220.0);
+        flowLayout.footerReferenceSize = CGSizeMake(SCREEN_WIDTH, 240.0);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
