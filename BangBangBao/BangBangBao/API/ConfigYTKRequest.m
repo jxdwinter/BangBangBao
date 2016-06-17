@@ -15,35 +15,6 @@
     return YTKRequestSerializerTypeHTTP;
 }
 
-/*
-- (NSDictionary *)requestHeaderFieldValueDictionary {
-    if ([[AccountHelper accountTicket] length] > 0 ) {
-        return @{
-                 @"Cookie":[NSString stringWithFormat:@"ticket=%@",[AccountHelper accountTicket]],
-                 @"content-type": @"text/xml",
-                 @"charset": @"UTF-8",
-                 @"Device-Platform":@"1",
-                 @"Deivce-Model":[self deviceModelName],
-                 @"Device-Version":[[UIDevice currentDevice] systemVersion],
-                 @"Client-Type":@"0",
-                 @"Client-Version":[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
-                 @"Client-Kind":@"1"
-                 };
-    }else{
-        return @{
-                 @"content-type": @"text/xml",
-                 @"charset": @"UTF-8",
-                 @"Device-Platform":@"1",
-                 @"Deivce-Model":[self deviceModelName],
-                 @"Device-Version":[[UIDevice currentDevice] systemVersion],
-                 @"Client-Type":@"0",
-                 @"Client-Version":[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"],
-                 @"Client-Kind":@"1"
-                 };
-    }
-}
-*/
-
 - (id)responseDictionaryWithResponseString : (NSString *) responseString{
     NSDictionary *jsonObjects = [[NSDictionary alloc]init];
     NSError *e = nil;

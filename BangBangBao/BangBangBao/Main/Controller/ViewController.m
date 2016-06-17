@@ -11,6 +11,8 @@
 #import "BaseNavigationController.h"
 #import <ClusterPrePermissions/ClusterPrePermissions.h>
 #import "MainCollectionViewCell.h"
+#import "MainFooterView.h"
+#import "MainFooterSubView.h"
 
 @interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
@@ -18,6 +20,7 @@
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray *dataSource;
 @property (nonatomic, strong) NSArray *iconDataSource;
+@property (nonatomic, strong) MainFooterView *footerView;
 
 @end
 
@@ -113,6 +116,14 @@
     }];
 }
 
+- (void) businessRecord {
+    
+}
+
+- (void) yuanbaoBusinessRecord {
+    
+}
+
 #pragma mark - ScanSuccessfulDelegate
 
 - (void) scanQRCodeSuccessfulWithResult : (NSString *) result {
@@ -147,29 +158,21 @@
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
-/*
+
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     UICollectionReusableView *reusableview = nil;
-    if (kind == UICollectionElementKindSectionHeader) {
-        if (!_headerView) {
-            _headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HEADER" forIndexPath:indexPath];
-            _headerView.settingDelegate = self;
-            User *user = [[AccountManager sharedAccountManager] getCurrentUser];
-            [_headerView.avatarImageView sd_setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:[UIImage imageNamed:@"avatar_loading"]];
-            _headerView.nameLabel.text = user.realName;
-        }
-        reusableview = _headerView;
-    }else if (kind == UICollectionElementKindSectionFooter) {
+    if (kind == UICollectionElementKindSectionFooter) {
         if (!_footerView) {
-            _footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FOOTER" forIndexPath:indexPath];
-            [_footerView.myPhotoView addTarget:self action:@selector(myPhoto) forControlEvents:UIControlEventTouchUpInside];
-            [_footerView.settingView addTarget:self action:@selector(systemSetting) forControlEvents:UIControlEventTouchUpInside];
+            _footerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionFooter
+                                                             withReuseIdentifier:@"FOOTER" forIndexPath:indexPath];
+            [_footerView.businessRecordView addTarget:self action:@selector(businessRecord) forControlEvents:UIControlEventTouchUpInside];
+            [_footerView.yuanbaoBusinessRecordView addTarget:self action:@selector(yuanbaoBusinessRecord) forControlEvents:UIControlEventTouchUpInside];
         }
         reusableview = _footerView;
     }
     return reusableview;
 }
-*/
+
 #pragma mark - getter and setter
 
 - (UIButton *) scanQRCodeButton {
@@ -186,15 +189,13 @@
         UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
         [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
         flowLayout.minimumLineSpacing = 0;
-        //flowLayout.headerReferenceSize = CGSizeMake(SCREEN_WIDTH, 120.0);
-        //flowLayout.footerReferenceSize = CGSizeMake(SCREEN_WIDTH, 130.0);
+        flowLayout.footerReferenceSize = CGSizeMake(SCREEN_WIDTH, 220.0);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.showsHorizontalScrollIndicator = NO;
         [_collectionView registerClass:[MainCollectionViewCell class] forCellWithReuseIdentifier:@"MAINCOLLECTIONVIEWCELL"];
-        //[_collectionView registerClass:[MeHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HEADER"];
-        //[_collectionView registerClass:[MeFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FOOTER"];
+        [_collectionView registerClass:[MainFooterView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"FOOTER"];
         _collectionView.backgroundColor = [UIColor whiteColor];
     }
     return _collectionView;
