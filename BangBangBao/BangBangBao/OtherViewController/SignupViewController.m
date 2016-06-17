@@ -367,7 +367,7 @@
         } else {
             if ([FBSDKAccessToken currentAccessToken]) {
                 FacebookSignupViewController *facebookSignupViewController = [[FacebookSignupViewController alloc] init];
-                facebookSignupViewController.accessToken = [FBSDKAccessToken currentAccessToken];
+                facebookSignupViewController.accessToken = [[FBSDKAccessToken currentAccessToken] tokenString];
                 [self.navigationController pushViewController:facebookSignupViewController animated:YES];
             }
         }

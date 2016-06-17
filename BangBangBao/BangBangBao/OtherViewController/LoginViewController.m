@@ -11,6 +11,7 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import "ForgetPasswordViewController.h"
 #import "LoginApi.h"
+#import "LoginWithFacebookApi.h"
 #import "MemberInformationApi.h"
 #import <YTKChainRequest.h>
 #import "User.h"
@@ -269,7 +270,21 @@
                  [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
                   startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
                       if (!error) {
-                          NSLog(@"fetched user:%@", result);
+                          LoginWithFacebookApi *api = [[LoginWithFacebookApi alloc] initWithFacebookAccessToken:[[FBSDKAccessToken currentAccessToken] tokenString]];
+                          YTKChainRequest *chainReq = [[YTKChainRequest alloc] init];
+                          RequestAccessory *accessory = [[RequestAccessory alloc] initAccessoryWithView:self.navigationController.view];
+                          [chainReq addAccessory:accessory];
+                          [chainReq addRequest:api callback:^(YTKChainRequest *chainRequest, YTKBaseRequest *baseRequest) {
+                              LoginApi *result = (LoginApi *)baseRequest;
+                              NSDictionary *dic = [api responseDictionaryWithResponseString:result.responseString];
+                              if (dic) {
+                                  [AccountHelper saveAccountVerifyTokenWithToken:dic[@"token"]];
+                                  MemberInformationApi *api = [[MemberInformationApi alloc] initWithMid:[dic[@"mid"] description]];
+                                  [chainRequest addRequest:api callback:nil];
+                              }
+                          }];
+                          chainReq.delegate = self;
+                          [chainReq start];
                       }
                   }];
              }
@@ -298,7 +313,18 @@
 }
 
 - (void)chainRequestFailed:(YTKChainRequest *)chainRequest failedBaseRequest:(YTKBaseRequest*)request {
-    // some one of request is failed
+    NSDictionary *dic = [[NSDictionary alloc]init];
+    NSError *e = nil;
+    dic = [NSJSONSerialization JSONObjectWithData: [request.responseString dataUsingEncoding:NSUTF8StringEncoding]
+                                          options: NSJSONReadingMutableContainers
+                                            error: &e];
+    if (!e) {
+        if (dic[@"error"]) {
+            [MBProgressHUD showHUDwithSuccess:YES WithTitle:dic[@"error"][@"username"] withView:self.navigationController.view];
+        }else{
+            [MBProgressHUD showHUDwithSuccess:YES WithTitle:dic[@"message"] withView:self.navigationController.view];
+        }
+    }
 }
 
 #pragma mark - getter and setter

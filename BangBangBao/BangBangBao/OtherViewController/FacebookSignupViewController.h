@@ -12,6 +12,6 @@
 
 @interface FacebookSignupViewController : BaseViewController
 
-@property (nonatomic, strong) FBSDKAccessToken *accessToken;
+@property (nonatomic, strong) NSString *accessToken;
 
 @end

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "MineViewController.h"
+#import "IntroViewController.h"
 #import "WelcomeViewController.h"
 #import "BaseNavigationController.h"
 #import <Fabric/Fabric.h>
@@ -223,7 +224,7 @@
  */
 - (void)launchRootViewController{
     if ([GBVersionTracking isFirstLaunchEver] || [GBVersionTracking isFirstLaunchForVersion]) {
-        //self.window.rootViewController = [[IntroViewController alloc] init];
+        self.window.rootViewController = [[IntroViewController alloc] init];
     }else{
         [self setupRootViewController];
     }
