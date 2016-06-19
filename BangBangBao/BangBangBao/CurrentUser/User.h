@@ -33,5 +33,7 @@
 @property (nonatomic, copy) FacebookData *fb_data;
 @property (nonatomic, copy) NSString *modified_time;
 @property (nonatomic, copy) NSString *credit_name;
+@property (nonatomic, copy) NSString *rank_next;//下一个成长值级别
+@property (nonatomic, copy) NSString *rank;//当前成长值级别
 
 @end

@@ -39,6 +39,7 @@
 		837B0A2B1D0E76E000C31D3C /* LoginApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A2A1D0E76E000C31D3C /* LoginApi.m */; };
 		837B0A2E1D0E85D600C31D3C /* MemberInformationApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A2D1D0E85D600C31D3C /* MemberInformationApi.m */; };
 		838343521D0BC87A007F3EB6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838343511D0BC87A007F3EB6 /* LoginViewController.m */; };
+		8399922D1D162F170077891D /* MineTableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399922C1D162F170077891D /* MineTableViewHeaderView.m */; };
 		83C479A21D1131BF00C5E3AB /* FacebookSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C479A11D1131BF00C5E3AB /* FacebookSignupViewController.m */; };
 		83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */; };
 		83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E01D01389C00B71E2D /* BaseNavigationController.m */; };
@@ -142,6 +143,8 @@
 		838343511D0BC87A007F3EB6 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		838BE4611D017EDA00D12AC2 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		838BE4621D017EDA00D12AC2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		8399922B1D162F170077891D /* MineTableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewHeaderView.h; sourceTree = "<group>"; };
+		8399922C1D162F170077891D /* MineTableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewHeaderView.m; sourceTree = "<group>"; };
 		83C479A01D1131BF00C5E3AB /* FacebookSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSignupViewController.h; sourceTree = "<group>"; };
 		83C479A11D1131BF00C5E3AB /* FacebookSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookSignupViewController.m; sourceTree = "<group>"; };
 		83E3D5DB1D0134BB00B71E2D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -417,6 +420,8 @@
 			children = (
 				83325E271D13D0060062EEBE /* MineTableViewCell.h */,
 				83325E281D13D0060062EEBE /* MineTableViewCell.m */,
+				8399922B1D162F170077891D /* MineTableViewHeaderView.h */,
+				8399922C1D162F170077891D /* MineTableViewHeaderView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -743,6 +748,7 @@
 				83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */,
 				83E3D5E91D013AAD00B71E2D /* Config.m in Sources */,
 				837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */,
+				8399922D1D162F170077891D /* MineTableViewHeaderView.m in Sources */,
 				8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */,
 				833B3D971D128DEF0008D3AD /* MainCollectionViewCell.m in Sources */,
 				83325E261D13A8AF0062EEBE /* MainYuanbaoBusinessRecordViewController.m in Sources */,

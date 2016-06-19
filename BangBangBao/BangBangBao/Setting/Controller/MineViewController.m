@@ -8,9 +8,11 @@
 
 #import "MineViewController.h"
 #import "MineTableViewCell.h"
+#import "MineTableViewHeaderView.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic, strong) MineTableViewHeaderView *headerView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
 @property (nonatomic, strong) NSArray *iconDataSource;
@@ -68,7 +70,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH,SCREEN_HEIGHT - NAVIGATIONBARHEIGHT)
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH,SCREEN_HEIGHT - NAVIGATIONBARHEIGHT -TABBARHEIGHT)
                                                   style:UITableViewStyleGrouped];
         _tableView.backgroundView = nil;
         _tableView.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.00];
@@ -77,9 +79,27 @@
         _tableView.rowHeight = 70;
         _tableView.sectionIndexColor = DEFAULTCOLOR;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectZero]];
+        [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH, 50.0)]];
+        _tableView.tableHeaderView = self.headerView;
     }
     return _tableView;
+}
+
+- (MineTableViewHeaderView *) headerView {
+    if (!_headerView) {
+        _headerView = [[MineTableViewHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH, 220.0)];
+        _headerView.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.00];
+        _headerView.avatarImageView.image = [UIImage imageNamed:@"mine_avatar"];
+        _headerView.nameLabel.text = @"蔣曉冬";
+        [_headerView.identityButton setImage:[UIImage imageNamed:@"mine_identity"] forState:UIControlStateNormal];
+        [_headerView.phoneButton setImage:[UIImage imageNamed:@"mine_phone"] forState:UIControlStateNormal];
+        [_headerView.supermarketButton setImage:[UIImage imageNamed:@"mine_supermarket"] forState:UIControlStateNormal];
+        _headerView.yuanbaoLabel.text = [NSString stringWithFormat:@"元寶 : %@",@"125"];
+        _headerView.myRankLabel.text = @"VIP8";
+        _headerView.myNumberLabel.text = @"586";
+         _headerView.myRecommendLabel.text = @"6";
+    }
+    return _headerView;
 }
 
 @end

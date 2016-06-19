@@ -304,7 +304,7 @@
     MemberInformationApi *api = requestArray[1];
     NSDictionary *dic = [api responseDictionaryWithResponseString:api.responseString];
     if (dic) {
-        [MBProgressHUD showHUDwithSuccess:YES WithTitle:@"登录成功" withView:self.navigationController.view];
+        [MBProgressHUD showHUDwithSuccess:YES WithTitle:@"登錄成功" withView:self.navigationController.view];
         AccountManager *accountManager = [AccountManager sharedAccountManager];
         [accountManager setCurrentUser:dic];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"USERLOGIN" object:nil];
