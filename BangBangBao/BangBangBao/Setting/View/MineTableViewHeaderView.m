@@ -63,12 +63,13 @@
         }];
         
         self.yuanbaoLabel = [[UILabel alloc] init];
+        self.yuanbaoLabel.textAlignment = NSTextAlignmentRight;
         self.yuanbaoLabel.textColor = DEFAULTTEXTCOLOR;
         self.yuanbaoLabel.font = DEFAULFONT;
         [self addSubview:self.yuanbaoLabel];
         [self.yuanbaoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.avatarImageView.mas_bottom).with.offset(10.0);
-            make.left.equalTo(self.mas_left).with.offset(20.0);
+            make.top.equalTo(self.nameLabel.mas_bottom).with.offset(5.0);
+            make.left.equalTo(self.supermarketButton.mas_right).with.offset(20.0);
             make.right.equalTo(self.mas_right).with.offset(-20.0);
             make.height.equalTo(@20.0);
         }];
@@ -77,7 +78,7 @@
         view.backgroundColor = DEFAULTLIGHTGRAYCOLOR;
         [self addSubview:view];
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.yuanbaoLabel.mas_bottom).with.offset(10.0);
+            make.top.equalTo(self.avatarImageView.mas_bottom).with.offset(20.0);
             make.left.equalTo(self.mas_left).with.offset(20.0);
             make.right.equalTo(self.mas_right).with.offset(-20.0);
             make.height.equalTo(@20.0);
@@ -125,7 +126,7 @@
         myRankInfoLabel.text = @"我的等級";
         [self addSubview:myRankInfoLabel];
         [myRankInfoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(vip1Label.mas_bottom).with.offset(10.0);
+            make.top.equalTo(vip1Label.mas_bottom).with.offset(20.0);
             make.left.equalTo(self.mas_left).with.offset(20.0);
             make.width.equalTo(@((SCREEN_WIDTH - 40.0)/3));
             make.height.equalTo(@20.0);
@@ -150,7 +151,7 @@
             make.top.equalTo(myRankInfoLabel.mas_top).with.offset(0.0);
             make.right.equalTo(myRankInfoLabel.mas_right).with.offset(0.0);
             make.bottom.equalTo(self.myRankLabel.mas_bottom).with.offset(0.0);
-            make.width.equalTo(@0.5);
+            make.width.equalTo(@1.0);
         }];
         
         UILabel *myNumberInfoLabel = [[UILabel alloc] init];
@@ -160,7 +161,7 @@
         myNumberInfoLabel.text = @"我的成長值";
         [self addSubview:myNumberInfoLabel];
         [myNumberInfoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(vip1Label.mas_bottom).with.offset(10.0);
+            make.top.equalTo(vip1Label.mas_bottom).with.offset(20.0);
             make.left.equalTo(line1View.mas_right).with.offset(0.0);
             make.width.equalTo(@((SCREEN_WIDTH - 40.0)/3));
             make.height.equalTo(@20.0);
@@ -185,7 +186,7 @@
             make.top.equalTo(myNumberInfoLabel.mas_top).with.offset(0.0);
             make.right.equalTo(myNumberInfoLabel.mas_right).with.offset(0.0);
             make.bottom.equalTo(self.myNumberLabel.mas_bottom).with.offset(0.0);
-            make.width.equalTo(@0.5);
+            make.width.equalTo(@1.0);
         }];
         
         UILabel *myRecommendInfoLabel = [[UILabel alloc] init];
@@ -195,7 +196,7 @@
         myRecommendInfoLabel.text = @"我推薦的好友";
         [self addSubview:myRecommendInfoLabel];
         [myRecommendInfoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(vip1Label.mas_bottom).with.offset(10.0);
+            make.top.equalTo(vip1Label.mas_bottom).with.offset(20.0);
             make.left.equalTo(line2View.mas_right).with.offset(0.0);
             make.width.equalTo(@((SCREEN_WIDTH - 40.0)/3));
             make.height.equalTo(@20.0);
