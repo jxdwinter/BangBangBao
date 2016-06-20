@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8328CFEA64628576CB65E4FD461EB69F'
+               BlueprintIdentifier = 'DD8271A043D8D9384CE8924959C0997C'
                BlueprintName = 'LCUIKit'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libLCUIKit.a'>

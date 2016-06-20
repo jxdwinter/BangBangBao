@@ -29,5 +29,6 @@ target "BangBangBao" do
 	pod 'ClusterPrePermissions'
 	pod 'APAddressBook'
 	pod 'LCUIKit'
+	pod 'CocoaAsyncSocket'  
 	
 end
