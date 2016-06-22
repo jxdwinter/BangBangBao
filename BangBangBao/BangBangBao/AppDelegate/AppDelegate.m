@@ -23,8 +23,6 @@
 
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
-@property (strong, nonatomic) UITabBarController *tabBarController;
-
 @property (nonatomic, strong) BaseNavigationController *mainNavController;
 @property (nonatomic, strong) BaseNavigationController *mineNavController;
 

@@ -48,7 +48,7 @@
     }];
     
     UILabel *scanQRCodeLabel = [[UILabel alloc] init];
-    scanQRCodeLabel.text = @"掃碼支付";
+    scanQRCodeLabel.text = @"QR Code 掃描";
     scanQRCodeLabel.textAlignment = NSTextAlignmentCenter;
     scanQRCodeLabel.font = DEFAULFONT;
     scanQRCodeLabel.textColor = DEFAULTTEXTCOLOR;

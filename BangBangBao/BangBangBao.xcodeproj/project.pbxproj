@@ -24,6 +24,12 @@
 		8345771D1D011C6200558456 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8345771C1D011C6200558456 /* Assets.xcassets */; };
 		8345772B1D011C6200558456 /* BangBangBaoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8345772A1D011C6200558456 /* BangBangBaoTests.m */; };
 		834577361D011C6200558456 /* BangBangBaoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 834577351D011C6200558456 /* BangBangBaoUITests.m */; };
+		834714B11D1A2A5200E94102 /* MineInformationEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834714B01D1A2A5200E94102 /* MineInformationEditViewController.m */; };
+		834714B41D1A2EBB00E94102 /* MineBankInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834714B31D1A2EBB00E94102 /* MineBankInformationViewController.m */; };
+		834714B71D1A2F8F00E94102 /* MineAlipayInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834714B61D1A2F8F00E94102 /* MineAlipayInformationViewController.m */; };
+		834714BA1D1A30A800E94102 /* MineMemberAnnouncementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834714B91D1A30A800E94102 /* MineMemberAnnouncementViewController.m */; };
+		834714BD1D1A315F00E94102 /* MineRecommendFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834714BC1D1A315F00E94102 /* MineRecommendFriendsViewController.m */; };
+		834714C01D1A31D800E94102 /* MineAboutBangBangBaoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834714BF1D1A31D800E94102 /* MineAboutBangBangBaoViewController.m */; };
 		834748A31D0BA82300EFADE0 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 834748A21D0BA82300EFADE0 /* WelcomeViewController.m */; };
 		834E599A1D0FA44E00B68FAA /* NSString+NSString_Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E59991D0FA44E00B68FAA /* NSString+NSString_Extended.m */; };
 		834E599E1D0FD20100B68FAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E599D1D0FD20100B68FAA /* User.m */; };
@@ -111,6 +117,18 @@
 		834577311D011C6200558456 /* BangBangBaoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BangBangBaoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		834577351D011C6200558456 /* BangBangBaoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BangBangBaoUITests.m; sourceTree = "<group>"; };
 		834577371D011C6200558456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		834714AF1D1A2A5200E94102 /* MineInformationEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineInformationEditViewController.h; sourceTree = "<group>"; };
+		834714B01D1A2A5200E94102 /* MineInformationEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineInformationEditViewController.m; sourceTree = "<group>"; };
+		834714B21D1A2EBB00E94102 /* MineBankInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineBankInformationViewController.h; sourceTree = "<group>"; };
+		834714B31D1A2EBB00E94102 /* MineBankInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineBankInformationViewController.m; sourceTree = "<group>"; };
+		834714B51D1A2F8F00E94102 /* MineAlipayInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineAlipayInformationViewController.h; sourceTree = "<group>"; };
+		834714B61D1A2F8F00E94102 /* MineAlipayInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineAlipayInformationViewController.m; sourceTree = "<group>"; };
+		834714B81D1A30A800E94102 /* MineMemberAnnouncementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineMemberAnnouncementViewController.h; sourceTree = "<group>"; };
+		834714B91D1A30A800E94102 /* MineMemberAnnouncementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineMemberAnnouncementViewController.m; sourceTree = "<group>"; };
+		834714BB1D1A315F00E94102 /* MineRecommendFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineRecommendFriendsViewController.h; sourceTree = "<group>"; };
+		834714BC1D1A315F00E94102 /* MineRecommendFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineRecommendFriendsViewController.m; sourceTree = "<group>"; };
+		834714BE1D1A31D800E94102 /* MineAboutBangBangBaoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineAboutBangBangBaoViewController.h; sourceTree = "<group>"; };
+		834714BF1D1A31D800E94102 /* MineAboutBangBangBaoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineAboutBangBangBaoViewController.m; sourceTree = "<group>"; };
 		834748A11D0BA82300EFADE0 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		834748A21D0BA82300EFADE0 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		834E59981D0FA44E00B68FAA /* NSString+NSString_Extended.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+NSString_Extended.h"; sourceTree = "<group>"; };
@@ -390,6 +408,18 @@
 			children = (
 				833B3D921D127A5D0008D3AD /* MineViewController.h */,
 				833B3D931D127A5D0008D3AD /* MineViewController.m */,
+				834714AF1D1A2A5200E94102 /* MineInformationEditViewController.h */,
+				834714B01D1A2A5200E94102 /* MineInformationEditViewController.m */,
+				834714B21D1A2EBB00E94102 /* MineBankInformationViewController.h */,
+				834714B31D1A2EBB00E94102 /* MineBankInformationViewController.m */,
+				834714B51D1A2F8F00E94102 /* MineAlipayInformationViewController.h */,
+				834714B61D1A2F8F00E94102 /* MineAlipayInformationViewController.m */,
+				834714B81D1A30A800E94102 /* MineMemberAnnouncementViewController.h */,
+				834714B91D1A30A800E94102 /* MineMemberAnnouncementViewController.m */,
+				834714BB1D1A315F00E94102 /* MineRecommendFriendsViewController.h */,
+				834714BC1D1A315F00E94102 /* MineRecommendFriendsViewController.m */,
+				834714BE1D1A31D800E94102 /* MineAboutBangBangBaoViewController.h */,
+				834714BF1D1A31D800E94102 /* MineAboutBangBangBaoViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -740,6 +770,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834714BD1D1A315F00E94102 /* MineRecommendFriendsViewController.m in Sources */,
 				83325E1A1D13942A0062EEBE /* LoginWithFacebookApi.m in Sources */,
 				833B3D941D127A5D0008D3AD /* MineViewController.m in Sources */,
 				83325E291D13D0060062EEBE /* MineTableViewCell.m in Sources */,
@@ -750,6 +781,7 @@
 				837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */,
 				8399922D1D162F170077891D /* MineTableViewHeaderView.m in Sources */,
 				8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */,
+				834714B41D1A2EBB00E94102 /* MineBankInformationViewController.m in Sources */,
 				833B3D971D128DEF0008D3AD /* MainCollectionViewCell.m in Sources */,
 				83325E261D13A8AF0062EEBE /* MainYuanbaoBusinessRecordViewController.m in Sources */,
 				837B0A1B1D0E59E000C31D3C /* RequestAccessory.m in Sources */,
@@ -766,11 +798,15 @@
 				837B0A281D0E75A000C31D3C /* SharedDatabaseHelper.m in Sources */,
 				83FDF7B21D067C0D0044E782 /* MBProgressHUD+Helper.m in Sources */,
 				838343521D0BC87A007F3EB6 /* LoginViewController.m in Sources */,
+				834714B11D1A2A5200E94102 /* MineInformationEditViewController.m in Sources */,
 				83FDF7AF1D067C0D0044E782 /* EncryptTools.m in Sources */,
+				834714C01D1A31D800E94102 /* MineAboutBangBangBaoViewController.m in Sources */,
 				83FDF7B11D067C0D0044E782 /* VerifyTools.m in Sources */,
 				83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */,
 				834E599E1D0FD20100B68FAA /* User.m in Sources */,
+				834714B71D1A2F8F00E94102 /* MineAlipayInformationViewController.m in Sources */,
 				833B3D911D1279E50008D3AD /* ViewController.m in Sources */,
+				834714BA1D1A30A800E94102 /* MineMemberAnnouncementViewController.m in Sources */,
 				83325E1D1D139DD90062EEBE /* MainFooterSubView.m in Sources */,
 				837B0A1A1D0E59E000C31D3C /* ConfigYTKRequest.m in Sources */,
 				83325E171D13939B0062EEBE /* IntroViewController.m in Sources */,

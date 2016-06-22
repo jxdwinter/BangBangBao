@@ -81,7 +81,7 @@
             make.top.equalTo(self.avatarImageView.mas_bottom).with.offset(20.0);
             make.left.equalTo(self.mas_left).with.offset(20.0);
             make.right.equalTo(self.mas_right).with.offset(-20.0);
-            make.height.equalTo(@20.0);
+            make.height.equalTo(@10.0);
         }];
         
         self.progressView = [[UIView alloc] init];
@@ -91,7 +91,7 @@
             make.top.equalTo(view.mas_top).with.offset(0.0);
             make.left.equalTo(view.mas_left).with.offset(0.0);
             make.width.equalTo(@200);
-            make.height.equalTo(@20.0);
+            make.height.equalTo(@10.0);
         }];
         
         UILabel*vip1Label = [[UILabel alloc] init];

@@ -1,75 +1,43 @@
 //
-//  MineViewController.m
+//  MineInformationEditViewController.m
 //  BangBangBao
 //
-//  Created by Xiaodong Jiang on 6/16/16.
+//  Created by Xiaodong Jiang on 6/22/16.
 //  Copyright © 2016 PAYBAO INTERNATIONAL LIMITED. All rights reserved.
 //
 
-#import "MineViewController.h"
-#import "MineTableViewCell.h"
-#import "MineTableViewHeaderView.h"
 #import "MineInformationEditViewController.h"
-#import "MineBankInformationViewController.h"
-#import "MineAlipayInformationViewController.h"
-#import "MineMemberAnnouncementViewController.h"
-#import "MineRecommendFriendsViewController.h"
-#import "MineAboutBangBangBaoViewController.h"
-#import <JGActionSheet.h>
-#import "AppDelegate.h"
+#import "MineTableViewCell.h"
 
-@interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MineInformationEditViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) MineTableViewHeaderView *headerView;
+@property (nonatomic, strong) UIButton *backButton;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;
 @property (nonatomic, strong) NSArray *iconDataSource;
-@property (nonatomic, strong) UIButton *logoutButton;
 
 @end
 
-@implementation MineViewController
+@implementation MineInformationEditViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad{
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, 80.0, 20.0)];
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.text = @"我的";
+    titleLabel.text = @"個人資料編輯";
     self.navigationItem.titleView = titleLabel;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.logoutButton];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backButton];
+    self.navigationItem.backBarButtonItem.title = @"";
     
-    self.dataSource = @[@[@"個人資料編輯",@"付款銀行帳戶",@"收款支付寶帳戶"],@[@"會員公告",@"推薦好友"],@[@"關於幫幫寶"]];
-    self.iconDataSource = @[@[@"mine_personal_information",@"mine_bank_account",@"mine_zhifubao"],@[@"mine_gonggao",@"mine_tuijian"],@[@"mine_about"]];
+    self.dataSource = @[@[@"會員身份認證",@"行動電話驗證",@"開通商超付款"],@[@"修改E-mail",@"修改密碼"],@[@"推薦人行動電話"]];
+    self.iconDataSource = @[@[@"mineinformation_identity",@"mineinformation_phone",@"mineinformation_supermarket"],@[@"mineinformation_email",@"mineinformation_password"],@[@"mineinformation_friends"]];
     [self.view addSubview:self.tableView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - private methods
 
-- (void)logout{
-    JGActionSheetSection *section = [JGActionSheetSection sectionWithTitle:@"确认登出吗?" message:@"" buttonTitles:@[@"確認"] buttonStyle:JGActionSheetButtonStyleRed];
-    section.titleLabel.textColor = DEFAULTTEXTCOLOR;
-    section.titleLabel.font = DEFAULFONT;
-    JGActionSheetSection *cancelSection = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"取消"] buttonStyle:JGActionSheetButtonStyleCancel];
-    NSArray *sections = @[section, cancelSection];
-    JGActionSheet *sheet = [JGActionSheet actionSheetWithSections:sections];
-    [sheet setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
-        [sheet dismissAnimated:YES];
-        if (indexPath.section == 0 && indexPath.row == 0) {
-            [self exit];
-        }
-    }];
-    [sheet showInView:self.view animated:YES];
-}
-
-- (void) exit {
-    [[AccountManager sharedAccountManager] userLogout];
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    [appDelegate setupRootViewController];
-    [appDelegate.tabBarController setSelectedIndex:0];
+- (void) popToPreViewController {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -97,6 +65,7 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    /*
     BaseViewController *viewController = nil;
     if (indexPath.section == 0) {
         if (indexPath.row == 0 ) {
@@ -124,9 +93,19 @@
         }
     }
     [self.navigationController pushViewController:viewController animated:YES];
+     */
 }
 
 #pragma mark - getter and setter
+
+- (UIButton *) backButton {
+    if (!_backButton) {
+        _backButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 25.0, 25.0)];
+        [_backButton addTarget:self action:@selector(popToPreViewController) forControlEvents:UIControlEventTouchUpInside];
+        [_backButton setImage:[UIImage imageNamed:@"back"] forState:UIControlStateNormal];
+    }
+    return _backButton;
+}
 
 - (UITableView *)tableView{
     if (!_tableView) {
@@ -140,35 +119,8 @@
         _tableView.sectionIndexColor = DEFAULTCOLOR;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         [_tableView setTableFooterView:[[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH, 50.0)]];
-        _tableView.tableHeaderView = self.headerView;
     }
     return _tableView;
-}
-
-- (MineTableViewHeaderView *) headerView {
-    if (!_headerView) {
-        _headerView = [[MineTableViewHeaderView alloc] initWithFrame:CGRectMake(0.0, 0.0, SCREEN_WIDTH, 210.0)];
-        _headerView.backgroundColor = [UIColor colorWithRed:0.99 green:0.99 blue:0.99 alpha:1.00];
-        _headerView.avatarImageView.image = [UIImage imageNamed:@"mine_avatar"];
-        _headerView.nameLabel.text = @"蔣曉冬";
-        [_headerView.identityButton setImage:[UIImage imageNamed:@"mine_identity"] forState:UIControlStateNormal];
-        [_headerView.phoneButton setImage:[UIImage imageNamed:@"mine_phone"] forState:UIControlStateNormal];
-        [_headerView.supermarketButton setImage:[UIImage imageNamed:@"mine_supermarket"] forState:UIControlStateNormal];
-        _headerView.yuanbaoLabel.text = [NSString stringWithFormat:@"元寶 : %@",@"125"];
-        _headerView.myRankLabel.text = @"VIP8";
-        _headerView.myNumberLabel.text = @"586";
-         _headerView.myRecommendLabel.text = @"6";
-    }
-    return _headerView;
-}
-
-- (UIButton *) logoutButton {
-    if (!_logoutButton) {
-        _logoutButton = [[UIButton alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
-        [_logoutButton addTarget:self action:@selector(logout) forControlEvents:UIControlEventTouchUpInside];
-        [_logoutButton setImage:[UIImage imageNamed:@"mine_logout"] forState:UIControlStateNormal];
-    }
-    return _logoutButton;
 }
 
 @end
