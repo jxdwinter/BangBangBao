@@ -32,6 +32,10 @@ static SharedDatabaseHelper* sharedDatabaseHelper = nil;
          *  当前登录用户
          */
         [store createTableWithName:CURRENTUSERTALBE];
+        /**
+         *  当前用户付款银行
+         */
+        [store createTableWithName:PAYMENTBANKTABLE];
     }
     return self;
 }
@@ -39,6 +43,7 @@ static SharedDatabaseHelper* sharedDatabaseHelper = nil;
 - (void)clearAllCurrentUserDatabase{
     YTKKeyValueStore *store = [[YTKKeyValueStore alloc] initDBWithName:DATABASENAME];
     [store clearTable:CURRENTUSERTALBE];
+    [store clearTable:PAYMENTBANKTABLE];
 }
 
 @end

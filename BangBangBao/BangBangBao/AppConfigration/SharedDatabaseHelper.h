@@ -10,6 +10,8 @@
 
 #define CURRENTUSERTALBE @"currentUserTalbe"
 
+#define PAYMENTBANKTABLE @"PaymentBankTable"
+
 @interface SharedDatabaseHelper : NSObject
 
 + (instancetype) sharedDatabaseHelper;

@@ -7,6 +7,8 @@
 //
 
 #import "MineBankInformationViewController.h"
+#import "PaymentsApi.h"
+#import "PaymentBankDatabaseHelper.h"
 
 @interface MineBankInformationViewController ()
 
@@ -27,6 +29,8 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backButton];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.addButton];
     self.navigationItem.backBarButtonItem.title = @"";
+    
+    [self getPaymentBank];
 }
 
 #pragma mark - private methods
@@ -37,6 +41,25 @@
 
 - (void) addBank {
     
+}
+
+- (void) getPaymentBank {
+    PaymentsApi *api = [[PaymentsApi alloc] init];
+    RequestAccessory *accessory = [[RequestAccessory alloc] initAccessoryWithView:self.navigationController.view];
+    [api addAccessory:accessory];
+    [api startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
+        NSDictionary *dic = [api responseDictionaryWithResponseString:request.responseString];
+        if (dic) {
+            if ([dic[@"result"] integerValue] == 0) {
+                
+            }else {
+                [MBProgressHUD showHUDwithSuccess:NO WithTitle:dic[@"message"] withView:self.navigationController.view];
+            }
+        }
+    } failure:^(YTKBaseRequest *request) {
+        NSLog(@"%@",request.responseString);
+    }];
+
 }
 
 #pragma mark - getter and setter

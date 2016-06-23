@@ -62,7 +62,7 @@
             [self exit];
         }
     }];
-    [sheet showInView:self.view animated:YES];
+    [sheet showInView:[[UIApplication sharedApplication] keyWindow] animated:YES];
 }
 
 - (void) exit {

@@ -34,6 +34,7 @@
 		834E599A1D0FA44E00B68FAA /* NSString+NSString_Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E59991D0FA44E00B68FAA /* NSString+NSString_Extended.m */; };
 		834E599E1D0FD20100B68FAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E599D1D0FD20100B68FAA /* User.m */; };
 		834E59A11D0FD25700B68FAA /* FacebookData.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E59A01D0FD25700B68FAA /* FacebookData.m */; };
+		835DA1C91D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 835DA1C81D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.m */; };
 		836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */; };
 		837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A131D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m */; };
 		837B0A1A1D0E59E000C31D3C /* ConfigYTKRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A171D0E59E000C31D3C /* ConfigYTKRequest.m */; };
@@ -51,6 +52,9 @@
 		83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E01D01389C00B71E2D /* BaseNavigationController.m */; };
 		83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E21D01389C00B71E2D /* BaseViewController.m */; };
 		83E3D5E91D013AAD00B71E2D /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E81D013AAD00B71E2D /* Config.m */; };
+		83EA69F41D1B746C00FEC452 /* BBBSocketConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EA69F31D1B746C00FEC452 /* BBBSocketConnection.m */; };
+		83EA69F71D1B83CC00FEC452 /* Payment_Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EA69F61D1B83CC00FEC452 /* Payment_Bank.m */; };
+		83EA69FB1D1B869D00FEC452 /* PaymentsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 83EA69FA1D1B869D00FEC452 /* PaymentsApi.m */; };
 		83FDF79A1D06600C0044E782 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4611D017EDA00D12AC2 /* Crashlytics.framework */; };
 		83FDF79B1D06600C0044E782 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4621D017EDA00D12AC2 /* Fabric.framework */; };
 		83FDF79F1D0674240044E782 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FDF79C1D0674240044E782 /* FBSDKCoreKit.framework */; };
@@ -137,6 +141,8 @@
 		834E599D1D0FD20100B68FAA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		834E599F1D0FD25700B68FAA /* FacebookData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookData.h; sourceTree = "<group>"; };
 		834E59A01D0FD25700B68FAA /* FacebookData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookData.m; sourceTree = "<group>"; };
+		835DA1C71D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentBankDatabaseHelper.h; sourceTree = "<group>"; };
+		835DA1C81D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentBankDatabaseHelper.m; sourceTree = "<group>"; };
 		836E70EB1D0559E400456C57 /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
 		836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRCodeViewController.m; sourceTree = "<group>"; };
 		837B0A121D0E514000C31D3C /* ForgetPasswordStepTwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordStepTwoViewController.h; sourceTree = "<group>"; };
@@ -175,6 +181,12 @@
 		83E3D5E71D013AAD00B71E2D /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		83E3D5E81D013AAD00B71E2D /* Config.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Config.m; sourceTree = "<group>"; };
 		83E3D5EA1D013D3700B71E2D /* BangBangBao-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BangBangBao-Prefix.pch"; sourceTree = "<group>"; };
+		83EA69F21D1B746C00FEC452 /* BBBSocketConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBBSocketConnection.h; sourceTree = "<group>"; };
+		83EA69F31D1B746C00FEC452 /* BBBSocketConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBBSocketConnection.m; sourceTree = "<group>"; };
+		83EA69F51D1B83CC00FEC452 /* Payment_Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payment_Bank.h; sourceTree = "<group>"; };
+		83EA69F61D1B83CC00FEC452 /* Payment_Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payment_Bank.m; sourceTree = "<group>"; };
+		83EA69F91D1B869D00FEC452 /* PaymentsApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentsApi.h; sourceTree = "<group>"; };
+		83EA69FA1D1B869D00FEC452 /* PaymentsApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentsApi.m; sourceTree = "<group>"; };
 		83FDF79C1D0674240044E782 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		83FDF79D1D0674240044E782 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		83FDF79E1D0674240044E782 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
@@ -327,6 +339,7 @@
 		8345770F1D011C6200558456 /* BangBangBao */ = {
 			isa = PBXGroup;
 			children = (
+				83EA69EE1D1B73CC00FEC452 /* Socket */,
 				8345771C1D011C6200558456 /* Assets.xcassets */,
 				834E599B1D0FD1CD00B68FAA /* CurrentUser */,
 				837B0A151D0E59AB00C31D3C /* API */,
@@ -434,6 +447,8 @@
 		836E70FD1D05660E00456C57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				83EA69F51D1B83CC00FEC452 /* Payment_Bank.h */,
+				83EA69F61D1B83CC00FEC452 /* Payment_Bank.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,6 +456,8 @@
 		836E70FE1D05660E00456C57 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				835DA1C71D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.h */,
+				835DA1C81D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.m */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -464,6 +481,7 @@
 				837B0A181D0E59E000C31D3C /* RequestAccessory.h */,
 				837B0A191D0E59E000C31D3C /* RequestAccessory.m */,
 				837B0A1C1D0E73DD00C31D3C /* Other */,
+				83EA69F81D1B864B00FEC452 /* Mine */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -517,6 +535,24 @@
 				837B0A241D0E75A000C31D3C /* SharedDatabaseHelper.m */,
 			);
 			path = AppConfigration;
+			sourceTree = "<group>";
+		};
+		83EA69EE1D1B73CC00FEC452 /* Socket */ = {
+			isa = PBXGroup;
+			children = (
+				83EA69F21D1B746C00FEC452 /* BBBSocketConnection.h */,
+				83EA69F31D1B746C00FEC452 /* BBBSocketConnection.m */,
+			);
+			path = Socket;
+			sourceTree = "<group>";
+		};
+		83EA69F81D1B864B00FEC452 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				83EA69F91D1B869D00FEC452 /* PaymentsApi.h */,
+				83EA69FA1D1B869D00FEC452 /* PaymentsApi.m */,
+			);
+			path = Mine;
 			sourceTree = "<group>";
 		};
 		83FDF7A21D067C0D0044E782 /* Toolkit */ = {
@@ -781,6 +817,7 @@
 				837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */,
 				8399922D1D162F170077891D /* MineTableViewHeaderView.m in Sources */,
 				8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */,
+				835DA1C91D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.m in Sources */,
 				834714B41D1A2EBB00E94102 /* MineBankInformationViewController.m in Sources */,
 				833B3D971D128DEF0008D3AD /* MainCollectionViewCell.m in Sources */,
 				83325E261D13A8AF0062EEBE /* MainYuanbaoBusinessRecordViewController.m in Sources */,
@@ -789,8 +826,10 @@
 				834577121D011C6200558456 /* main.m in Sources */,
 				834E599A1D0FA44E00B68FAA /* NSString+NSString_Extended.m in Sources */,
 				834748A31D0BA82300EFADE0 /* WelcomeViewController.m in Sources */,
+				83EA69FB1D1B869D00FEC452 /* PaymentsApi.m in Sources */,
 				837B0A261D0E75A000C31D3C /* AccountManager.m in Sources */,
 				83FDF7B31D067C0D0044E782 /* MostTopViewControllerTools.m in Sources */,
+				83EA69F41D1B746C00FEC452 /* BBBSocketConnection.m in Sources */,
 				83325E231D13A86F0062EEBE /* MainBusinessRecordViewController.m in Sources */,
 				8323EDB61D0D08EC00005152 /* ForgetPasswordViewController.m in Sources */,
 				837B0A251D0E75A000C31D3C /* AccountHelper.m in Sources */,
@@ -815,6 +854,7 @@
 				83FDF7B01D067C0D0044E782 /* MF_Base64Additions.m in Sources */,
 				834E59A11D0FD25700B68FAA /* FacebookData.m in Sources */,
 				836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */,
+				83EA69F71D1B83CC00FEC452 /* Payment_Bank.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "BBBSocketConnection.h"
 #import "ScanQRCodeViewController.h"
 #import "BaseNavigationController.h"
 #import <ClusterPrePermissions/ClusterPrePermissions.h>
@@ -16,7 +17,11 @@
 #import "MainBusinessRecordViewController.h"
 #import "MainYuanbaoBusinessRecordViewController.h"
 
-@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface ViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,BBBSocketConnectionDelegate>{
+    NSString *_serverHost;
+    int _serverPort;
+    BBBSocketConnection *_connection;
+}
 
 @property (nonatomic, strong) UIButton *scanQRCodeButton;
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -78,6 +83,11 @@
         make.right.equalTo(self.view.mas_right).with.offset(0.0);
         make.bottom.equalTo(self.view.mas_bottom).with.offset(0.0);
     }];
+    /*
+    _serverHost = @"www.baidu.com";
+    _serverPort = 80;
+    [self openConnection];
+     */
 }
 
 - (void)didReceiveMemoryWarning {
@@ -127,6 +137,39 @@
 - (void) yuanbaoBusinessRecord {
     MainYuanbaoBusinessRecordViewController *yuanbaoBusinessRecordViewController = [[MainYuanbaoBusinessRecordViewController alloc] init];
     [self.navigationController pushViewController:yuanbaoBusinessRecordViewController animated:YES];
+}
+
+#pragma mark -
+#pragma mark RHSocketConnection method
+
+- (void)openConnection{
+    [self closeConnection];
+    _connection = [[BBBSocketConnection alloc] init];
+    _connection.delegate = self;
+    [_connection connectWithHost:_serverHost port:_serverPort];
+}
+
+- (void)closeConnection{
+    if (_connection) {
+        _connection.delegate = nil;
+        [_connection disconnect];
+        _connection = nil;
+    }
+}
+
+#pragma mark -
+#pragma mark RHSocketConnectionDelegate method
+
+- (void)didDisconnectWithError:(NSError *)error{
+    NSLog(@"didDisconnectWithError...");
+}
+
+- (void)didConnectToHost:(NSString *)host port:(UInt16)port{
+    NSLog(@"didConnectToHost...");
+}
+
+- (void)didReceiveData:(NSData *)data tag:(long)tag{
+    NSLog(@"didReceiveData...");
 }
 
 #pragma mark - ScanSuccessfulDelegate
