@@ -11,6 +11,7 @@
 #import "PaymentAlipayDatabaseHelper.h"
 #import "Payment_Alipay.h"
 #import "MineBankTableViewCell.h"
+#import "MineAddAlipayViewController.h"
 
 @interface MineAlipayInformationViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -53,7 +54,12 @@
 }
 
 - (void) addBank {
-    
+    if ([self.dataSource count] < 5) {
+        MineAddAlipayViewController *addAlipayViewController = [[MineAddAlipayViewController alloc] init];
+        [self.navigationController pushViewController:addAlipayViewController animated:YES];
+    }else{
+        [MBProgressHUD showHUDwithSuccess:YES WithTitle:@"最多只能添加 5 個收款支付寶帳戶" withView:self.navigationController.view];
+    }
 }
 
 - (void) getPaymentAlipay {

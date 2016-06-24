@@ -53,7 +53,11 @@
 }
 
 - (void) addBank {
-    
+    if ([self.dataSource count] < 5) {
+        
+    }else{
+        [MBProgressHUD showHUDwithSuccess:YES WithTitle:@"最多只能添加 5 個付款銀行帳戶" withView:self.navigationController.view];
+    }
 }
 
 - (void) getPaymentBank {
