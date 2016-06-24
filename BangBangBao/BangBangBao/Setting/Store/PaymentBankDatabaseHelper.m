@@ -25,17 +25,21 @@
     return [[YTKKeyValueStore alloc] initDBWithName:DATABASENAME];
 }
 
-
 - (void) savePaymentBanksWithBanksArray : (NSArray *) banksArray {
     if (banksArray && [banksArray count]) {
         for (NSDictionary *dic in banksArray) {
-            [[self store] putObject:dic withId:dic[@"option_id"] intoTable:PAYMENTBANKTABLE];
+            [[self store] putObject:dic withId:dic[@"aid"] intoTable:PAYMENTBANKTABLE];
         }
     }
 }
 
 - (NSArray *) queryAllBanks {
-    return [[self store] getAllItemsFromTable:PAYMENTBANKTABLE];
+    NSArray *tmpArray = [[self store] getAllItemsFromTable:PAYMENTBANKTABLE];
+    NSMutableArray *tmpMutableArray = [NSMutableArray new];
+    for (YTKKeyValueItem *itme in tmpArray) {
+        [tmpMutableArray addObject:itme.itemObject];
+    }
+    return [tmpMutableArray copy];
 }
 
 - (void) deleteAllBanks {
@@ -48,7 +52,7 @@
 
 - (void) addBankWithBank : (Payment_Bank *) bank {
     if (bank) {
-        [[self store] putObject:[bank yy_modelToJSONObject] withId:[NSString stringWithFormat:@"%ld",(long)bank.option_id] intoTable:PAYMENTBANKTABLE];
+        [[self store] putObject:[bank yy_modelToJSONObject] withId:bank.aid intoTable:PAYMENTBANKTABLE];
     }
 }
 

@@ -36,6 +36,10 @@ static SharedDatabaseHelper* sharedDatabaseHelper = nil;
          *  当前用户付款银行
          */
         [store createTableWithName:PAYMENTBANKTABLE];
+        /**
+         *  当前用户支付宝
+         */
+        [store createTableWithName:PAYMENTALIPAYTABLE];
     }
     return self;
 }
@@ -44,6 +48,7 @@ static SharedDatabaseHelper* sharedDatabaseHelper = nil;
     YTKKeyValueStore *store = [[YTKKeyValueStore alloc] initDBWithName:DATABASENAME];
     [store clearTable:CURRENTUSERTALBE];
     [store clearTable:PAYMENTBANKTABLE];
+    [store clearTable:PAYMENTALIPAYTABLE];
 }
 
 @end

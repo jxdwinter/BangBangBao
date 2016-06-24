@@ -34,6 +34,10 @@
 		834E599A1D0FA44E00B68FAA /* NSString+NSString_Extended.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E59991D0FA44E00B68FAA /* NSString+NSString_Extended.m */; };
 		834E599E1D0FD20100B68FAA /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E599D1D0FD20100B68FAA /* User.m */; };
 		834E59A11D0FD25700B68FAA /* FacebookData.m in Sources */ = {isa = PBXBuildFile; fileRef = 834E59A01D0FD25700B68FAA /* FacebookData.m */; };
+		834F37A11D1CC6B100564081 /* Payment_Alipay.m in Sources */ = {isa = PBXBuildFile; fileRef = 834F37A01D1CC6B100564081 /* Payment_Alipay.m */; };
+		834F37A41D1CC74300564081 /* PaymentAlipayDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 834F37A31D1CC74300564081 /* PaymentAlipayDatabaseHelper.m */; };
+		834F37A71D1CCBDC00564081 /* AccountApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 834F37A61D1CCBDC00564081 /* AccountApi.m */; };
+		8354DE141D1CEA63009688B7 /* MineBankTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8354DE131D1CEA63009688B7 /* MineBankTableViewCell.m */; };
 		835DA1C91D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 835DA1C81D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.m */; };
 		836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E70EC1D0559E400456C57 /* ScanQRCodeViewController.m */; };
 		837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A131D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m */; };
@@ -141,6 +145,14 @@
 		834E599D1D0FD20100B68FAA /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		834E599F1D0FD25700B68FAA /* FacebookData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookData.h; sourceTree = "<group>"; };
 		834E59A01D0FD25700B68FAA /* FacebookData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookData.m; sourceTree = "<group>"; };
+		834F379F1D1CC6B100564081 /* Payment_Alipay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Payment_Alipay.h; sourceTree = "<group>"; };
+		834F37A01D1CC6B100564081 /* Payment_Alipay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Payment_Alipay.m; sourceTree = "<group>"; };
+		834F37A21D1CC74300564081 /* PaymentAlipayDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentAlipayDatabaseHelper.h; sourceTree = "<group>"; };
+		834F37A31D1CC74300564081 /* PaymentAlipayDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentAlipayDatabaseHelper.m; sourceTree = "<group>"; };
+		834F37A51D1CCBDC00564081 /* AccountApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountApi.h; sourceTree = "<group>"; };
+		834F37A61D1CCBDC00564081 /* AccountApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountApi.m; sourceTree = "<group>"; };
+		8354DE121D1CEA63009688B7 /* MineBankTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineBankTableViewCell.h; sourceTree = "<group>"; };
+		8354DE131D1CEA63009688B7 /* MineBankTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineBankTableViewCell.m; sourceTree = "<group>"; };
 		835DA1C71D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentBankDatabaseHelper.h; sourceTree = "<group>"; };
 		835DA1C81D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentBankDatabaseHelper.m; sourceTree = "<group>"; };
 		836E70EB1D0559E400456C57 /* ScanQRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRCodeViewController.h; sourceTree = "<group>"; };
@@ -339,7 +351,6 @@
 		8345770F1D011C6200558456 /* BangBangBao */ = {
 			isa = PBXGroup;
 			children = (
-				83EA69EE1D1B73CC00FEC452 /* Socket */,
 				8345771C1D011C6200558456 /* Assets.xcassets */,
 				834E599B1D0FD1CD00B68FAA /* CurrentUser */,
 				837B0A151D0E59AB00C31D3C /* API */,
@@ -351,6 +362,7 @@
 				833B3D891D1279E50008D3AD /* Main */,
 				836E70EF1D05657600456C57 /* Setting */,
 				83FDF7A21D067C0D0044E782 /* Toolkit */,
+				83EA69EE1D1B73CC00FEC452 /* Socket */,
 				834577101D011C6200558456 /* Supporting Files */,
 			);
 			path = BangBangBao;
@@ -449,6 +461,8 @@
 			children = (
 				83EA69F51D1B83CC00FEC452 /* Payment_Bank.h */,
 				83EA69F61D1B83CC00FEC452 /* Payment_Bank.m */,
+				834F379F1D1CC6B100564081 /* Payment_Alipay.h */,
+				834F37A01D1CC6B100564081 /* Payment_Alipay.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -458,6 +472,8 @@
 			children = (
 				835DA1C71D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.h */,
 				835DA1C81D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.m */,
+				834F37A21D1CC74300564081 /* PaymentAlipayDatabaseHelper.h */,
+				834F37A31D1CC74300564081 /* PaymentAlipayDatabaseHelper.m */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -469,6 +485,8 @@
 				83325E281D13D0060062EEBE /* MineTableViewCell.m */,
 				8399922B1D162F170077891D /* MineTableViewHeaderView.h */,
 				8399922C1D162F170077891D /* MineTableViewHeaderView.m */,
+				8354DE121D1CEA63009688B7 /* MineBankTableViewCell.h */,
+				8354DE131D1CEA63009688B7 /* MineBankTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -551,6 +569,8 @@
 			children = (
 				83EA69F91D1B869D00FEC452 /* PaymentsApi.h */,
 				83EA69FA1D1B869D00FEC452 /* PaymentsApi.m */,
+				834F37A51D1CCBDC00564081 /* AccountApi.h */,
+				834F37A61D1CCBDC00564081 /* AccountApi.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -808,6 +828,7 @@
 			files = (
 				834714BD1D1A315F00E94102 /* MineRecommendFriendsViewController.m in Sources */,
 				83325E1A1D13942A0062EEBE /* LoginWithFacebookApi.m in Sources */,
+				834F37A11D1CC6B100564081 /* Payment_Alipay.m in Sources */,
 				833B3D941D127A5D0008D3AD /* MineViewController.m in Sources */,
 				83325E291D13D0060062EEBE /* MineTableViewCell.m in Sources */,
 				837B0A271D0E75A000C31D3C /* DatabaseHelper.m in Sources */,
@@ -815,6 +836,7 @@
 				83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */,
 				83E3D5E91D013AAD00B71E2D /* Config.m in Sources */,
 				837B0A141D0E514000C31D3C /* ForgetPasswordStepTwoViewController.m in Sources */,
+				834F37A71D1CCBDC00564081 /* AccountApi.m in Sources */,
 				8399922D1D162F170077891D /* MineTableViewHeaderView.m in Sources */,
 				8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */,
 				835DA1C91D1BC50E001D9CC9 /* PaymentBankDatabaseHelper.m in Sources */,
@@ -828,6 +850,7 @@
 				834748A31D0BA82300EFADE0 /* WelcomeViewController.m in Sources */,
 				83EA69FB1D1B869D00FEC452 /* PaymentsApi.m in Sources */,
 				837B0A261D0E75A000C31D3C /* AccountManager.m in Sources */,
+				834F37A41D1CC74300564081 /* PaymentAlipayDatabaseHelper.m in Sources */,
 				83FDF7B31D067C0D0044E782 /* MostTopViewControllerTools.m in Sources */,
 				83EA69F41D1B746C00FEC452 /* BBBSocketConnection.m in Sources */,
 				83325E231D13A86F0062EEBE /* MainBusinessRecordViewController.m in Sources */,
@@ -854,6 +877,7 @@
 				83FDF7B01D067C0D0044E782 /* MF_Base64Additions.m in Sources */,
 				834E59A11D0FD25700B68FAA /* FacebookData.m in Sources */,
 				836E70ED1D0559E400456C57 /* ScanQRCodeViewController.m in Sources */,
+				8354DE141D1CEA63009688B7 /* MineBankTableViewCell.m in Sources */,
 				83EA69F71D1B83CC00FEC452 /* Payment_Bank.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

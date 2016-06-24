@@ -12,6 +12,8 @@
 
 #define PAYMENTBANKTABLE @"PaymentBankTable"
 
+#define PAYMENTALIPAYTABLE @"PaymentAlipayTable"
+
 @interface SharedDatabaseHelper : NSObject
 
 + (instancetype) sharedDatabaseHelper;
