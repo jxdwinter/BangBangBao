@@ -11,5 +11,6 @@
 @interface MineBankTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *infoLabel;
+@property (nonatomic, strong) UILabel *statusLabel;
 
 @end

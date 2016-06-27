@@ -50,7 +50,7 @@
     [[self store] deleteObjectById:alipay_id fromTable:PAYMENTALIPAYTABLE];
 }
 
-- (void) addBankWithBank : (Payment_Alipay *) alipay {
+- (void) addAlipayWithAlipay : (Payment_Alipay *) alipay {
     if (alipay) {
         [[self store] putObject:[alipay yy_modelToJSONObject] withId:alipay.aid intoTable:PAYMENTALIPAYTABLE];
     }

@@ -8,6 +8,14 @@
 
 #import "BaseViewController.h"
 
+@protocol AddAlipayDelegate <NSObject>
+
+- (void) reloadAlipay;
+
+@end
+
 @interface MineAddAlipayViewController : BaseViewController
+
+@property (nonatomic, weak) id<AddAlipayDelegate> addAlipayDelegate;
 
 @end

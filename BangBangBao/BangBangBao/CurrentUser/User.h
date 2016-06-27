@@ -30,10 +30,10 @@
 @property (nonatomic, copy) NSString *identity_card_type;
 @property (nonatomic, copy) NSString *identity_card_verified;//是否验证过身份证
 @property (nonatomic, copy) NSString *customer_type;//new 新顾客，regular 老顾客，交易成功过一笔订单的即为老顾客
-@property (nonatomic, copy) FacebookData *fb_data;
 @property (nonatomic, copy) NSString *modified_time;
 @property (nonatomic, copy) NSString *credit_name;
 @property (nonatomic, copy) NSString *rank_next;//下一个成长值级别
 @property (nonatomic, copy) NSString *rank;//当前成长值级别
+@property (nonatomic, strong) FacebookData *fb_data;
 
 @end

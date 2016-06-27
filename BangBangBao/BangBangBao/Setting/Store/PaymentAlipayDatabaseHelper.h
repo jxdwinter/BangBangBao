@@ -18,6 +18,6 @@
 - (NSArray *) queryAllAlipays;
 - (void) deleteAllAlipays;
 - (void) deleteAlipayWithAlipay_id : (NSString *) alipay_id;
-- (void) addBankWithBank : (Payment_Alipay *) alipay;
+- (void) addAlipayWithAlipay : (Payment_Alipay *) alipay;
 
 @end

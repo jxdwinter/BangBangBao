@@ -12,8 +12,10 @@
 #import "Payment_Alipay.h"
 #import "MineBankTableViewCell.h"
 #import "MineAddAlipayViewController.h"
+#import "AccountDeleteApi.h"
+#import <JGActionSheet.h>
 
-@interface MineAlipayInformationViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface MineAlipayInformationViewController () <UITableViewDelegate, UITableViewDataSource,AddAlipayDelegate>
 
 @property (nonatomic, strong) UIButton *backButton;
 @property (nonatomic, strong) UIButton *addButton;
@@ -56,6 +58,7 @@
 - (void) addBank {
     if ([self.dataSource count] < 5) {
         MineAddAlipayViewController *addAlipayViewController = [[MineAddAlipayViewController alloc] init];
+        addAlipayViewController.addAlipayDelegate = self;
         [self.navigationController pushViewController:addAlipayViewController animated:YES];
     }else{
         [MBProgressHUD showHUDwithSuccess:YES WithTitle:@"最多只能添加 5 個收款支付寶帳戶" withView:self.navigationController.view];
@@ -87,7 +90,20 @@
                 }
             }
         } failure:^(YTKBaseRequest *request) {
-            NSLog(@"%@",request.responseString);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSDictionary *dic = [[NSDictionary alloc]init];
+                NSError *e = nil;
+                dic = [NSJSONSerialization JSONObjectWithData: [request.responseString dataUsingEncoding:NSUTF8StringEncoding]
+                                                      options: NSJSONReadingMutableContainers
+                                                        error: &e];
+                if (!e) {
+                    if (dic[@"error"]) {
+                        [MBProgressHUD showHUDwithSuccess:YES WithTitle:dic[@"error"][@"username"] withView:self.navigationController.view];
+                    }else{
+                        [MBProgressHUD showHUDwithSuccess:YES WithTitle:dic[@"message"] withView:self.navigationController.view];
+                    }
+                }
+            });
         }];
     });
 }
@@ -102,10 +118,42 @@
     
     NSString *account_number = alipay.account_number;
 
-    tmpString = [tmpString stringByAppendingString:account_name];
+    tmpString = [tmpString stringByAppendingString:account_name?account_name:@""];
     tmpString = [tmpString stringByAppendingString:@"  "];
-    tmpString = [tmpString stringByAppendingString:account_number];
+    tmpString = [tmpString stringByAppendingString:account_number?account_number:@""];
     return tmpString;
+}
+
+- (void)deleteAlipay : (Payment_Alipay *) alipay withIndexPath : (NSIndexPath *) indexPath {
+    AccountDeleteApi *api = [[AccountDeleteApi alloc] initWithAccount_id:alipay.aid];
+    RequestAccessory *accessory = [[RequestAccessory alloc] initAccessoryWithView:self.navigationController.view];
+    [api addAccessory:accessory];
+    [api startWithCompletionBlockWithSuccess:^(YTKBaseRequest *request) {
+        [self.dataSource removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
+        [[PaymentAlipayDatabaseHelper sharedPaymentAlipaysDatabaseHelper] deleteAlipayWithAlipay_id:alipay.aid];
+        [MBProgressHUD showHUDwithSuccess:YES WithTitle:@"刪除成功" withView:self.navigationController.view];
+    } failure:^(YTKBaseRequest *request) {
+        NSDictionary *dic = [[NSDictionary alloc]init];
+        NSError *e = nil;
+        dic = [NSJSONSerialization JSONObjectWithData: [request.responseString dataUsingEncoding:NSUTF8StringEncoding]
+                                              options: NSJSONReadingMutableContainers
+                                                error: &e];
+        if (!e) {
+            if (dic[@"error"]) {
+                [MBProgressHUD showHUDwithSuccess:YES WithTitle:dic[@"error"][@"account_number"] withView:self.navigationController.view];
+            }else{
+                [MBProgressHUD showHUDwithSuccess:YES WithTitle:dic[@"message"] withView:self.navigationController.view];
+            }
+        }
+    }];
+}
+
+#pragma mark - AddAlipayDelegate
+
+- (void) reloadAlipay {
+    [self getPaymentAlipay];
 }
 
 #pragma mark - Table view data source
@@ -126,6 +174,16 @@
     }
     Payment_Alipay *alipay = self.dataSource[indexPath.row];
     cell.infoLabel.text = [self dealTextWithAlipay:alipay];
+    if ([alipay.account_status isEqualToString:@"non_exist"]) {
+        cell.statusLabel.text = @"賬戶不存在";
+        cell.statusLabel.textColor = DEFAULTTEXTCOLOR;
+    }else if ([alipay.account_status isEqualToString:@"real_name_verified"]) {
+        cell.statusLabel.text = @"賬戶正常";
+        cell.statusLabel.textColor = [UIColor colorWithRed:0.53 green:0.72 blue:0.45 alpha:1.00];
+    }else {
+        cell.statusLabel.text = @"檢測中...";
+        cell.statusLabel.textColor = DEFAULTTEXTCOLOR;
+    }
     return cell;
 }
 
@@ -133,6 +191,40 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+//定义编辑样式
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+
+//进入编辑模式，按下出现的编辑按钮后
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle ==  UITableViewCellEditingStyleDelete) {
+        Payment_Alipay *alipay = self.dataSource[indexPath.row];
+        JGActionSheetSection *section = [JGActionSheetSection sectionWithTitle:@"确认刪除吗?" message:@"" buttonTitles:@[@"確認"] buttonStyle:JGActionSheetButtonStyleDefault];
+        section.titleLabel.textColor = DEFAULTTEXTCOLOR;
+        section.titleLabel.font = DEFAULFONT;
+        JGActionSheetSection *cancelSection = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"取消"] buttonStyle:JGActionSheetButtonStyleCancel];
+        NSArray *sections = @[section, cancelSection];
+        JGActionSheet *sheet = [JGActionSheet actionSheetWithSections:sections];
+        [sheet setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *idxPath) {
+            [sheet dismissAnimated:YES];
+            if (idxPath.section == 0 && idxPath.row == 0) {
+                [self deleteAlipay:alipay withIndexPath:indexPath];
+            }
+        }];
+        [sheet showInView:self.navigationController.view animated:YES];
+    }
+}
+
+//修改编辑按钮文字
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"刪除";
 }
 
 #pragma mark - getter and setter
