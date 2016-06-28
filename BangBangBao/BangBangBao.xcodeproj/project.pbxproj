@@ -53,7 +53,8 @@
 		837B0A2E1D0E85D600C31D3C /* MemberInformationApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A2D1D0E85D600C31D3C /* MemberInformationApi.m */; };
 		838343521D0BC87A007F3EB6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838343511D0BC87A007F3EB6 /* LoginViewController.m */; };
 		8399922D1D162F170077891D /* MineTableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399922C1D162F170077891D /* MineTableViewHeaderView.m */; };
-		83A553BA1D224B4600EFD565 /* BankInfoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 83A553B91D224B4600EFD565 /* BankInfoApi.m */; };
+		83A553BD1D225DDB00EFD565 /* bank_info_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 83A553BB1D225DDB00EFD565 /* bank_info_1.json */; };
+		83A553BE1D225DDB00EFD565 /* bank_info_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 83A553BC1D225DDB00EFD565 /* bank_info_2.json */; };
 		83C479A21D1131BF00C5E3AB /* FacebookSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C479A11D1131BF00C5E3AB /* FacebookSignupViewController.m */; };
 		83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */; };
 		83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E01D01389C00B71E2D /* BaseNavigationController.m */; };
@@ -123,7 +124,7 @@
 		833B3D961D128DEF0008D3AD /* MainCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCollectionViewCell.m; sourceTree = "<group>"; };
 		8345770D1D011C6200558456 /* BangBangBao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BangBangBao.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		834577111D011C6200558456 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8345771C1D011C6200558456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8345771C1D011C6200558456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = BangBangBao/Assets.xcassets; sourceTree = "<group>"; };
 		834577211D011C6200558456 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		834577261D011C6200558456 /* BangBangBaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BangBangBaoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8345772A1D011C6200558456 /* BangBangBaoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BangBangBaoTests.m; sourceTree = "<group>"; };
@@ -189,8 +190,8 @@
 		838BE4621D017EDA00D12AC2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		8399922B1D162F170077891D /* MineTableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewHeaderView.h; sourceTree = "<group>"; };
 		8399922C1D162F170077891D /* MineTableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewHeaderView.m; sourceTree = "<group>"; };
-		83A553B81D224B4600EFD565 /* BankInfoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankInfoApi.h; sourceTree = "<group>"; };
-		83A553B91D224B4600EFD565 /* BankInfoApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankInfoApi.m; sourceTree = "<group>"; };
+		83A553BB1D225DDB00EFD565 /* bank_info_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bank_info_1.json; sourceTree = "<group>"; };
+		83A553BC1D225DDB00EFD565 /* bank_info_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bank_info_2.json; sourceTree = "<group>"; };
 		83C479A01D1131BF00C5E3AB /* FacebookSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSignupViewController.h; sourceTree = "<group>"; };
 		83C479A11D1131BF00C5E3AB /* FacebookSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookSignupViewController.m; sourceTree = "<group>"; };
 		83E3D5DB1D0134BB00B71E2D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -342,6 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				8345770F1D011C6200558456 /* BangBangBao */,
+				8345771C1D011C6200558456 /* Assets.xcassets */,
 				834577291D011C6200558456 /* BangBangBaoTests */,
 				834577341D011C6200558456 /* BangBangBaoUITests */,
 				8345770E1D011C6200558456 /* Products */,
@@ -363,7 +365,6 @@
 		8345770F1D011C6200558456 /* BangBangBao */ = {
 			isa = PBXGroup;
 			children = (
-				8345771C1D011C6200558456 /* Assets.xcassets */,
 				834E599B1D0FD1CD00B68FAA /* CurrentUser */,
 				837B0A151D0E59AB00C31D3C /* API */,
 				83E3D5E51D0139F000B71E2D /* AppConfigration */,
@@ -383,6 +384,8 @@
 		834577101D011C6200558456 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				83A553BB1D225DDB00EFD565 /* bank_info_1.json */,
+				83A553BC1D225DDB00EFD565 /* bank_info_2.json */,
 				834577211D011C6200558456 /* Info.plist */,
 				834577111D011C6200558456 /* main.m */,
 				83E3D5EA1D013D3700B71E2D /* BangBangBao-Prefix.pch */,
@@ -589,8 +592,6 @@
 				83F508561D20CFCC000CC4EA /* CreateAlipayAccountApi.m */,
 				832C1A9E1D20ED0100E40527 /* AccountDeleteApi.h */,
 				832C1A9F1D20ED0100E40527 /* AccountDeleteApi.m */,
-				83A553B81D224B4600EFD565 /* BankInfoApi.h */,
-				83A553B91D224B4600EFD565 /* BankInfoApi.m */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -761,6 +762,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8345771D1D011C6200558456 /* Assets.xcassets in Resources */,
+				83A553BD1D225DDB00EFD565 /* bank_info_1.json in Resources */,
+				83A553BE1D225DDB00EFD565 /* bank_info_2.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -866,7 +869,6 @@
 				837B0A1B1D0E59E000C31D3C /* RequestAccessory.m in Sources */,
 				83E3D5E41D01389C00B71E2D /* BaseViewController.m in Sources */,
 				834577121D011C6200558456 /* main.m in Sources */,
-				83A553BA1D224B4600EFD565 /* BankInfoApi.m in Sources */,
 				834E599A1D0FA44E00B68FAA /* NSString+NSString_Extended.m in Sources */,
 				834748A31D0BA82300EFADE0 /* WelcomeViewController.m in Sources */,
 				83EA69FB1D1B869D00FEC452 /* PaymentsApi.m in Sources */,
