@@ -20,6 +20,7 @@
 #import <YTKNetworkConfig.h>
 #import <JDStatusBarNotification.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <ClusterPrePermissions/ClusterPrePermissions.h>
 
 @interface AppDelegate ()<UITabBarControllerDelegate>
 
@@ -137,6 +138,9 @@
          (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
     }
     
+    //獲取位置信息
+    [self getLocationPermission];
+    
     /*!
      *  设置图片缓存默认大小200M,图片缓存时间为7天
      */
@@ -245,4 +249,20 @@
     }
 }
 
+- (void)getLocationPermission{
+    ClusterPrePermissions *permissions = [ClusterPrePermissions sharedPermissions];
+    [permissions showLocationPermissionsWithTitle:@"允許訪問您的位置信息?"
+                                          message:@"爲了您的賬戶安全，我們需要訪問您的位置信息!"
+                                  denyButtonTitle:@"不允許"
+                                 grantButtonTitle:@"允許"
+                                completionHandler:^(BOOL hasPermission,
+                                                    ClusterDialogResult userDialogResult,
+                                                    ClusterDialogResult systemDialogResult) {
+                                    if (hasPermission) {
+                                        
+                                    }else{
+                                        
+                                    }
+                                }];
+}
 @end

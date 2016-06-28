@@ -17,6 +17,7 @@
 #import "MineAboutBangBangBaoViewController.h"
 #import <JGActionSheet.h>
 #import "AppDelegate.h"
+#import "BankInfoApi.h"
 
 @interface MineViewController ()<UITableViewDelegate,UITableViewDataSource>
 

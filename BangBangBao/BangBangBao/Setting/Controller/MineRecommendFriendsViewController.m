@@ -7,10 +7,14 @@
 //
 
 #import "MineRecommendFriendsViewController.h"
+#import <ClusterPrePermissions/ClusterPrePermissions.h>
+#import <APContact.h>
+#import <APAddressBook.h>
 
 @interface MineRecommendFriendsViewController ()
 
 @property (nonatomic, strong) UIButton *backButton;
+@property (nonatomic, strong) NSMutableArray *dataSource;
 
 @end
 
@@ -25,6 +29,9 @@
     self.navigationItem.titleView = titleLabel;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.backButton];
     self.navigationItem.backBarButtonItem.title = @"";
+    
+    self.dataSource = [[NSMutableArray alloc] initWithCapacity:1];
+    [self getContactData];
 }
 
 #pragma mark - private methods
@@ -32,6 +39,55 @@
 - (void) popToPreViewController {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (void) getContactData {
+    ClusterPrePermissions *permissions = [ClusterPrePermissions sharedPermissions];
+    [permissions showContactsPermissionsWithTitle:@"允許訪問您的通訊錄?"
+                                          message:@"將幫幫寶分享給您的好友!"
+                                  denyButtonTitle:@"不允許"
+                                 grantButtonTitle:@"允許"
+                                completionHandler:^(BOOL hasPermission, ClusterDialogResult userDialogResult, ClusterDialogResult systemDialogResult) {
+        if (hasPermission) {
+            [MBProgressHUD showHUDWhileNetworkWithView:self.navigationController.view];
+            __weak __typeof(self) weakSelf = self;
+            APAddressBook *addressBook = [[APAddressBook alloc] init];
+            addressBook.fieldsMask = APContactFieldName | APContactFieldPhonesOnly;
+            addressBook.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name.firstName" ascending:YES],
+                                            [NSSortDescriptor sortDescriptorWithKey:@"name.lastName" ascending:YES]];
+            addressBook.filterBlock = ^BOOL(APContact *contact){
+                return contact.phones.count > 0;
+            };
+            [addressBook loadContacts:^(NSArray<APContact *> *contacts, NSError *error) {
+                if (contacts){
+                    [weakSelf configDataSourceWithArray:contacts];
+                }else if (error){
+                    [MBProgressHUD hideHUDWhenNetworkFinishedFromView:self.navigationController.view];
+                }
+            }];
+        } else {
+            [MBProgressHUD showHUDwithSuccess:NO WithTitle:@"不允許訪問您的通訊錄將無法分享" withView:self.navigationController.view];
+        }
+    }];
+}
+
+- (void) configDataSourceWithArray : (NSArray *) array {
+    if (array && [array count]) {
+        for (APContact *contact in array) {
+            if ([contact.phones count] == 1) {
+                NSDictionary *dic = @{@"cphone":contact.phones.lastObject.number,@"cname":contact.name.compositeName};
+                [self.dataSource addObject:dic];
+            }else if ([contact.phones count] > 1){
+                for (APPhone *phone in contact.phones) {
+                    NSDictionary *dic = @{@"cphone":phone.number,@"cname":contact.name.compositeName};
+                    [self.dataSource addObject:dic];
+                }
+            }
+        }
+    }
+    [MBProgressHUD hideHUDWhenNetworkFinishedFromView:self.navigationController.view];
+}
+
+
 
 #pragma mark - getter and setter
 
