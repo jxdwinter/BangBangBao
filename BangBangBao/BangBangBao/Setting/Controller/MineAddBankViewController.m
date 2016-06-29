@@ -76,6 +76,35 @@
         [tmpFisherman_associationArray addObject:bank];
     }
     self.rightDataSource = @[tmpBankArray, tmpPostArray,tmpCredit_cooperativeArray,tmpPeasant_associationArray,tmpFisherman_associationArray];
+    
+    /**
+     *  另外一種算法
+     */
+    /*
+    self.leftDataSource = [NSMutableArray new];
+    self.rightDataSource = [NSMutableArray new];
+    
+    for (NSString *key in [bankDic allKeys]) {
+        if ([key isEqualToString:@"bank"]) {
+            [self.leftDataSource addObject:@"銀行"];
+        }else if ([key isEqualToString:@"post"]){
+            [self.leftDataSource addObject:@"郵局"];
+        }else if ([key isEqualToString:@"credit_cooperative"]){
+            [self.leftDataSource addObject:@"信用合作社"];
+        }else if ([key isEqualToString:@"peasant_association"]){
+            [self.leftDataSource addObject:@"農會"];
+        }else if ([key isEqualToString:@"fisherman_association"]){
+            [self.leftDataSource addObject:@"漁會"];
+        }
+        NSMutableArray *tmpArray = [NSMutableArray new];
+        for (NSString *k in [bankDic[key] allKeys]) {
+            NSString *v = bankDic[key][k];
+            BankInformation *bank = [[BankInformation alloc] initWithId:k withName:v];
+            [tmpArray addObject:bank];
+        }
+        [self.rightDataSource addObject:tmpArray];
+    }
+    */
 }
 
 
