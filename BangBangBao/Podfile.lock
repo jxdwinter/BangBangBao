@@ -1,5 +1,5 @@
 PODS:
-  - ActionSheetPicker-3.0 (2.1.0)
+  - ActionSheetPicker-3.0 (2.2.0)
   - AFDownloadRequestOperation (2.0.1):
     - AFNetworking (~> 2.0)
   - AFNetworking (2.6.3):
@@ -97,7 +97,7 @@ DEPENDENCIES:
   - YYModel
 
 SPEC CHECKSUMS:
-  ActionSheetPicker-3.0: db66605feb85689279d328206c61f0e4f398df92
+  ActionSheetPicker-3.0: d11a4c12c6aaf704b8a3f56d179198c99f3e41e6
   AFDownloadRequestOperation: 748a1643423e1ddb23f2178f778087d4f0ae8ac7
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   APAddressBook: 2a91bf05999548bea210ec9d1a68073f4dc8bfce

@@ -11,6 +11,7 @@
 #import "PaymentBankDatabaseHelper.h"
 #import "Payment_Bank.h"
 #import "MineBankTableViewCell.h"
+#import "MineAddBankViewController.h"
 
 @interface MineBankInformationViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -54,7 +55,8 @@
 
 - (void) addBank {
     if ([self.dataSource count] < 5) {
-        
+        MineAddBankViewController *addBankViewController = [[MineAddBankViewController alloc] init];
+        [self.navigationController pushViewController:addBankViewController animated:YES];
     }else{
         [MBProgressHUD showHUDwithSuccess:YES WithTitle:@"最多只能添加 5 個付款銀行帳戶" withView:self.navigationController.view];
     }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		465178ADE25D6564C0308C98 /* libPods-BangBangBao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D7B671A672F94C8E349712 /* libPods-BangBangBao.a */; };
+		830AEA011D238EED0022C463 /* MineAddBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830AEA001D238EED0022C463 /* MineAddBankViewController.m */; };
+		830AEA031D238FF30022C463 /* bank_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 830AEA021D238FF30022C463 /* bank_info.json */; };
+		830AEA061D23AEB60022C463 /* BankInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 830AEA051D23AEB60022C463 /* BankInformation.m */; };
 		8323EDB31D0CEF4500005152 /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8323EDB21D0CEF4500005152 /* SignupViewController.m */; };
 		8323EDB61D0D08EC00005152 /* ForgetPasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8323EDB51D0D08EC00005152 /* ForgetPasswordViewController.m */; };
 		832C1AA01D20ED0100E40527 /* AccountDeleteApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 832C1A9F1D20ED0100E40527 /* AccountDeleteApi.m */; };
@@ -53,8 +56,6 @@
 		837B0A2E1D0E85D600C31D3C /* MemberInformationApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 837B0A2D1D0E85D600C31D3C /* MemberInformationApi.m */; };
 		838343521D0BC87A007F3EB6 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838343511D0BC87A007F3EB6 /* LoginViewController.m */; };
 		8399922D1D162F170077891D /* MineTableViewHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8399922C1D162F170077891D /* MineTableViewHeaderView.m */; };
-		83A553BD1D225DDB00EFD565 /* bank_info_1.json in Resources */ = {isa = PBXBuildFile; fileRef = 83A553BB1D225DDB00EFD565 /* bank_info_1.json */; };
-		83A553BE1D225DDB00EFD565 /* bank_info_2.json in Resources */ = {isa = PBXBuildFile; fileRef = 83A553BC1D225DDB00EFD565 /* bank_info_2.json */; };
 		83C479A21D1131BF00C5E3AB /* FacebookSignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C479A11D1131BF00C5E3AB /* FacebookSignupViewController.m */; };
 		83E3D5DD1D0134BB00B71E2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5DC1D0134BB00B71E2D /* AppDelegate.m */; };
 		83E3D5E31D01389C00B71E2D /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E3D5E01D01389C00B71E2D /* BaseNavigationController.m */; };
@@ -96,6 +97,11 @@
 /* Begin PBXFileReference section */
 		09D7B671A672F94C8E349712 /* libPods-BangBangBao.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BangBangBao.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8199B71886D002DE4EEF55F7 /* Pods-BangBangBao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BangBangBao.release.xcconfig"; path = "Pods/Target Support Files/Pods-BangBangBao/Pods-BangBangBao.release.xcconfig"; sourceTree = "<group>"; };
+		830AE9FF1D238EED0022C463 /* MineAddBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineAddBankViewController.h; sourceTree = "<group>"; };
+		830AEA001D238EED0022C463 /* MineAddBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineAddBankViewController.m; sourceTree = "<group>"; };
+		830AEA021D238FF30022C463 /* bank_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bank_info.json; sourceTree = "<group>"; };
+		830AEA041D23AEB60022C463 /* BankInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankInformation.h; sourceTree = "<group>"; };
+		830AEA051D23AEB60022C463 /* BankInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankInformation.m; sourceTree = "<group>"; };
 		8323EDB11D0CEF4500005152 /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		8323EDB21D0CEF4500005152 /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		8323EDB41D0D08EC00005152 /* ForgetPasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordViewController.h; sourceTree = "<group>"; };
@@ -190,8 +196,6 @@
 		838BE4621D017EDA00D12AC2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		8399922B1D162F170077891D /* MineTableViewHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineTableViewHeaderView.h; sourceTree = "<group>"; };
 		8399922C1D162F170077891D /* MineTableViewHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineTableViewHeaderView.m; sourceTree = "<group>"; };
-		83A553BB1D225DDB00EFD565 /* bank_info_1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bank_info_1.json; sourceTree = "<group>"; };
-		83A553BC1D225DDB00EFD565 /* bank_info_2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bank_info_2.json; sourceTree = "<group>"; };
 		83C479A01D1131BF00C5E3AB /* FacebookSignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSignupViewController.h; sourceTree = "<group>"; };
 		83C479A11D1131BF00C5E3AB /* FacebookSignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookSignupViewController.m; sourceTree = "<group>"; };
 		83E3D5DB1D0134BB00B71E2D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -384,8 +388,7 @@
 		834577101D011C6200558456 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				83A553BB1D225DDB00EFD565 /* bank_info_1.json */,
-				83A553BC1D225DDB00EFD565 /* bank_info_2.json */,
+				830AEA021D238FF30022C463 /* bank_info.json */,
 				834577211D011C6200558456 /* Info.plist */,
 				834577111D011C6200558456 /* main.m */,
 				83E3D5EA1D013D3700B71E2D /* BangBangBao-Prefix.pch */,
@@ -452,6 +455,8 @@
 				834714B01D1A2A5200E94102 /* MineInformationEditViewController.m */,
 				834714B21D1A2EBB00E94102 /* MineBankInformationViewController.h */,
 				834714B31D1A2EBB00E94102 /* MineBankInformationViewController.m */,
+				830AE9FF1D238EED0022C463 /* MineAddBankViewController.h */,
+				830AEA001D238EED0022C463 /* MineAddBankViewController.m */,
 				834714B51D1A2F8F00E94102 /* MineAlipayInformationViewController.h */,
 				834714B61D1A2F8F00E94102 /* MineAlipayInformationViewController.m */,
 				8354DE151D1D223C009688B7 /* MineAddAlipayViewController.h */,
@@ -476,6 +481,8 @@
 		836E70FD1D05660E00456C57 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				830AEA041D23AEB60022C463 /* BankInformation.h */,
+				830AEA051D23AEB60022C463 /* BankInformation.m */,
 				83EA69F51D1B83CC00FEC452 /* Payment_Bank.h */,
 				83EA69F61D1B83CC00FEC452 /* Payment_Bank.m */,
 				834F379F1D1CC6B100564081 /* Payment_Alipay.h */,
@@ -762,8 +769,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8345771D1D011C6200558456 /* Assets.xcassets in Resources */,
-				83A553BD1D225DDB00EFD565 /* bank_info_1.json in Resources */,
-				83A553BE1D225DDB00EFD565 /* bank_info_2.json in Resources */,
+				830AEA031D238FF30022C463 /* bank_info.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -895,10 +901,12 @@
 				834714BA1D1A30A800E94102 /* MineMemberAnnouncementViewController.m in Sources */,
 				83325E1D1D139DD90062EEBE /* MainFooterSubView.m in Sources */,
 				837B0A1A1D0E59E000C31D3C /* ConfigYTKRequest.m in Sources */,
+				830AEA061D23AEB60022C463 /* BankInformation.m in Sources */,
 				83325E171D13939B0062EEBE /* IntroViewController.m in Sources */,
 				83325E201D139E3A0062EEBE /* MainFooterView.m in Sources */,
 				8354DE171D1D223C009688B7 /* MineAddAlipayViewController.m in Sources */,
 				83F508571D20CFCC000CC4EA /* CreateAlipayAccountApi.m in Sources */,
+				830AEA011D238EED0022C463 /* MineAddBankViewController.m in Sources */,
 				83C479A21D1131BF00C5E3AB /* FacebookSignupViewController.m in Sources */,
 				83FDF7B01D067C0D0044E782 /* MF_Base64Additions.m in Sources */,
 				834E59A11D0FD25700B68FAA /* FacebookData.m in Sources */,
