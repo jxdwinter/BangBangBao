@@ -139,7 +139,7 @@
     }
     
     //獲取位置信息
-    [self getLocationPermission];
+    //[self getLocationPermission];
     
     /*!
      *  设置图片缓存默认大小200M,图片缓存时间为7天
