@@ -261,32 +261,29 @@
 -(void)loginButtonClicked{
     FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
     [login logInWithReadPermissions: @[@"public_profile"] fromViewController:self handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+        NSLog(@"%@",result.token.tokenString);
          if (error) {
              NSLog(@"Process error");
          } else if (result.isCancelled) {
              NSLog(@"Cancelled");
          } else {
              if ([FBSDKAccessToken currentAccessToken]) {
-                 [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
-                  startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-                      if (!error) {
-                          LoginWithFacebookApi *api = [[LoginWithFacebookApi alloc] initWithFacebookAccessToken:[[FBSDKAccessToken currentAccessToken] tokenString]];
-                          YTKChainRequest *chainReq = [[YTKChainRequest alloc] init];
-                          RequestAccessory *accessory = [[RequestAccessory alloc] initAccessoryWithView:self.navigationController.view];
-                          [chainReq addAccessory:accessory];
-                          [chainReq addRequest:api callback:^(YTKChainRequest *chainRequest, YTKBaseRequest *baseRequest) {
-                              LoginApi *result = (LoginApi *)baseRequest;
-                              NSDictionary *dic = [api responseDictionaryWithResponseString:result.responseString];
-                              if (dic) {
-                                  [AccountHelper saveAccountVerifyTokenWithToken:dic[@"token"]];
-                                  MemberInformationApi *api = [[MemberInformationApi alloc] initWithMid:[dic[@"mid"] description]];
-                                  [chainRequest addRequest:api callback:nil];
-                              }
-                          }];
-                          chainReq.delegate = self;
-                          [chainReq start];
-                      }
-                  }];
+                 NSLog(@"%@",[[FBSDKAccessToken currentAccessToken] tokenString]);
+                 LoginWithFacebookApi *api = [[LoginWithFacebookApi alloc] initWithFacebookAccessToken:[[FBSDKAccessToken currentAccessToken] tokenString]];
+                 YTKChainRequest *chainReq = [[YTKChainRequest alloc] init];
+                 RequestAccessory *accessory = [[RequestAccessory alloc] initAccessoryWithView:self.navigationController.view];
+                 [chainReq addAccessory:accessory];
+                 [chainReq addRequest:api callback:^(YTKChainRequest *chainRequest, YTKBaseRequest *baseRequest) {
+                     LoginApi *result = (LoginApi *)baseRequest;
+                     NSDictionary *dic = [api responseDictionaryWithResponseString:result.responseString];
+                     if (dic) {
+                         [AccountHelper saveAccountVerifyTokenWithToken:dic[@"token"]];
+                         MemberInformationApi *api = [[MemberInformationApi alloc] initWithMid:[dic[@"mid"] description]];
+                         [chainRequest addRequest:api callback:nil];
+                     }
+                 }];
+                 chainReq.delegate = self;
+                 [chainReq start];
              }
          }
      }];

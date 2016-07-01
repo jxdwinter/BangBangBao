@@ -147,7 +147,6 @@
     SDImageCache *imageCache = [SDImageCache sharedImageCache];
     [imageCache setMaxCacheSize:1024*1024*200];
     
-    
     /**
      *  初始化数据库
      */

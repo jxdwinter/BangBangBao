@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		465178ADE25D6564C0308C98 /* libPods-BangBangBao.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D7B671A672F94C8E349712 /* libPods-BangBangBao.a */; };
+		830480731D2630B400B75073 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830480701D2630B400B75073 /* FBSDKCoreKit.framework */; };
+		830480741D2630B400B75073 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830480711D2630B400B75073 /* FBSDKLoginKit.framework */; };
+		830480751D2630B400B75073 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 830480721D2630B400B75073 /* FBSDKShareKit.framework */; };
 		830AEA011D238EED0022C463 /* MineAddBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 830AEA001D238EED0022C463 /* MineAddBankViewController.m */; };
 		830AEA031D238FF30022C463 /* bank_info.json in Resources */ = {isa = PBXBuildFile; fileRef = 830AEA021D238FF30022C463 /* bank_info.json */; };
 		830AEA061D23AEB60022C463 /* BankInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 830AEA051D23AEB60022C463 /* BankInformation.m */; };
@@ -67,9 +70,6 @@
 		83F508571D20CFCC000CC4EA /* CreateAlipayAccountApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 83F508561D20CFCC000CC4EA /* CreateAlipayAccountApi.m */; };
 		83FDF79A1D06600C0044E782 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4611D017EDA00D12AC2 /* Crashlytics.framework */; };
 		83FDF79B1D06600C0044E782 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 838BE4621D017EDA00D12AC2 /* Fabric.framework */; };
-		83FDF79F1D0674240044E782 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FDF79C1D0674240044E782 /* FBSDKCoreKit.framework */; };
-		83FDF7A01D0674240044E782 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FDF79D1D0674240044E782 /* FBSDKLoginKit.framework */; };
-		83FDF7A11D0674240044E782 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FDF79E1D0674240044E782 /* FBSDKShareKit.framework */; };
 		83FDF7AF1D067C0D0044E782 /* EncryptTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FDF7A51D067C0D0044E782 /* EncryptTools.m */; };
 		83FDF7B01D067C0D0044E782 /* MF_Base64Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FDF7A71D067C0D0044E782 /* MF_Base64Additions.m */; };
 		83FDF7B11D067C0D0044E782 /* VerifyTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 83FDF7A91D067C0D0044E782 /* VerifyTools.m */; };
@@ -97,6 +97,9 @@
 /* Begin PBXFileReference section */
 		09D7B671A672F94C8E349712 /* libPods-BangBangBao.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BangBangBao.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8199B71886D002DE4EEF55F7 /* Pods-BangBangBao.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BangBangBao.release.xcconfig"; path = "Pods/Target Support Files/Pods-BangBangBao/Pods-BangBangBao.release.xcconfig"; sourceTree = "<group>"; };
+		830480701D2630B400B75073 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4/FBSDKCoreKit.framework"; sourceTree = "<group>"; };
+		830480711D2630B400B75073 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4/FBSDKLoginKit.framework"; sourceTree = "<group>"; };
+		830480721D2630B400B75073 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKShareKit.framework; path = "../../../Documents/FacebookSDKs-iOS-4/FBSDKShareKit.framework"; sourceTree = "<group>"; };
 		830AE9FF1D238EED0022C463 /* MineAddBankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineAddBankViewController.h; sourceTree = "<group>"; };
 		830AEA001D238EED0022C463 /* MineAddBankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineAddBankViewController.m; sourceTree = "<group>"; };
 		830AEA021D238FF30022C463 /* bank_info.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bank_info.json; sourceTree = "<group>"; };
@@ -216,9 +219,6 @@
 		83EA69FA1D1B869D00FEC452 /* PaymentsApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentsApi.m; sourceTree = "<group>"; };
 		83F508551D20CFCC000CC4EA /* CreateAlipayAccountApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateAlipayAccountApi.h; sourceTree = "<group>"; };
 		83F508561D20CFCC000CC4EA /* CreateAlipayAccountApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateAlipayAccountApi.m; sourceTree = "<group>"; };
-		83FDF79C1D0674240044E782 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		83FDF79D1D0674240044E782 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		83FDF79E1D0674240044E782 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		83FDF7A41D067C0D0044E782 /* EncryptTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EncryptTools.h; sourceTree = "<group>"; };
 		83FDF7A51D067C0D0044E782 /* EncryptTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncryptTools.m; sourceTree = "<group>"; };
 		83FDF7A61D067C0D0044E782 /* MF_Base64Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MF_Base64Additions.h; sourceTree = "<group>"; };
@@ -238,9 +238,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				83FDF79A1D06600C0044E782 /* Crashlytics.framework in Frameworks */,
-				83FDF79F1D0674240044E782 /* FBSDKCoreKit.framework in Frameworks */,
-				83FDF7A11D0674240044E782 /* FBSDKShareKit.framework in Frameworks */,
-				83FDF7A01D0674240044E782 /* FBSDKLoginKit.framework in Frameworks */,
+				830480731D2630B400B75073 /* FBSDKCoreKit.framework in Frameworks */,
+				830480751D2630B400B75073 /* FBSDKShareKit.framework in Frameworks */,
+				830480741D2630B400B75073 /* FBSDKLoginKit.framework in Frameworks */,
 				83FDF79B1D06600C0044E782 /* Fabric.framework in Frameworks */,
 				465178ADE25D6564C0308C98 /* libPods-BangBangBao.a in Frameworks */,
 			);
@@ -650,9 +650,9 @@
 		E93A8374766770B974E15466 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				83FDF79C1D0674240044E782 /* FBSDKCoreKit.framework */,
-				83FDF79D1D0674240044E782 /* FBSDKLoginKit.framework */,
-				83FDF79E1D0674240044E782 /* FBSDKShareKit.framework */,
+				830480701D2630B400B75073 /* FBSDKCoreKit.framework */,
+				830480711D2630B400B75073 /* FBSDKLoginKit.framework */,
+				830480721D2630B400B75073 /* FBSDKShareKit.framework */,
 				838BE4611D017EDA00D12AC2 /* Crashlytics.framework */,
 				838BE4621D017EDA00D12AC2 /* Fabric.framework */,
 				09D7B671A672F94C8E349712 /* libPods-BangBangBao.a */,
@@ -1043,6 +1043,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/jxdwinter/Documents/FacebookSDKs-iOS-4",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/BangBangBao/BangBangBao-Prefix.pch";
@@ -1051,7 +1052,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.paybao.BangBangBao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "68a8d959-15ea-4c0b-b7de-57ac6dc938e1";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -1068,6 +1069,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"/Users/jxdwinter/Documents/FacebookSDKs-iOS-4",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "${SRCROOT}/BangBangBao/BangBangBao-Prefix.pch";
@@ -1076,7 +1078,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = tw.paybao.BangBangBao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "df1a4b3d-a02a-4b95-9058-de5e0544c034";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
