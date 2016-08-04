@@ -18,7 +18,7 @@ NSString *const DATABASENAME = @"bangbangbao.db";
 /**
  *  URL
  */
-NSString *const BASEURL = @"https://api.paybao.com.tw";
+NSString *const BASEURL = @"";
 
 /**
  *  每一页的数量,用于翻页

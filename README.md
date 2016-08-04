@@ -1,5 +1,7 @@
 # BangBangBao
-幫幫寶iOS客戶端 http://www.paybao.tw
+
+
+幫幫寶iOS客戶端 
 
 ### 开发人员
 开发人员       | 手机号码       |  邮箱 |
@@ -42,14 +44,6 @@
 | ZXingObjC | 3.1.0 | [ ZXingObjC ][17] |  ZXingObjC |
 | LBXScan | 1.1.1 | [ LBXScan ][18] |  LBXScan |
 
-
-
-
-
-
-
-
-PAYBAO（沛寶）© 版權所有 2013-2016
 
 [1]:	https://github.com/AFNetworking/AFNetworking
 [2]:	https://github.com/jdg/MBProgressHUD
